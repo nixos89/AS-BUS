@@ -27,7 +27,7 @@
 			
 		</li>
 		<li id="veci">
-			<a href="NoviPolasci.jsp"><i class="fa fa-plus"></i> Dodavanje Polazaka</a>
+			<a href="NoviPolasci.jsp"><i class="fa fa-plus"></i> Novi Polasci</a>
 		
 		</li >
 		<li  id="veci1">
