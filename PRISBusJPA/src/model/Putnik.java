@@ -24,6 +24,8 @@ public class Putnik implements Serializable {
 	private int brkarata;
 
 	private String ime;
+	
+	private String user;
 
 	private String password;
 
@@ -68,6 +70,14 @@ public class Putnik implements Serializable {
 
 	public void setIme(String ime) {
 		this.ime = ime;
+	}
+	
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
 	}
 
 	public String getPassword() {
