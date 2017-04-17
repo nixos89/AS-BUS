@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>servlets.LogInServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>RegistracijaServlet</servlet-name>
+  	<display-name>RegistracijaServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.RegistracijaServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LogInServlet</servlet-name>
   	<url-pattern>/LogInServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegistracijaServlet</servlet-name>
+  	<url-pattern>/RegistracijaServlet</url-pattern>
   </servlet-mapping>
 </web-app>

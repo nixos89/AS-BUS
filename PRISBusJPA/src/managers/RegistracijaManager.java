@@ -7,15 +7,16 @@ import model.Putnik;
 
 public class RegistracijaManager {
 
-	public Putnik sacuvajPutnika(String ime, String prezime,int brkarata,String password){
+	public Putnik sacuvajPutnika(String ime, String prezime,
+			String user,String password){
 		try{
 			EntityManager em = JPAUtils.getEntityManager();
 			em.getTransaction().begin();
 			Putnik p = new Putnik();
 			p.setIme(ime);
 			p.setPrezime(prezime);
-			p.setBrkarata(brkarata);
-			p.setPassword(password);
+//			p.setUser(user);
+			p.setPassword(password);			
 			em.persist(p);
 			em.getTransaction().commit();
 			em.close();
