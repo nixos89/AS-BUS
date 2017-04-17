@@ -39,7 +39,7 @@
 		
 		</div>
         
-<div class="contain1">
+<div class="contain">
 		<h2>Kreirajte cenu za odgovarajuću kartu: </h2>
 		<form>
 
@@ -74,13 +74,8 @@
 			</table>
 			</form>
 			</div>
+			
 	</div>
-        <div>
-	
-		</div>
-	
-		
-
 
 </body>
 </html>
