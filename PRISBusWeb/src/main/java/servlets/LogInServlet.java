@@ -10,6 +10,8 @@ import managers.RegistracijaManager;
 import model.Putnik;
 
 /**
+ * @author Slobodan Babic
+ * 
  * Servlet implementation class LogInServlet
  */
 public class LogInServlet extends HttpServlet {
@@ -32,9 +34,12 @@ public class LogInServlet extends HttpServlet {
 			String user = request.getParameter("korisnicko _ime");	
 			String password = request.getParameter("lozinka");
 			boolean korisnikPostoji = new RegistracijaManager().logInPutnik(user, password);
-			if(korisnikPostoji){
-				request.getRequestDispatcher("registracija.jsp").forward(request, response);
-				
+			String porukaError = null;
+			if(korisnikPostoji){				
+				request.getRequestDispatcher("Registracija.jsp").forward(request, response);
+			}else{
+				request.setAttribute("porukaError", porukaError);
+				request.getRequestDispatcher("Registracija.jsp").forward(request, response);
 			}
 		}catch(Exception e){
 			e.printStackTrace();

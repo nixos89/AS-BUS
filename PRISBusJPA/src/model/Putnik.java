@@ -20,7 +20,7 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@Table(name="Putnik")
+@Table(name="PUTNIK")
 @NamedQuery(name="Putnik.findAll", query="SELECT p FROM Putnik p")
 public class Putnik implements Serializable {
 	private static final long serialVersionUID = 1L;

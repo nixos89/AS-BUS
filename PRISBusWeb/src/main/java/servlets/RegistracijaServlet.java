@@ -32,7 +32,7 @@ public class RegistracijaServlet extends HttpServlet {
 			request.getSession().getServletContext();
 			String ime = request.getParameter("ime");
 			String prezime = request.getParameter("prezime");
-			String user = request.getParameter("korisnicko _ime");
+			String user = request.getParameter("korisnicko_ime");
 			String pass = request.getParameter("lozinka");			
 			Putnik p = (Putnik) new RegistracijaManager().sacuvajPutnika(ime, prezime, user, pass);
 			String porukaReg = null;
@@ -51,6 +51,6 @@ public class RegistracijaServlet extends HttpServlet {
 			System.out.println("Greska, dogodio se exception iz nekog razloga...");
 		}
 		
-	}
+	}//doPost
 
 }

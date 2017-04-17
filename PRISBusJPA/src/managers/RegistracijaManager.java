@@ -7,6 +7,9 @@ import model.Putnik;
 
 public class RegistracijaManager {
 
+	
+	/* @author: Nikola Stevanovic
+	 * Registracija korisnika, tj. Putnik-a*/
 	public Putnik sacuvajPutnika(String ime, String prezime,
 			String user,String password){
 		try{
@@ -27,7 +30,8 @@ public class RegistracijaManager {
 		}
 	}//sacuvajPutnika 
 
-	/* Proverava da li se korisnik (tj. Putnik) sa prosledjenim podacima nalazi u bazi */
+	/* @author: Slobodan Babic
+	 * Proverava da li se korisnik (tj. Putnik) sa prosledjenim podacima nalazi u bazi */
 	public boolean logInPutnik(String user, String password){
 		try{
 			EntityManager em = JPAUtils.getEntityManager();
