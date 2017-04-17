@@ -55,19 +55,10 @@
 						<td><p>Ponovi lozinku</p></td>
 						<td><input type="text" name="ponLozinku"></td>
 					</tr>
-					<tr>
-						<td><p>Adresa</p></td>
-						<td><input type="text" name="adresa"></td>
-					</tr>
-					<tr>
-						<td><p>Telefon</p></td>
-						<td><input type="text" name="telefon"></td>
-					</tr>
-
-
+					
 					<tr>
 						<td>&nbsp;</td>
-						<td><input type="submit" name="submit" value="Dodaj"></td>
+						<td><input type="submit" value="Dodaj"></td>
 					</tr>
 				</table>
 			</form>

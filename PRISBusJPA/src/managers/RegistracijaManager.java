@@ -15,7 +15,7 @@ public class RegistracijaManager {
 			Putnik p = new Putnik();
 			p.setIme(ime);
 			p.setPrezime(prezime);
-//			p.setUser(user);
+			p.setUser(user);
 			p.setPassword(password);			
 			em.persist(p);
 			em.getTransaction().commit();
@@ -31,7 +31,7 @@ public class RegistracijaManager {
 	public boolean logInPutnik(String user, String password){
 		try{
 			EntityManager em = JPAUtils.getEntityManager();
-			Query upit = em.createQuery("SELECT p FROM Putnik p WHERE p.prezime LIKE :user AND p.password LIKE :password");
+			Query upit = em.createQuery("SELECT p FROM Putnik p WHERE p.user LIKE :user AND p.password LIKE :password");
 			upit.setParameter("user", user);
 			upit.setParameter("password", password);
 			Putnik p = (Putnik)upit.getSingleResult();			

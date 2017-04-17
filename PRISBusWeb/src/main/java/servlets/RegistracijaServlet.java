@@ -36,17 +36,19 @@ public class RegistracijaServlet extends HttpServlet {
 			String pass = request.getParameter("lozinka");			
 			Putnik p = (Putnik) new RegistracijaManager().sacuvajPutnika(ime, prezime, user, pass);
 			String porukaReg = null;
-			if(p!=null){
-				request.getRequestDispatcher("Registracija.jsp").forward(request, response);
+			if(p!=null){				
 				porukaReg = "Korisnik "+ p.getIme()+" "+p.getPrezime()+" je uspesno sacuvan!";
-			}else{
-				request.getRequestDispatcher("Registracija.jsp").forward(request, response);
 				request.setAttribute("porukaReg", porukaReg);
+				request.getRequestDispatcher("Registracija.jsp").forward(request, response);
+			}else{			
 				porukaReg = "Greska, korisnik NIJE sacuvan!";
+				request.setAttribute("porukaReg", porukaReg);
+				request.getRequestDispatcher("Registracija.jsp").forward(request, response);
 			}
 			
 		}catch(Exception e){
 			e.printStackTrace();
+			System.out.println("Greska, dogodio se exception iz nekog razloga...");
 		}
 		
 	}
