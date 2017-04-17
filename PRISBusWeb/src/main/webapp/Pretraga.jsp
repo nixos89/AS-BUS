@@ -38,10 +38,10 @@
 		
 		</div>
        
-
+	<marquee> Dobro došli na naš sajt! </marquee>
 	<div class="pretraga">
 	<br></br>
-     <h2 class="sansserif" >NaÄite odgovarajuÄi autobus: </h2>
+     <h2 class="sansserif" >Nađite odgovarajući autobus: </h2>
 	<table>
 		
 		<tr>
