@@ -39,7 +39,7 @@
 	</ul>
 		
 		</div>
-      <div class="contain1">
+      <div class="contain">
 		<h2>Dodati nove polaske: </h2>
 		<form>
 
@@ -72,13 +72,11 @@
 				</tr>
 				
 			</table>
-			</form>
-			</div>
-
+			</form> 
 </div>
-        <div>
-	
-		</div>
+	<br></br>
+	<img id="logo" src="resources/images/s3.jpg">
+</div>
 		
 		
 </body>
