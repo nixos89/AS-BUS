@@ -2,6 +2,8 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -53,6 +55,7 @@ public class Polazak implements Serializable {
 	private List<Putnik> putniks;
 
 	public Polazak() {
+		putniks = new ArrayList<Putnik>();
 	}
 
 	public int getIdpolaska() {
