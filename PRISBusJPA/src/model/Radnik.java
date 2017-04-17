@@ -20,6 +20,8 @@ public class Radnik implements Serializable {
 	private int idradnik;
 
 	private String ime;
+	
+	private String user;
 
 	private String password;
 
@@ -46,6 +48,14 @@ public class Radnik implements Serializable {
 
 	public void setIme(String ime) {
 		this.ime = ime;
+	}
+	
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
 	}
 
 	public String getPassword() {
