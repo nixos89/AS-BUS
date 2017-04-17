@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
 
 <title>Insert title here</title>
@@ -16,10 +16,10 @@
 	 <img id="logo" src="resources/images/Logo.jpg">
 		<div class="menu">
 		<ul id="menu">
-		<li id="standard"><a href="Pocetna.jsp"><i class="fa fa-home"></i>Pocetna</a> 
+		<li id="standard"><a href="Pocetna.jsp"><i class="fa fa-home"></i>Početna</a> 
 		</li>
 		<li id="standard">
-			<a href="Pretraga.jsp"><i class="fa fa-search"></i> Pretraga </a>
+			<a href="Pretraga.jsp"><i class="fa fa-search"></i> Pretraga</a>
 			
 		</li >
 		<li  id="standard">
@@ -27,7 +27,7 @@
 			
 		</li>
 		<li id="veci">
-			<a href="NoviPolasci.jsp"><i class="fa fa-plus"></i> Dodavanje Polazaka</a>
+			<a href="NoviPolasci.jsp"><i class="fa fa-plus"></i> Novi Polasci</a>
 		
 		</li >
 		<li  id="veci1">
@@ -40,7 +40,7 @@
 		</div>
         
 <div class="contain1">
-		<h2>Kreirajte cenu za odgovarajucu kartu: </h2>
+		<h2>Kreirajte cenu za odgovarajuću kartu: </h2>
 		<form>
 
 			<table>
