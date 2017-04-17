@@ -63,7 +63,7 @@
         <div>
 	</table>
     <h2 id="naslov"> O nama: </h2>
-	<p id="text"> PUTUJTE UDOBNO I SIGURNO!   <img id="s1" align="center" src="resources/images/s1.jpg"> </p>
+	<marquee><p id="text"> PUTUJTE UDOBNO I SIGURNO!   <img id="s1" align="center" src="resources/images/s1.jpg"> </p> </marquee>
 
 </br>
 <h2 id="naslov1">Najisplativiji prevoznik! </h2>
@@ -87,17 +87,11 @@
   <tr class="tr">
     <td class="td">Niš ekspres</td>
     <td class="td">1100</td>
-    <td class="td">14%</td>
-    
+    <td class="td">14%</td>  
   </tr>
   
   </table>
-
-
 		</div>
-        
-        
-		
-		
+	
 </body>
 </html>
