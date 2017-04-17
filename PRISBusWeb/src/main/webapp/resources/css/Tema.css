@@ -100,10 +100,10 @@ li:hover a {
   width: 13.87%;
  }
  #standard, #veci1 {
-  font-size:15px;
+  font-size:16px;
  }
  #veci {
-  font-size: 15px;
+  font-size: 12px;
  }
 }
 @media screen and (min-width:1200px) {
