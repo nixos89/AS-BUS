@@ -50,7 +50,7 @@
 					<option value="va">Valjevo</option>
 					<option value="bg">Beograd</option>
 					<option value="ns">Novi Sad</option>
-					<option value="sa" selected>Å abac</option>
+					<option value="sa" selected>Šabac</option>
 			</select></td>
 		</tr>
 		<tr>
@@ -59,7 +59,7 @@
 					<option value="va">Valjevo</option>
 					<option value="bg">Beograd</option>
 					<option value="ns">Novi Sad</option>
-					<option value="sa" selected>Å abac</option>
+					<option value="sa" selected>Šabac</option>
 			</select></td>
 		</tr>
 		<tr>
@@ -86,7 +86,7 @@
         <table class="table">
   <tr class="tr">
     <th class="th">Polazak</th>
-    <th class="th">ZavrÅ¡etak</th>
+    <th class="th">Završetak</th>
     <th class="th">Vreme</th>
     <th class="th">Prevoznik</th>
     <th class="th">Cena</th>
@@ -94,23 +94,23 @@
   </tr>
   <tr class="tr">
     <td class="td">Beograd</td>
-    <td class="td">NiÅ¡</td>
+    <td class="td">Niš</td>
     <td class="td">15:35</td>
     <td class="td">Lasta</td>
     <td class="td">1600</td>
   </tr>
   <tr class="tr">
-    <td class="td">NiÅ¡</td>
+    <td class="td">Niš</td>
     <td class="td">Beograd</td>
     <td class="td">21:00</td>
-    <td class="td">NiÅ¡ Ekspres</td>
+    <td class="td">Niš Ekspres</td>
     <td class="td">1600</td>
   </tr>
   <tr class="tr">
-    <td class="td">NiÅ¡</td>
+    <td class="td">Niš</td>
     <td class="td">Novi Sad</td>
     <td class="td">21:15</td>
-    <td class="td">NiÅ¡ Ekspres</td>
+    <td class="td">Niš Ekspres</td>
     <td class="td">2400</td>
   </tr>
 </table>
