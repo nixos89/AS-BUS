@@ -2,6 +2,8 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -22,6 +24,8 @@ public class Putnik implements Serializable {
 	private int brkarata;
 
 	private String ime;
+	
+	private String user;
 
 	private String password;
 
@@ -41,6 +45,7 @@ public class Putnik implements Serializable {
 	private List<Polazak> polazaks;
 
 	public Putnik() {
+		polazaks = new ArrayList<Polazak>();
 	}
 
 	public int getIdputnik() {
@@ -65,6 +70,14 @@ public class Putnik implements Serializable {
 
 	public void setIme(String ime) {
 		this.ime = ime;
+	}
+	
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
 	}
 
 	public String getPassword() {
