@@ -16,7 +16,7 @@
 		</header>
 		<div class="menu">
 		<ul id="menu">
-		<li id="standard"><a href="Pocetna.jsp"><i class="fa fa-home"></i>Pocetna</a> 
+		<li id="standard"><a href="Pocetna.jsp"><i class="fa fa-home"></i>Početna</a> 
 		</li>
 		<li id="standard">
 			<a href="Pretraga.jsp"><i class="fa fa-search"></i> Pretraga </a>
