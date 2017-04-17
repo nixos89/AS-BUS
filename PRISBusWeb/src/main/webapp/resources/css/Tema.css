@@ -17,6 +17,11 @@ body {
 	opacity: 1;
 }
 
+#kartice {
+		width: 50%;
+		height: 200px;
+		opacity: 1;
+}
 .menu {
 	width: 100%;
 	margin-bottom: 50px;

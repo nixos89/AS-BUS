@@ -38,7 +38,6 @@
 	</ul>
 		
 		</div>
-        
 <div class="contain">
 		<h2>Kreirajte cenu za odgovarajuću kartu: </h2>
 		<form>
@@ -75,6 +74,7 @@
 			</form>
 			</div>
 			
+				<center><img id="kartice" src="resources/images/kartice.jpg" ></center> 
 	</div>
 
 </body>
