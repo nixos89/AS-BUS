@@ -71,7 +71,11 @@ public class Putnik implements Serializable {
 	public void setIme(String ime) {
 		this.ime = ime;
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> branch 'TK-757' of https://github.com/nixos89/AS-BUS.git
 	public String getUser() {
 		return user;
 	}

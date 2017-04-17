@@ -20,9 +20,15 @@ public class Radnik implements Serializable {
 	private int idradnik;
 
 	private String ime;
+<<<<<<< HEAD
 
 	private String user;
 	
+=======
+	
+	private String user;
+
+>>>>>>> branch 'TK-757' of https://github.com/nixos89/AS-BUS.git
 	private String password;
 
 	private String prezime;
