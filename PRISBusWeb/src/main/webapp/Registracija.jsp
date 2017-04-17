@@ -38,6 +38,7 @@
 	</ul>
 		
 		</div>
+		<marquee> Dobro došli na naš sajt! </marquee>
         <div class="contain">
 		<h2>Registruj se: </h2>
 		<form>
