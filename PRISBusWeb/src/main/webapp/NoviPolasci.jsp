@@ -42,7 +42,6 @@
       <div class="contain">
 		<h2>Dodati nove polaske: </h2>
 		<form>
-
 			<table>
 				<tr>
 					<td><p>ID Polaska: </p></td>
@@ -53,7 +52,7 @@
 					<td><input type="text" name="idVrstaPolaska"></td>
 				</tr>
 				<tr>
-					<td><p>Id prevoznika: </p></td>
+					<td><p>Id Prevoznika: </p></td>
 					<td><input type="text" name="idPrevoznika"></td>
 				</tr>
 				<tr>
