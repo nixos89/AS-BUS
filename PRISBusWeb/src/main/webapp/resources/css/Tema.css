@@ -1,14 +1,28 @@
 body {
-	background-color: #0c32ae;
+   
+    background: red;
+    -webkit-animation: mymove 3s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 3s infinite;
 }
 
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    from {background-color: purple;}
+    to {background-color: blue;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    from {background-color: purple;}
+    to {background-color: blue;}
+}
 .Box {
 	margin-left: 15%;
 	margin-top: 30px;
 	width: 70%;
 	background-color: powderblue;
 	height: 1000px;
-	color: #ff0000;
+	color: #8000ff;
 }
 
 #logo {
@@ -73,9 +87,10 @@ li:hover a {
     text-align: left;
     padding: 8px;
 	background-color: white;
+	font-size: 14px;
 }
 
-.tr:nth-child(even){background-color: #c0c0c00;}
+.tr:nth-child(even){background-color: white;}
 .contain1 {        
   margin-left:35%;
   margin-right:auto;

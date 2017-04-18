@@ -6,9 +6,8 @@
 <link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>Pocetna</title>
+<title>Početna</title>
 </head>
-<body>
 <body>
 
 	<div class="Box">
@@ -20,26 +19,21 @@
 		<li id="standard"><a href="Pocetna.jsp"><i class="fa fa-home"></i>Početna</a> 
 		</li>
 		<li id="standard">
-			<a href="#"><i class="fa fa-search"></i> Pretraga </a>
-			
+			<a href="#"><i class="fa fa-search"></i> Pretraga </a>	
 		</li >
 		<li  id="standard">
-			<a href="Registracija.jsp"><i class="fa fa-registered"></i> Registracija</a>
-			
+			<a href="Registracija.jsp"><i class="fa fa-registered"></i> Registracija</a>	
 		</li>
 		<li id="veci">
 			<a href="#"><i class="fa fa-plus"></i> Novi Polasci</a>
-		
 		</li >
 		<li  id="veci1">
 			<a href="#"><i class="fa fa-pencil-square-o"></i> Modifikuj cene</a>
-		
-		</li>
-		
+		</li>	
 	</ul>
 		
 		</div>
-        <h2 id="naslov">Popusti: <h2>
+        <h2 id="naslov"> TOP PONUDA! <h2>
       <table class="table">
   <tr class="tr">
     <th class="th">Polazak</th>
@@ -55,21 +49,18 @@
     <td class="td">15:35</td>
     <td class="td">Lasta</td>
     <td class="td">800</td>
-  </tr>
-  
+  </tr> 
 
 </div>
 	</div>
         <div>
 	</table>
-    <h2 id="naslov"> O nama: </h2>
-	<marquee><p id="text"> PUTUJTE UDOBNO I SIGURNO!   <img id="s1" align="center" src="resources/images/s1.jpg"> </p> </marquee>
+	<marquee><p id="text"> PUTUJTE UDOBNO I SIGURNO! </p></marquee>
+	<img id="logo" align="center" src="resources/images/ponude.jpg">
 
-</br>
 <h2 id="naslov1">Najisplativiji prevoznik! </h2>
 <h3 id="naslov1">Ovog meseca iz ponude izdvajamo: </h3>
 
-</br>
  <table class="table">
   <tr class="tr">
     <th class="th">Prevoznik</th>
