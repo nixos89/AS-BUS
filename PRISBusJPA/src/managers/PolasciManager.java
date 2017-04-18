@@ -3,6 +3,7 @@ package managers;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import model.Vrstapolaska;
@@ -27,6 +28,19 @@ public class PolasciManager {
 		}
 	}//sacuvajVrstuPolaska
 	
+	public Vrstapolaska nazivVrstePolaska(String nazivVrste){
+		try {
+			EntityManager em = JPAUtils.getEntityManager();
+			Query upit = em.createQuery("SELECT vp FROM Vrstapolaska vp WHERE vp.vrsta LIKE :nazivVrste");
+			upit.setParameter("nazivVrste", nazivVrste);
+			Vrstapolaska vp = (Vrstapolaska)upit.getSingleResult();
+			return vp;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 //	public List<Vrstapolaska> sveVrstePolazaka(){
 //		try {

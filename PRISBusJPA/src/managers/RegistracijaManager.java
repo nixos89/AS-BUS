@@ -7,6 +7,8 @@ import model.Putnik;
 
 public class RegistracijaManager {
 
+	
+	
 	public Putnik sacuvajPutnika(String ime, String prezime,int brkarata,String password){
 		try{
 			EntityManager em = JPAUtils.getEntityManager();

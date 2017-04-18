@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,8 +9,10 @@
 </head>
 <body>
 	<body>
+	<jsp:useBean id="vrstaPolaska" class="model.Vrstapolaska" scope="session" />
 	<div class="Box">
-		<header> <img id="logo" src="resources/images/Logo.jpg">
+		<header> 
+			<img id="logo" src="resources/images/Logo.jpg">
 		</header>
 		<div class="menu">
 			<ul id="menu">
@@ -28,12 +31,14 @@
 
 		<div class="pretraga">
 			<h2 class="sansserif">Unesite novu vrstu polaska</h2>
-			<table>
-				<tr>
-					<td>Naziv </td>
-					<td><input type="text" name="nazivVrste"></td>
-				</tr>
-			</table>
+			<form action="SacuvajVrstuPolaskaServlet" method="get">
+				<table>
+					<tr>
+						<td>Naziv</td>
+						<td><input type="text" name="nazivVrste"></td>
+					</tr>
+				</table>
+			</form>
 		</div><!-- class="pretraga" -->
 		
 		<div>
@@ -41,8 +46,16 @@
 			<div>
 				<table class="table">
 					<tr class="tr">
-						
-					</tr>					
+						<td>
+							
+						</td>	
+					</tr>
+					<c:forEach items="${naziviPolazaka}" var="naziv">
+						<tr class="tr">
+							<td>${naziv}</td>
+						</tr>
+					</c:forEach>
+										
 				</table>
 			</div>
 		</div>
