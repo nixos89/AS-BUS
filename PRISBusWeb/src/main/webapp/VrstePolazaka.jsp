@@ -8,8 +8,9 @@
 <title>Vrste polazaka</title>
 </head>
 <body>
-	<body>
-	<jsp:useBean id="vrstaPolaska" class="model.Vrstapolaska" scope="session" />
+
+<body>
+	<jsp:useBean id="vrstaPolaska" class="model.Vrstapolaska" scope="session" />	
 	<div class="Box">
 		<header> 
 			<img id="logo" src="resources/images/Logo.jpg">
@@ -27,15 +28,16 @@
 				<li id="veci1"><a href="CenaKarte.jsp"><i
 						class="fa fa-pencil-square-o"></i> Modifikuj cene</a></li>
 			</ul>
-		</div>
+		</div><!-- class="menu" -->
 
 		<div class="pretraga">
 			<h2 class="sansserif">Unesite novu vrstu polaska</h2>
-			<form action="SacuvajVrstuPolaskaServlet" method="get">
+			<form id="novaVrstaPolaskaForm" action="SacuvajVrstuPolaskaServlet" method="get">
 				<table>
 					<tr>
 						<td>Naziv</td>
 						<td><input type="text" name="nazivVrste"></td>
+						<td><input type="submit" value="Snimi"/></td>
 					</tr>
 				</table>
 			</form>
@@ -46,11 +48,11 @@
 			<div>
 				<table class="table">
 					<tr class="tr">
-						<td>
-							
-						</td>	
+						<th class="th">
+							Naziv polaska
+						</th>	
 					</tr>
-					<c:forEach items="${naziviPolazaka}" var="naziv">
+					<c:forEach items="${vrstaPolaska}" var="naziv">
 						<tr class="tr">
 							<td>${naziv}</td>
 						</tr>

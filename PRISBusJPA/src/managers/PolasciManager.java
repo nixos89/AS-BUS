@@ -16,9 +16,10 @@ public class PolasciManager {
 		try{
 			EntityManager em = JPAUtils.getEntityManager();
 			em.getTransaction().begin();
+			
 			Vrstapolaska vp = new Vrstapolaska();
 			vp.setVrsta(vrsta);
-
+			em.persist(vp);
 			em.getTransaction().commit();
 			em.close();
 			return vp;
@@ -42,28 +43,28 @@ public class PolasciManager {
 		}
 	}
 	
-//	public List<Vrstapolaska> sveVrstePolazaka(){
-//		try {
-//			EntityManager em = JPAUtils.getEntityManager();
-//			TypedQuery<Vrstapolaska> upit = em.createNamedQuery("SELECT vp FROM Vrstepolaska vp", Vrstapolaska.class);
-//			List<Vrstapolaska> sveVrste = upit.getResultList();
-//			return sveVrste;
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			return null;
-//		}
-//	}//sveVrstePolazaka
+	public List<Vrstapolaska> sveVrstePolazaka(){
+		try {
+			EntityManager em = JPAUtils.getEntityManager();
+			TypedQuery<Vrstapolaska> upit = em.createQuery("SELECT vp FROM Vrstapolaska vp", Vrstapolaska.class);
+			List<Vrstapolaska> sveVrste = upit.getResultList();
+//			em.close();
+			return sveVrste;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}//sveVrstePolazaka
 	
 	public static void main(String[] args) {
 		PolasciManager pm = new PolasciManager();
-		Vrstapolaska vpolaska = pm.sacuvajVrstuPolaska("Svakodnevni");
-		System.out.println("Sacuvan "+vpolaska.getVrsta()+" polazak!");
-//		List<Vrstapolaska> sveV = pm.sveVrstePolazaka();
-//		for(Vrstapolaska vp:sveV){
-//			System.out.println(vp.getVrsta());
-//		}
+//		Vrstapolaska vpolaska = pm.sacuvajVrstuPolaska("Svakodnevni");
+//		System.out.println("Sacuvan "+vpolaska.getVrsta()+" polazak!");
+		List<Vrstapolaska> sveV = pm.sveVrstePolazaka();
+		for(Vrstapolaska vp:sveV){
+			System.out.println(vp.getVrsta());
+		}
 		
-	}
+	}//main
 
 }
