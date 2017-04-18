@@ -71,10 +71,12 @@
 				</tr>
 				
 			</table>
+			<br></br>
 			</form>
 			</div>
 			
 				<center><img id="kartice" src="resources/images/kartice.jpg" ></center> 
+				<marquee>OVDE TREBA LOGO</marquee>
 	</div>
 
 </body>
