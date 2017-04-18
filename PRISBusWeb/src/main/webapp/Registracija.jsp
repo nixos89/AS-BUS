@@ -38,7 +38,7 @@
 	</ul>
 		
 		</div>
-		<marquee> Dobro došli na naš sajt! </marquee>
+
         <div class="contain">
 		<h2>Registruj se: </h2>
 		<form>
@@ -64,15 +64,6 @@
 					<td><p>Ponovi lozinku: </p></td>
 					<td><input type="text" name="ponLozinku"></td>
 				</tr>
-				<tr>
-					<td><p>Adresa: </p></td>
-					<td><input type="text" name="adresa"></td>
-				</tr>
-				<tr>
-					<td><p>Telefon: </p></td>
-					<td><input type="text" name="telefon"></td>
-				</tr>
-
 
 				<tr>
 					<td>&nbsp;</td>
@@ -81,7 +72,6 @@
 			</table>
 		</form>
 	</div>
-
 	<div class="contain">
 	<h2>Login: </h2>
 		<table>
