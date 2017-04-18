@@ -37,15 +37,11 @@
 		</div><!-- class="pretraga" -->
 		
 		<div>
-			<h1>Rezultat pretrage</h1>
+			<h1>Vrste polazaka</h1>
 			<div>
 				<table class="table">
 					<tr class="tr">
-						<th class="th">Polazak</th>
-						<th class="th">Zavrsetak</th>
-						<th class="th">Vreme</th>
-						<th class="th">Prevoznik</th>
-						<th class="th">Cena</th>
+						
 					</tr>					
 				</table>
 			</div>
