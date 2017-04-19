@@ -26,6 +26,9 @@
 			<a href="Registracija.jsp"><i class="fa fa-registered"></i> Registracija</a>
 			
 		</li>
+		<li  id="standard">
+			<a href="Registracija.jsp"><i class="fa fa-registered"></i> Logovanje</a>	
+		</li>
 		<li id="veci">
 			<a href="NoviPolasci.jsp"><i class="fa fa-plus"></i> Novi Polasci</a>
 		
@@ -40,28 +43,29 @@
 		</div>
 
         <div class="contain">
-		<h2>Registruj se: </h2>
+        <br></br>
+		<h2>Registrujte se: </h2>
 		<form>
 
 			<table>
 				<tr>
-					<td><p>Ime: </p></td>
+					<td><p>Ime: *</p></td>
 					<td><input type="text" name="ime"></td>
 				</tr>
 				<tr>
-					<td><p>Prezime: </p></td>
+					<td><p>Prezime: *</p></td>
 					<td><input type="text" name="prezime"></td>
 				</tr>
 				<tr>
-					<td><p>Korisničko ime: </p></td>
+					<td><p>Korisničko ime: *</p></td>
 					<td><input type="text" name="korisnicko _ime"></td>
 				</tr>
 				<tr>
-					<td><p>Lozinka: </p></td>
+					<td><p>Lozinka: *</p></td>
 					<td><input type="text" name="lozinka"></td>
 				</tr>
 				<tr>
-					<td><p>Ponovi lozinku: </p></td>
+					<td><p>Ponovi lozinku: *</p></td>
 					<td><input type="text" name="ponLozinku"></td>
 				</tr>
 
@@ -72,24 +76,6 @@
 			</table>
 		</form>
 	</div>
-	<div class="contain">
-	<h2>Login: </h2>
-		<table>
-			<tr>
-				<td><p>Korisničko ime: </p></td>
-				<td><input type="text" name="korisnicko _ime"></td>
-			</tr>
-			<tr>
-				<td><p>Lozinka:</p></td>
-				<td><input type="text" name="lozinka"></td>
-			</tr>
-			<tr>
-			<td>&nbsp;</td>
-			<td><input type="submit" name="submit" value="Dodaj"></td>
-			</tr>
-		</table>
-
-</div>
 	</div>	
 </body>
 

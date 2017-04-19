@@ -1,25 +1,10 @@
 body {
    
-    background: red;
-    -webkit-animation: mymove 3s infinite; /* Chrome, Safari, Opera */
-    animation: mymove 3s infinite;
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes mymove {
-    from {background-color: purple;}
-    to {background-color: blue;}
-}
-
-/* Standard syntax */
-@keyframes mymove {
-    from {background-color: purple;}
-    to {background-color: blue;}
-}
+    background-color: #0c32ae; }
 .Box {
 	margin-left: 15%;
 	margin-top: 30px;
-	width: 70%;
+	width: 85%;
 	background-color: powderblue;
 	height: 1000px;
 	color: #8000ff;
