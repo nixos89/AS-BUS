@@ -26,6 +26,10 @@
 			
 		</li>
 		<li id="veci">
+			<a href="NoviPolasci.jsp"><i class="fa fa-plus"></i> Logovanje</a>
+		
+		</li >
+		<li id="veci">
 			<a href="NoviPolasci.jsp"><i class="fa fa-plus"></i> Novi Polasci</a>
 		
 		</li >
@@ -38,9 +42,8 @@
 		
 		</div>
        
-	<marquee> Dobro došli na naš sajt! </marquee>
+	<marquee> <img src="resources/images/as-bus.jpg"></marquee>
 	<div class="pretraga">
-	<br></br>
      <h2 class="sansserif" >Nađite odgovarajući autobus: </h2>
 	<table>
 		
