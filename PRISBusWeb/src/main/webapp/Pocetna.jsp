@@ -24,6 +24,9 @@
 		<li  id="standard">
 			<a href="Registracija.jsp"><i class="fa fa-registered"></i> Registracija</a>	
 		</li>
+		<li  id="standard">
+			<a href="Logovanje.jsp"><i class="fa fa-registered"></i> Logovanje</a>	
+		</li>
 		<li id="veci">
 			<a href="#"><i class="fa fa-plus"></i> Novi Polasci</a>
 		</li >
