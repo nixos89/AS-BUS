@@ -26,6 +26,9 @@
 			<a href="Registracija.jsp"><i class="fa fa-registered"></i> Registracija</a>
 			
 		</li>
+		<li  id="standard">
+			<a href="Registracija.jsp"><i class="fa fa-registered"></i> Logovanje</a>	
+		</li>
 		<li id="veci">
 			<a href="NoviPolasci.jsp"><i class="fa fa-plus"></i> Novi Polasci</a>
 		
@@ -71,10 +74,14 @@
 				</tr>
 				
 			</table>
+			<br></br>
+			<marquee><h2> AS-BUS </h2></marquee>
+			<br></br>
 			</form> 
 </div>
 	<br></br>
 	<img id="logo" src="resources/images/s3.jpg">
+	
 </div>
 		
 		
