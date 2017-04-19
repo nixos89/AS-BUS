@@ -40,7 +40,7 @@
 						<td><input type="text" name="idPolaska"></td>
 					</tr>
 					<tr>
-						<td><p>Id Vrsta Polaska:</p></td>
+						<td><p>Vrsta Polaska:</p></td>
 						<td><select name="vrstaPolaska">
 								<c:forEach items="${vrstePolaska.sveVrstePolazaka}" var="vrstaP">
 									<option value="${vrstaP.idvrstapolaska}">${vrstaP.vrsta}</option>
