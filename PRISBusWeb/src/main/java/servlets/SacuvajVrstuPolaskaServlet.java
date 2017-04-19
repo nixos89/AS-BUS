@@ -27,20 +27,25 @@ public class SacuvajVrstuPolaskaServlet extends HttpServlet {
 			request.getSession().getServletContext();
 			String nazivVrste = request.getParameter("nazivVrste");
 			Vrstapolaska unetaVrstaP = new PolasciManager().nazivVrstePolaska(nazivVrste);
+			String nazivUneteVP = unetaVrstaP.getVrsta();
 			String porukaVrstaPol = null;
-			if(unetaVrstaP.getVrsta().equals(nazivVrste)){
-				porukaVrstaPol="Polazak "+nazivVrste+" je VEC sacuvan u bazi, molimo Vas odaberite drugi naziv!";
-				request.setAttribute("porukaVrstaPol", porukaVrstaPol);
-				request.getRequestDispatcher("VrstePolazaka.jsp").forward(request, response);
-			}else if(!unetaVrstaP.getVrsta().equals(nazivVrste)){
-				Vrstapolaska pol = new PolasciManager().sacuvajVrstuPolaska(nazivVrste);
-				porukaVrstaPol="Polazak "+pol.getVrsta()+" je uspesno sacuvan!";
-				request.setAttribute("porukaVrstaPol", porukaVrstaPol);
-				request.getRequestDispatcher("VrstePolazaka.jsp").forward(request, response);
+			if(nazivUneteVP.equals(nazivVrste)){
+				porukaVrstaPol="Polazak " + nazivVrste + " je VEC sacuvan u bazi, molimo Vas odaberite drugi naziv!";			
+				response.sendRedirect("VrstePolazaka.jsp");
+//				request.setAttribute("porukaVrstaPol", porukaVrstaPol);
+//				request.getRequestDispatcher("VrstePolazaka.jsp").forward(request, response);
 			}else{
-				porukaVrstaPol="Greska, polazak NIJE sacuvan!";
-				request.setAttribute("porukaVrstaPol", porukaVrstaPol);
-				request.getRequestDispatcher("VrstePolazaka.jsp").forward(request, response);
+				Vrstapolaska pol = new PolasciManager().sacuvajVrstuPolaska(nazivVrste);
+				if(pol!=null){
+					porukaVrstaPol="Polazak "+pol.getVrsta()+" je uspesno sacuvan!";
+					request.setAttribute("porukaVrstaPol", porukaVrstaPol);
+					request.getRequestDispatcher("VrstePolazaka.jsp").forward(request, response);
+
+				}else{
+					porukaVrstaPol="Greska, polazak NIJE sacuvan!";
+					request.setAttribute("porukaVrstaPol", porukaVrstaPol);
+					request.getRequestDispatcher("VrstePolazaka.jsp").forward(request, response);
+				}
 			}
 		}catch(Exception e){
 			e.printStackTrace();

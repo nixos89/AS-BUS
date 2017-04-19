@@ -1,16 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Vrste polazaka</title>
 </head>
 <body>
 
 <body>
-	<jsp:useBean id="vrstaPolaska" class="model.Vrstapolaska" scope="session" />	
+	<jsp:useBean id="vrstePolaska" class="customBeans.SveVrstePolazaka" scope="session" />	
 	<div class="Box">
 		<header> 
 			<img id="logo" src="resources/images/Logo.jpg">
@@ -41,6 +41,7 @@
 					</tr>
 				</table>
 			</form>
+			${porukaVrstaPol}
 		</div><!-- class="pretraga" -->
 		
 		<div>
@@ -48,16 +49,13 @@
 			<div>
 				<table class="table">
 					<tr class="tr">
-						<th class="th">
-							Naziv polaska
-						</th>	
+						<th class="th">Naziv polaska</th>
 					</tr>
-					<c:forEach items="${vrstaPolaska}" var="naziv">
+					<c:forEach items="${vrstePolaska.sveVrstePolazaka}" var="vrstaP">
 						<tr class="tr">
-							<td>${naziv}</td>
+							<td>${vrstaP.vrsta}</td>
 						</tr>
 					</c:forEach>
-										
 				</table>
 			</div>
 		</div>
