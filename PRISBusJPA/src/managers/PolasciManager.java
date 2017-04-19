@@ -3,6 +3,7 @@ package managers;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
@@ -33,7 +34,7 @@ public class PolasciManager {
 			Query upit = em.createQuery("SELECT vp FROM Vrstapolaska vp WHERE vp.vrsta LIKE :nazivVrste").setParameter("nazivVrste", nazivVrste);
 			Vrstapolaska vp = (Vrstapolaska)upit.getSingleResult();
 			return vp;
-		} catch (Exception e) {
+		} catch (NoResultException e) {
 			e.printStackTrace();
 			return null;
 		}
@@ -53,12 +54,12 @@ public class PolasciManager {
 	
 	
 	public static void main(String[] args) {
-//		PolasciManager pm = new PolasciManager();
+		PolasciManager pm = new PolasciManager();
 //		Vrstapolaska vpolaska = pm.sacuvajVrstuPolaska("Nocni");
 //		System.out.println("Sacuvan "+vpolaska.getVrsta()+" polazak!");
 //		
-//		Vrstapolaska vpolaska2 = pm.nazivVrstePolaska("Svakodnevni");
-//		System.out.println("Naziv vrste polaska: "+vpolaska2.getVrsta());
+		Vrstapolaska vpolaska2 = pm.nazivVrstePolaska("Svakodnevni");
+		System.out.println("Naziv vrste polaska: "+vpolaska2.getVrsta());
 //		
 //		List<Vrstapolaska> sveV = pm.sveVrstePolazaka(JPAUtils.getEntityManager());
 //		for(Vrstapolaska vp:sveV){

@@ -27,13 +27,14 @@ public class SacuvajVrstuPolaskaServlet extends HttpServlet {
 			request.getSession().getServletContext();
 			String nazivVrste = request.getParameter("nazivVrste");
 			Vrstapolaska unetaVrstaP = new PolasciManager().nazivVrstePolaska(nazivVrste);
-			String nazivUneteVP = unetaVrstaP.getVrsta();
+			System.out.println("pre ");
+//			String nazivUneteVP = unetaVrstaP.getVrsta();
 			String porukaVrstaPol = null;
-			if(nazivUneteVP.equals(nazivVrste)){
+			if(unetaVrstaP!=null && unetaVrstaP.getVrsta().equals(nazivVrste)){
 				porukaVrstaPol="Polazak " + nazivVrste + " je VEC sacuvan u bazi, molimo Vas odaberite drugi naziv!";			
-				response.sendRedirect("VrstePolazaka.jsp");
-//				request.setAttribute("porukaVrstaPol", porukaVrstaPol);
-//				request.getRequestDispatcher("VrstePolazaka.jsp").forward(request, response);
+//				response.sendRedirect("VrstePolazaka.jsp");
+				request.setAttribute("porukaVrstaPol", porukaVrstaPol);
+				request.getRequestDispatcher("VrstePolazaka.jsp").forward(request, response);
 			}else{
 				Vrstapolaska pol = new PolasciManager().sacuvajVrstuPolaska(nazivVrste);
 				if(pol!=null){
