@@ -26,7 +26,7 @@
 			
 		</li>
 		<li id="veci">
-			<a href="NoviPolasci.jsp"><i class="fa fa-plus"></i> Logovanje</a>
+			<a href="Logovanje.jsp"><i class="fa fa-plus"></i> Logovanje</a>
 		
 		</li >
 		<li id="veci">
