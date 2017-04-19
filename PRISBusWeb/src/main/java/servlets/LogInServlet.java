@@ -31,7 +31,7 @@ public class LogInServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try{
 			request.getSession().getServletContext();
-			String user = request.getParameter("korisnicko _ime");	
+			String user = request.getParameter("korisnicko_ime");	
 			String password = request.getParameter("lozinka");
 			boolean korisnikPostoji = new RegistracijaManager().logInPutnik(user, password);
 			String porukaError = null;
