@@ -27,7 +27,7 @@
 			
 		</li>
 		<li  id="standard">
-			<a href="Registracija.jsp"><i class="fa fa-registered"></i> Logovanje</a>	
+			<a href="Logovanje.jsp"><i class="fa fa-registered"></i> Logovanje</a>	
 		</li>
 		<li id="veci">
 			<a href="NoviPolasci.jsp"><i class="fa fa-plus"></i> Novi Polasci</a>
