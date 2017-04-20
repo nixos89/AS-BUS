@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -46,16 +46,14 @@
 	<h2>Vaš profil: </h2>
 		<img src="resources/images/profile.png">
 		 
-		<p><strong>Ime: <label for="ime">Marko</label> </p></strong> 
-        <p><strong>Prezime: <label for="prezime">Marković</label> </p></strong><br></br>
-        <p><strong>Broj karata: <label for="brKarata">2</label> </p></strong>
+		<p><strong>Ime:</strong>  <label for="ime">Marko</label> </p>
+        <p><strong>Prezime: </strong><label for="prezime">Marković</label> </p>
+        <p><strong>Broj karata: </strong><label for="brKarata">2</label> </p>
 		<form action="Logout" method="post">
 		<br></br>
-			<input type="submit" value="Logout" >
-			<!-- SREDI OVO da bude preko Servlet-a ODJAVLJIVANJE!!!!!!!!!! -->
-			
+			<input type="submit" value="Logout" > <!-- SREDI OVO da bude preko Servlet-a ODJAVLJIVANJE!!!!!!!!!! -->		
 		</form>
-		<br></br>
+		<br>
 	</div>
 		<marquee><img src="resources/images/as-bus.jpg"></marquee>
 	</div>	

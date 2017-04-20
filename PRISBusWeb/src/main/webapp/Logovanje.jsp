@@ -48,7 +48,7 @@
 		<table>
 			<tr>
 				<td><p>Korisničko ime:</p></td>
-				<td><input type="text" name="korisnicko _ime"></td>
+				<td><input type="text" name="korisnicko_ime"></td>
 			</tr>
 			<tr>
 				<td><p>Lozinka:</p></td>
@@ -56,7 +56,7 @@
 			</tr>
 			<tr>
 			<td>&nbsp;</td>
-			<td><input type="submit" name="submit" value="Dodaj"></td>
+			<td><input type="submit" name="submit" value="Prijavite se"></td>
 			</tr>
 		</table>
 		</form>
