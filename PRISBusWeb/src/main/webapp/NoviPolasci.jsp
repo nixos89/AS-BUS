@@ -22,16 +22,16 @@
 		</header>
 		<div class="menu">
 			<ul id="menu">
-				<li id="standard"><a href="Pocetna.jsp"><i
+				<li id="standard"><a href="Administrator.jsp"><i
 						class="fa fa-home"></i>Početna</a></li>
-				<li id="standard"><a href="Pretraga.jsp"><i
-						class="fa fa-search"></i> Pretraga </a></li>
-				<li id="standard"><a href="Registracija.jsp"><i
-						class="fa fa-registered"></i> Registracija</a></li>
-				<li id="veci"><a href="NoviPolasci.jsp"><i
-						class="fa fa-plus"></i> Novi Polasci</a></li>
-				<li id="veci1"><a href="CenaKarte.jsp"><i
-						class="fa fa-pencil-square-o"></i> Modifikuj cene</a></li>
+				<li id="standard"><a href="Prevoznik.jsp"><i 
+					class="fa fa-plus"></i>Novi	Prevoznik</a></li>
+				<li id="standard"><a href="Grad.jsp"><i
+						class="fa fa-plus"></i>Nova Linija</a></li>
+				<li id="veci"><a href="UnosLinije.jsp"><i
+						class="fa fa-plus"></i>Novi Polasci</a></li>
+				<li id="standard"><a href="CenaKarte.jsp"><i
+						class="fa fa-plus"></i>Dodaj promocije</a></li>
 			</ul>
 		</div>
 
