@@ -38,11 +38,7 @@
 			<form method="get" action="NoviPoslaciServlet">
 				<table>
 					<tr>
-						<td><p>ID Polaska:</p></td>
-						<td><input type="text" name="idPolaska"></td>
-					</tr>
-					<tr>
-						<td><p>Id Vrsta Polaska:</p></td>
+						<td><p>Vrsta polaska:</p></td>
 						<td><select name="vrstaPolaska">
 								<c:forEach items="${vrstePolaska.sveVrstePolazaka}" var="vrstaP">
 									<option value="${vrstaP.idvrstapolaska}">${vrstaP.vrsta}</option>
@@ -50,11 +46,11 @@
 						</select></td>
 					</tr>
 					<tr>
-						<td><p>Id Prevoznika:</p></td>
+						<td><p>Prevoznik:</p></td>
 						<td><input type="text" name="idPrevoznika"></td>
 					</tr>
 					<tr>
-						<td><p>Id Linije:</p></td>
+						<td><p>Linije:</p></td>
 						<td><input type="text" name="idLinija"></td>
 					</tr>
 					<tr>
