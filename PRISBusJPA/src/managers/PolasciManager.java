@@ -10,6 +10,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import model.Grad;
+import model.Karta;
 import model.Linija;
 import model.Polazak;
 import model.Prevoznik;
@@ -52,6 +53,18 @@ public class PolasciManager {
 			TypedQuery<Vrstapolaska> upit = em.createQuery("SELECT vp FROM Vrstapolaska vp", Vrstapolaska.class);
 			List<Vrstapolaska> sveVrste = upit.getResultList();
 			return sveVrste;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}//sveVrstePolazaka
+	
+	
+	public List<Polazak> sviPolasci(EntityManager em){
+		try {
+			TypedQuery<Polazak> upit = em.createQuery("SELECT p FROM Polazak p", Polazak.class);
+			List<Polazak> sviPolasci = upit.getResultList();
+			return sviPolasci;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -166,6 +179,25 @@ public class PolasciManager {
 			return null;
 		}
 	}
+	
+	public boolean snimiCenuKarte(int cena,String tipKarte,int idPolaska){
+		try{
+			EntityManager em = JPAUtils.getEntityManager();
+			em.getTransaction().begin();	
+			Karta k = new Karta();
+			k.setCenakarte(cena);
+			k.setTipkarte(tipKarte);
+			k.setPolazak(em.find(Polazak.class, idPolaska));	
+			em.persist(k);
+			em.getTransaction().commit();
+			em.close();
+			return true;
+		}catch(Exception e){
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 	
 	
 	public static void main(String[] args) {
