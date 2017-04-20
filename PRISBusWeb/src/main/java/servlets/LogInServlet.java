@@ -36,10 +36,10 @@ public class LogInServlet extends HttpServlet {
 			boolean korisnikPostoji = new RegistracijaManager().logInPutnik(user, password);
 			String porukaError = null;
 			if(korisnikPostoji){				
-				request.getRequestDispatcher("Registracija.jsp").forward(request, response);
+				request.getRequestDispatcher("Profil.jsp").forward(request, response);
 			}else{
 				request.setAttribute("porukaError", porukaError);
-				request.getRequestDispatcher("Registracija.jsp").forward(request, response);
+				request.getRequestDispatcher("Logovanje.jsp").forward(request, response);
 			}
 		}catch(Exception e){
 			e.printStackTrace();
