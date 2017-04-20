@@ -1,5 +1,7 @@
 package managers;
 
+
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -7,6 +9,10 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import model.Grad;
+import model.Linija;
+import model.Polazak;
+import model.Prevoznik;
 import model.Vrstapolaska;
 
 public class PolasciManager {	
@@ -52,9 +58,123 @@ public class PolasciManager {
 		}
 	}//sveVrstePolazaka
 	
+	public static boolean sacuvajPrevoznika(String naziv, int brMesta){
+		try {
+			EntityManager em = JPAUtils.getEntityManager();
+			em.getTransaction().begin();
+			Prevoznik p = new Prevoznik();
+			p.setNaziv(naziv);
+			p.setBrmesta(brMesta);
+			em.persist(p);
+			em.getTransaction().commit();
+			em.close();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public static boolean sacuvajGrad(String naziv){
+		try {
+			EntityManager em = JPAUtils.getEntityManager();
+			em.getTransaction().begin();
+			Grad g = new Grad();
+			g.setNaziv(naziv);
+			em.persist(g);
+			em.getTransaction().commit();
+			em.close();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public static boolean sacuvajLinuju(int idGrad,String nazivLinije, Date datum){
+		try {
+			EntityManager em = JPAUtils.getEntityManager();
+			em.getTransaction().begin();
+			Linija l = new Linija();
+			Grad g = em.find(Grad.class, idGrad);
+			l.setNazivlinije(nazivLinije);
+			l.setGrad(g);
+			l.setDatumpolaska(datum);
+			em.persist(l);
+			em.getTransaction().commit();
+			em.close();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public Polazak sacuvajPolazak(int idPrevoznika,int idLinije,int idVrstePolaska,Date datumP){
+		try{
+			System.out.println("pozvan manager");
+			EntityManager em = JPAUtils.getEntityManager();
+			em.getTransaction().begin();
+			Polazak p = new Polazak();
+			p.setPrevoznik(em.find(Prevoznik.class, idPrevoznika));
+			p.setLinija(em.find(Linija.class, idLinije));
+			p.setVrstapolaska(em.find(Vrstapolaska.class, idVrstePolaska));
+			p.setVremepolaska(datumP);
+			em.persist(p);
+			em.getTransaction().commit();
+			em.close();
+			return p;
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public static List<Grad> sviGradovi(){
+		try {
+			EntityManager em =JPAUtils.getEntityManager();
+			TypedQuery<Grad> upit = em.createQuery("SELECT g from Grad g",Grad.class);
+			List<Grad> gradovi = upit.getResultList();
+			return gradovi;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public static List<Prevoznik> sviPrevoznici(){
+		try {
+			EntityManager em =JPAUtils.getEntityManager();
+			TypedQuery<Prevoznik> upit = em.createQuery("SELECT p from Prevoznik p",Prevoznik.class);
+			List<Prevoznik> prevoznici = upit.getResultList();
+			return prevoznici;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	
+	public static List<Linija> sveLinije(){
+		try {
+			EntityManager em =JPAUtils.getEntityManager();
+			TypedQuery<Linija> upit = em.createQuery("SELECT l from Linija l",Linija.class);
+			List<Linija> linije = upit.getResultList();
+			return linije;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	
 	public static void main(String[] args) {
 		PolasciManager pm = new PolasciManager();
+		
+		List<Linija> gradovi = sveLinije();
+		for(Linija g: gradovi)
+			System.out.println(g.getNazivlinije());
+		
 //		Vrstapolaska vpolaska = pm.sacuvajVrstuPolaska("Nocni");
 //		System.out.println("Sacuvan "+vpolaska.getVrsta()+" polazak!");
 //		

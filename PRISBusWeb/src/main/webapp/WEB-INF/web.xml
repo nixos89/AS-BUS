@@ -22,6 +22,24 @@
   	<description></description>
   	<servlet-class>servlets.NoviPolasciServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PrevoznikServlet</servlet-name>
+  	<display-name>PrevoznikServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.PrevoznikServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GradServlet</servlet-name>
+  	<display-name>GradServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.GradServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UnosLinijeServlet</servlet-name>
+  	<display-name>UnosLinijeServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.UnosLinijeServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LogInServlet</servlet-name>
   	<url-pattern>/LogInServlet</url-pattern>
@@ -33,5 +51,17 @@
   <servlet-mapping>
   	<servlet-name>NoviPolasciServlet</servlet-name>
   	<url-pattern>/NoviPolasciServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PrevoznikServlet</servlet-name>
+  	<url-pattern>/PrevoznikServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GradServlet</servlet-name>
+  	<url-pattern>/GradServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UnosLinijeServlet</servlet-name>
+  	<url-pattern>/UnosLinijeServlet</url-pattern>
   </servlet-mapping>
 </web-app>
