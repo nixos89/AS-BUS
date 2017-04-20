@@ -34,18 +34,23 @@ public class GradServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String naziv = request.getParameter("naziv");		
-		boolean sacuvan =PolasciManager.sacuvajGrad(naziv);
-		String poruka=null;
-		if (sacuvan){
-			poruka="Uspesno ste uneli Grad.";
-			request.setAttribute("poruka",poruka);	
+		try {
+			String naziv = request.getParameter("naziv");		
+			boolean sacuvan =PolasciManager.sacuvajGrad(naziv);
+			String poruka=null;
+			if (sacuvan){
+				poruka="Uspesno ste uneli Grad.";
+				request.setAttribute("poruka",poruka);	
+			}
+			else{
+				poruka="Dogodila se greska, grad nije sacuvan.";
+				request.setAttribute("poruka", poruka);	
+			}
+			request.getRequestDispatcher("Grad.jsp").forward(request, response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		else{
-			poruka="Dogodila se greska, grad nije sacuvan.";
-			request.setAttribute("poruka", poruka);	
-		}
-		request.getRequestDispatcher("Grad.jsp").forward(request, response);
 	}
 
 }
