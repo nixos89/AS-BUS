@@ -7,6 +7,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import model.Grad;
 import model.Vrstapolaska;
 
 public class PolasciManager {
@@ -51,6 +52,18 @@ public class PolasciManager {
 			return null;
 		}
 	}//sveVrstePolazaka
+	
+	public static List<Grad> sviGradovi(){
+		try {
+			EntityManager em =JPAUtils.getEntityManager();
+			TypedQuery<Grad> upit = em.createQuery("SELECT g from Grad g",Grad.class);
+			List<Grad> gradovi = upit.getResultList();
+			return gradovi;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 	
 	
 	public static void main(String[] args) {
