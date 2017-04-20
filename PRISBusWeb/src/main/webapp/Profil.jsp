@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
 
-<title>Logovanje</title>
+<title>Profil</title>
 </head>
 <body>
 <body>
@@ -43,25 +43,20 @@
 		</div>
 	<div class="contain">
 	<br></br>
-	<h2>Logovanje: </h2>
-		<table>
-			<tr>
-				<td><p>Korisničko ime:</p></td>
-				<td><input type="text" name="korisnicko _ime"></td>
-			</tr>
-			<tr>
-				<td><p>Lozinka:</p></td>
-				<td><input type="text" name="lozinka"></td>
-			</tr>
-			<tr>
-			<td>&nbsp;</td>
-			<td><input type="submit" name="submit" value="Dodaj"></td>
-			</tr>
-		</table>
+	<h2>Vaš profil: </h2>
+		<img src="resources/images/profile.png">
+		
+		
+		
+		
+		<form action="Logout" method="post">
 		<br></br>
-		<marquee><img src="resources/images/as-bus.jpg"></marquee>
+		<br></br>
+			<input type="submit" value="Logout" >
+		</form>
 </div>
 	</div>	
 </body>
 
 </html>
+

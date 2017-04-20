@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
 
-<title>Insert title here</title>
+<title>Registracija</title>
 </head>
 <body>
 <body>
@@ -74,6 +74,8 @@
 					<td><input type="submit" name="submit" value="Dodaj"></td>
 				</tr>
 			</table>
+			<br></br>
+		    <marquee><img src="resources/images/as-bus.jpg"></marquee>
 		</form>
 	</div>
 	</div>	
