@@ -32,13 +32,7 @@
 			<h2 class="sansserif">Nadjite odgovarajuci autobus</h2>
 			<table>
 				<tr>
-					<td align="right">Od:</td>
-					<td><select>
-							<option value="va">Valjevo</option>
-							<option value="bg">Beograd</option>
-							<option value="ns">Novi Sad</option>
-							<option value="sa" selected>Sabac</option>
-					</select></td>
+					
 				</tr>
 				<tr>
 					<td align="right">Do:</td>

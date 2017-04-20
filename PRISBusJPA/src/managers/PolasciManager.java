@@ -1,5 +1,7 @@
 package managers;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -7,6 +9,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import model.Polazak;
 import model.Vrstapolaska;
 
 public class PolasciManager {
@@ -40,6 +43,21 @@ public class PolasciManager {
 		}
 	}//nazivVrstePolaska
 	
+	public static List<Polazak> vratiPolaskeZaDatumIDestinaciju(int idGrad, Date datum){
+		try {
+			EntityManager em = JPAUtils.getEntityManager();			
+			Query q = em.createQuery("select p from Polazak p join p.linija l join l.grad g where l.datumpolaska=:datum and g.idgrad=:idGrad");
+			q.setParameter("idGrad", idGrad);
+			q.setParameter("datum", datum);
+			List<Polazak> polasci = q.getResultList();
+			return polasci;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 	
 	public List<Vrstapolaska> sveVrstePolazaka(EntityManager em){
 		try {
@@ -53,20 +71,19 @@ public class PolasciManager {
 	}//sveVrstePolazaka
 	
 	
-	public static void main(String[] args) {
-		PolasciManager pm = new PolasciManager();
-//		Vrstapolaska vpolaska = pm.sacuvajVrstuPolaska("Nocni");
-//		System.out.println("Sacuvan "+vpolaska.getVrsta()+" polazak!");
-//		
-		Vrstapolaska vpolaska2 = pm.nazivVrstePolaska("Svakodnevni");
-		System.out.println("Naziv vrste polaska: "+vpolaska2.getVrsta());
-//		
-//		List<Vrstapolaska> sveV = pm.sveVrstePolazaka(JPAUtils.getEntityManager());
-//		for(Vrstapolaska vp:sveV){
-//			System.out.println(vp.getVrsta());
-//		}
+	/*public static void main(String[] args) {
+		Date d=null;
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			d = sdf.parse("2017-04-22");
+			for(Polazak p: vratiPolaskeZaDatumIDestinaciju(4, d)){
+				System.out.println(p.getIdpolaska());
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
-	}//main
-
+	}
+*/
 
 }
