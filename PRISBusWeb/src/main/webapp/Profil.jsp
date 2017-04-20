@@ -45,14 +45,15 @@
 	<br></br>
 	<h2>Vaš profil: </h2>
 		<img src="resources/images/profile.png">
-		
-		<p><strong>ID korisnika: <label for="ime">SD23789</label> </p></strong> 
+		 
 		<p><strong>Ime: <label for="ime">Marko</label> </p></strong> 
         <p><strong>Prezime: <label for="prezime">Marković</label> </p></strong><br></br>
         <p><strong>Broj karata: <label for="brKarata">2</label> </p></strong>
 		<form action="Logout" method="post">
 		<br></br>
 			<input type="submit" value="Logout" >
+			<!-- SREDI OVO da bude preko Servlet-a ODJAVLJIVANJE!!!!!!!!!! -->
+			
 		</form>
 		<br></br>
 	</div>

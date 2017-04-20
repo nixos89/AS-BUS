@@ -44,6 +44,7 @@
 	<div class="contain">
 	<br></br>
 	<h2>Logovanje: </h2>
+		<form action="LogInServlet" method="post">
 		<table>
 			<tr>
 				<td><p>Korisničko ime:</p></td>
@@ -58,6 +59,7 @@
 			<td><input type="submit" name="submit" value="Dodaj"></td>
 			</tr>
 		</table>
+		</form>
 		<br></br>
 		<marquee><img src="resources/images/as-bus.jpg"></marquee>
 </div>
