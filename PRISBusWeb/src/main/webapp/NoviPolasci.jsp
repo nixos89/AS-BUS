@@ -24,13 +24,15 @@
 						class="fa fa-search"></i> Pretraga </a></li>
 				<li id="standard"><a href="Registracija.jsp"><i
 						class="fa fa-registered"></i> Registracija</a></li>
+				<li id="standard"><a href="Logovanje.jsp"><i
+						class="fa fa-registered"></i> Logovanje</a></li>
 				<li id="veci"><a href="NoviPolasci.jsp"><i
 						class="fa fa-plus"></i> Novi Polasci</a></li>
 				<li id="veci1"><a href="CenaKarte.jsp"><i
 						class="fa fa-pencil-square-o"></i> Modifikuj cene</a></li>
 			</ul>
 		</div>
-		
+
 		<div class="contain">
 			<h2>Dodati nove polaske:</h2>
 			<form method="get" action="NoviPoslaciServlet">
