@@ -74,7 +74,6 @@
 						<td class="td">Lasta</td>
 						<td class="td">1000</td>
 						<td class="td">15%</td>
-
 					</tr>
 					<tr class="tr">
 						<td class="td">Niš ekspres</td>
