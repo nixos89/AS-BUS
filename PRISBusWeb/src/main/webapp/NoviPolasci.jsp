@@ -44,7 +44,7 @@
 		</div>
       <div class="contain">
 		<h2>Dodati nove polaske: </h2>
-		<form>
+		<form method="post" action="NoviPolasciServlet">
 			<table>
 				<tr>
 					<td><p>ID Polaska: </p></td>
@@ -74,10 +74,10 @@
 				</tr>
 				
 			</table>
+			</form>
 			<br></br>
 			<marquee><h2> AS-BUS </h2></marquee>
 			<br></br>
-			</form> 
 </div>
 	<br></br>
 	<img id="logo" src="resources/images/s3.jpg">
