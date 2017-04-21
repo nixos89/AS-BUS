@@ -1,5 +1,6 @@
 package managers;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -8,6 +9,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import model.Grad;
+import model.Polazak;
 import model.Vrstapolaska;
 
 public class PolasciManager {
@@ -41,6 +43,21 @@ public class PolasciManager {
 		}
 	}//nazivVrstePolaska
 	
+	
+	
+	public List<Polazak> vratiPolaskeZaDatumIDestinaciju(int idGrad, Date datum){
+		try {
+			EntityManager em = JPAUtils.getEntityManager();			
+			TypedQuery<Polazak> q = em.createQuery("select p from Polazak p join p.linija l join l.grad g where l.datumpolaska=:datum and g.idgrad=:idGrad",Polazak.class);
+			q.setParameter("idGrad", idGrad);
+			q.setParameter("datum", datum);
+			List<Polazak> polasci = q.getResultList();
+			return polasci;			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}		
+}
 	
 	public List<Vrstapolaska> sveVrstePolazaka(EntityManager em){
 		try {

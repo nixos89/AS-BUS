@@ -36,8 +36,8 @@ public class PretragaServlet extends HttpServlet {
 			try{
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 				datumP = sdf.parse(datumStr);
-				List<Polazak> polasci = null;
-				if(polasci.isEmpty()){
+				List<Polazak> polasci = new PolasciManager().vratiPolaskeZaDatumIDestinaciju(idGrad, datumP);
+				if(!polasci.isEmpty()){
 					porukaPretraga = "Nema polazaka za zadate parametre!";
 					request.setAttribute("porukaPretraga", porukaPretraga);
 					request.getRequestDispatcher("Pretraga.jsp").forward(request, response);
@@ -48,6 +48,15 @@ public class PretragaServlet extends HttpServlet {
 			}catch(Exception e){
 				e.printStackTrace();
 			}
+//			List<Polazak> polasci = new PolasciManager().vratiPolaskeZaDatumIDestinaciju(idGrad, datumP);
+//			if(polasci.isEmpty()){
+//				porukaPretraga = "Nema polazaka za zadate parametre!";
+//				request.setAttribute("porukaPretraga", porukaPretraga);
+//				request.getRequestDispatcher("Pretraga.jsp").forward(request, response);
+//			}else{//NIJE prazan
+//				request.setAttribute("polasci", polasci);
+//				request.getRequestDispatcher("Pretraga.jsp").forward(request, response);
+//			}			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
