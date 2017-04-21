@@ -46,17 +46,15 @@ public class PolasciManager {
 	public static List<Polazak> vratiPolaskeZaDatumIDestinaciju(int idGrad, Date datum){
 		try {
 			EntityManager em = JPAUtils.getEntityManager();			
-			Query q = em.createQuery("select p from Polazak p join p.linija l join l.grad g where l.datumpolaska=:datum and g.idgrad=:idGrad");
+			TypedQuery<Polazak> q = em.createQuery("select p from Polazak p join p.linija l join l.grad g where l.datumpolaska=:datum and g.idgrad=:idGrad",Polazak.class);
 			q.setParameter("idGrad", idGrad);
 			q.setParameter("datum", datum);
 			List<Polazak> polasci = q.getResultList();
-			return polasci;
-			
+			return polasci;			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
-		}
-		
+		}		
 	}
 	
 	public List<Vrstapolaska> sveVrstePolazaka(EntityManager em){
@@ -71,19 +69,19 @@ public class PolasciManager {
 	}//sveVrstePolazaka
 	
 	
-	/*public static void main(String[] args) {
-		Date d=null;
-		try {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			d = sdf.parse("2017-04-22");
-			for(Polazak p: vratiPolaskeZaDatumIDestinaciju(4, d)){
-				System.out.println(p.getIdpolaska());
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+	public static void main(String[] args) {
+//		Date d=null;
+//		try {
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//			d = sdf.parse("2017-04-21");
+//			for(Polazak p: vratiPolaskeZaDatumIDestinaciju(4, d)){
+//				System.out.println(p.getIdpolaska());
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
-	}
-*/
+	}//main
+
 
 }
