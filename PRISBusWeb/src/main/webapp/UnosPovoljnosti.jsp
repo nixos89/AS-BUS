@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>Početna</title>
+<title>Unos povoljnosti</title>
 </head>
 <body>
 
@@ -43,7 +43,7 @@
 
 					</tr>
 					<tr class="tr">
-						<td class="td">Novi Sad</td>
+						<td class="td">Beograd</td>
 						<td class="td">Niš</td>
 						<td class="td">15:35</td>
 						<td class="td">Lasta</td>
@@ -67,12 +67,20 @@
 						<th class="th">Prevoznik</th>
 						<th class="th">Prosečna cena karte</th>
 						<th class="th">U proseku jeftiniji od</th>
+
+
 					</tr>
 					<tr class="tr">
 						<td class="td">Lasta</td>
 						<td class="td">1000</td>
 						<td class="td">15%</td>
-					</tr>				
+					</tr>
+					<tr class="tr">
+						<td class="td">Niš ekspres</td>
+						<td class="td">1100</td>
+						<td class="td">14%</td>
+					</tr>
+
 				</table>
 	</div>
 
