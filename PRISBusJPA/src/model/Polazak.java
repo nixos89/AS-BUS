@@ -23,7 +23,8 @@ public class Polazak implements Serializable {
 	private int idpolaska;
 
 	private int brprodatihkarata;
-
+	
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date vremepolaska;
 

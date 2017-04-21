@@ -1,5 +1,6 @@
 package managers;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -87,13 +88,25 @@ public class PolasciManager {
 		PolasciManager pm = new PolasciManager();
 //		Vrstapolaska vpolaska = pm.sacuvajVrstuPolaska("Nocni");
 //		System.out.println("Sacuvan "+vpolaska.getVrsta()+" polazak!");
-//		
-		Vrstapolaska vpolaska2 = pm.nazivVrstePolaska("Svakodnevni");
-		System.out.println("Naziv vrste polaska: "+vpolaska2.getVrsta());
-//		
+		
+//		Vrstapolaska vpolaska2 = pm.nazivVrstePolaska("Svakodnevni");
+//		System.out.println("Naziv vrste polaska: "+vpolaska2.getVrsta());
+		
 //		List<Vrstapolaska> sveV = pm.sveVrstePolazaka(JPAUtils.getEntityManager());
 //		for(Vrstapolaska vp:sveV){
 //			System.out.println(vp.getVrsta());
+//		}
+//		
+//		Date d=null;
+//		try {
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//			d = sdf.parse("2017-04-21");
+//			List<Polazak> nekiPolasci = pm.vratiPolaskeZaDatumIDestinaciju(4, d);
+//			for(Polazak p: nekiPolasci){
+//				System.out.println("idPolaska: "+p.getIdpolaska()+", prevoznik: "+p.getPrevoznik().getNaziv()+", linija: "+p.getLinija().getNazivlinije());
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
 //		}
 		
 	}//main

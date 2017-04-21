@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -45,6 +46,8 @@ public class PretragaServlet extends HttpServlet {
 					request.setAttribute("polasci", polasci);
 					request.getRequestDispatcher("Pretraga.jsp").forward(request, response);
 				}										
+			}catch(DateTimeParseException e){
+				e.printStackTrace();
 			}catch(Exception e){
 				e.printStackTrace();
 			}
