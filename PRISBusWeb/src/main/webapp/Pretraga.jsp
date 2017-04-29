@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,6 +12,7 @@
 <body>
 
 <body>
+	<jsp:useBean class="customBeans.SviGradovi" id="gradovi" scope="session" />
 	<div class="Box">
 		<header> <img id="logo" src="resources/images/Logo.jpg">
 		</header>
@@ -30,71 +33,55 @@
 
 		<div class="pretraga">
 			<h2 class="sansserif">Nadjite odgovarajuci autobus</h2>
-			<table>
-				<tr>
-					<td align="right">Od:</td>
-					<td><select>
-							<option value="va">Valjevo</option>
-							<option value="bg">Beograd</option>
-							<option value="ns">Novi Sad</option>
-							<option value="sa" selected>Sabac</option>
-					</select></td>
-				</tr>
-				<tr>
-					<td align="right">Do:</td>
-					<td><select>
-							<option value="va">Valjevo</option>
-							<option value="bg">Beograd</option>
-							<option value="ns">Novi Sad</option>
-							<option value="sa" selected>Sabac</option>
-					</select></td>
-				</tr>
-				<tr>
-					<td align="right">Datum polaska</td>
-					<td><input id="meeting" type="date" value="2011-01-13 15:00" /></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center">
-						<button type="button">Potvrdi</button>
-					</td>
+			<form method="get" action="PretragaServlet">
+				<table>
+					<tr>
+						<td align="right">Destinacija: </td>
+						<td>
+							<select name="destinacija">
+								<c:forEach items="${gradovi.sviGradovi}" var="grad">
+									<option value="${grad.idgrad}">${grad.naziv}</option>								
+								</c:forEach>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">Datum polaska</td>
+						<td><input id="meeting" name="datumPolaska" type="date" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<button type="button">Potvrdi</button>
+						</td>
 
-				</tr>
-			</table>
+					</tr>
+				</table>
+			</form>
 		</div>
 		
 		<div>
 			<h1>Rezultat pretrage</h1>
 			<div>
-				<table class="table">
-					<tr class="tr">
-						<th class="th">Polazak</th>
-						<th class="th">Zavrsetak</th>
-						<th class="th">Vreme</th>
-						<th class="th">Prevoznik</th>
-						<th class="th">Cena</th>
-					</tr>
-					<tr class="tr">
-						<td class="td">Beograd</td>
-						<td class="td">Nis</td>
-						<td class="td">15:35</td>
-						<td class="td">Lasta</td>
-						<td class="td">1600</td>
-					</tr>
-					<tr class="tr">
-						<td class="td">nis</td>
-						<td class="td">Beograd</td>
-						<td class="td">21:00</td>
-						<td class="td">Nis Ekspres</td>
-						<td class="td">1600</td>
-					</tr>
-					<tr class="tr">
-						<td class="td">Nis</td>
-						<td class="td">Novi Sad</td>
-						<td class="td">21:15</td>
-						<td class="td">Nis Ekspres</td>
-						<td class="td">2400</td>
-					</tr>
-				</table>
+				<c:if test="${!empty polasci}">
+					<table class="table">
+						<tr class="tr">
+							<th class="th">Polazak</th>
+							<th class="th">Destinacija</th>
+							<th class="th">Vreme</th>
+							<th class="th">Prevoznik</th>
+							<th class="th">Cena</th>
+						</tr>
+						<c:forEach items="${polasci}" var="polazak">
+							<tr class="tr">
+								<td class="td">Novi Sad</td>
+								<td class="td">${polazak.linija.grad}</td>
+								<td class="td">${polazak.vremepolaska}</td>
+								<td class="td">${polazak.prevoznik}</td>
+								<td class="td">${polazak.karta.cenakarte}</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</c:if>
 			</div>
 		</div>
 	</div>
