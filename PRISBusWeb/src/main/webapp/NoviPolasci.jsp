@@ -28,6 +28,8 @@
 						class="fa fa-search"></i> Pretraga </a></li>
 				<li id="standard"><a href="Registracija.jsp"><i
 						class="fa fa-registered"></i> Registracija</a></li>
+				<li id="standard"><a href="Logovanje.jsp"><i
+						class="fa fa-registered"></i> Logovanje</a></li>
 				<li id="veci"><a href="NoviPolasci.jsp"><i
 						class="fa fa-plus"></i> Novi Polasci</a></li>
 				<li id="veci1"><a href="CenaKarte.jsp"><i
@@ -63,7 +65,6 @@
 								</c:forEach>
 						</select></td>
 					</tr>
-					
 					<tr>
 						<td><p>Vreme Polaska:</p></td>
 						<td><input name="vremePolaska" type="text" /></td>
