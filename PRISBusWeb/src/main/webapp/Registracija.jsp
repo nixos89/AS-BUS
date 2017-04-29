@@ -16,80 +16,60 @@
 		<div class="menu">
 			<ul id="menu">
 				<li id="standard"><a href="Pocetna.jsp"><i
-						class="fa fa-home"></i>Pocetna</a></li>
+						class="fa fa-home"></i>Početna</a></li>
 				<li id="standard"><a href="Pretraga.jsp"><i
-						class="fa fa-search"></i> Pretraga </a></li>
+						class="fa fa-search"></i> Pretraga</a></li>
 				<li id="standard"><a href="Registracija.jsp"><i
 						class="fa fa-registered"></i> Registracija</a></li>
+				<li id="standard"><a href="Logovanje.jsp"><i
+						class="fa fa-registered"></i> Logovanje</a></li>
 				<li id="veci"><a href="NoviPolasci.jsp"><i
-						class="fa fa-plus"></i> Dodavanje Polazaka</a></li>
+						class="fa fa-plus"></i> Novi Polasci</a></li>
 				<li id="veci1"><a href="CenaKarte.jsp"><i
 						class="fa fa-pencil-square-o"></i> Modifikuj cene</a></li>
+
 			</ul>
 		</div>
 		<div class="contain">
-			<h1>Registruj se</h1>
-			<form>
+			<br></br>
+			<h2>Registrujte se:</h2>
+			<form action="RegistracijaServlet" method="post">
 
 				<table>
 					<tr>
-						<td><p>Ime</p></td>
+						<td><p>Ime: *</p></td>
 						<td><input type="text" name="ime"></td>
 					</tr>
 					<tr>
-						<td><p>Prezime</p></td>
+						<td><p>Prezime: *</p></td>
 						<td><input type="text" name="prezime"></td>
 					</tr>
 					<tr>
-						<td><p>Korisničko ime</p></td>
+						<td><p>Korisničko ime: *</p></td>
 						<td><input type="text" name="korisnicko _ime"></td>
 					</tr>
 					<tr>
-						<td><p>Lozinka</p></td>
+						<td><p>Lozinka: *</p></td>
 						<td><input type="text" name="lozinka"></td>
 					</tr>
 					<tr>
-						<td><p>Ponovi lozinku</p></td>
+						<td><p>Ponovi lozinku: *</p></td>
 						<td><input type="text" name="ponLozinku"></td>
 					</tr>
-					<tr>
-						<td><p>Adresa</p></td>
-						<td><input type="text" name="adresa"></td>
-					</tr>
-					<tr>
-						<td><p>Telefon</p></td>
-						<td><input type="text" name="telefon"></td>
-					</tr>
-
 
 					<tr>
 						<td>&nbsp;</td>
 						<td><input type="submit" name="submit" value="Dodaj"></td>
 					</tr>
 				</table>
+				<br></br>
+				<marquee>
+					<img src="resources/images/as-bus.jpg">
+				</marquee>
 			</form>
 		</div>
 
-		<div class="contain">
-			<h1>Login</h1>
-			<table>
-				<tr>
-					<td><p>Korisničko ime</p></td>
-					<td><input type="text" name="korisnicko _ime"></td>
-				</tr>
-				<tr>
-					<td><p>Lozinka</p></td>
-					<td><input type="text" name="lozinka"></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td><input type="submit" name="submit" value="Dodaj"></td>
-				</tr>
-			</table>
-
 		</div>
-	</div>
-	<div></div>
 
 </body>
 </html>

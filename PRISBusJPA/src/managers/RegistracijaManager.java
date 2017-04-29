@@ -8,15 +8,16 @@ import model.Putnik;
 public class RegistracijaManager {
 
 	
-	
-	public Putnik sacuvajPutnika(String ime, String prezime,int brkarata,String password){
+	/* @author: Nikola Stevanovic
+	 * Registracija korisnika, tj. Putnik-a*/
+	public Putnik sacuvajPutnika(String ime, String prezime,String user,String password){
 		try{
 			EntityManager em = JPAUtils.getEntityManager();
 			em.getTransaction().begin();
 			Putnik p = new Putnik();
 			p.setIme(ime);
 			p.setPrezime(prezime);
-			p.setBrkarata(brkarata);
+			p.setUser(user);
 			p.setPassword(password);
 			em.persist(p);
 			em.getTransaction().commit();
@@ -27,12 +28,13 @@ public class RegistracijaManager {
 			return null;
 		}
 	}//sacuvajPutnika 
-
-	/* Proverava da li se korisnik (tj. Putnik) sa prosledjenim podacima nalazi u bazi */
+	
+	/* @author: Slobodan Babic
+	 * Proverava da li se korisnik (tj. Putnik) sa prosledjenim podacima nalazi u bazi */
 	public boolean logInPutnik(String user, String password){
 		try{
 			EntityManager em = JPAUtils.getEntityManager();
-			Query upit = em.createQuery("SELECT p FROM Putnik p WHERE p.prezime LIKE :user AND p.password LIKE :password");
+			Query upit = em.createQuery("SELECT p FROM Putnik p WHERE p.user LIKE :user AND p.password LIKE :password");
 			upit.setParameter("user", user);
 			upit.setParameter("password", password);
 			Putnik p = (Putnik)upit.getSingleResult();			
@@ -43,8 +45,28 @@ public class RegistracijaManager {
 		}
 	}//logInPutnik
 	
+	public Putnik getPutnikZaUserPass(String user, String pass){
+		try{
+			EntityManager em = JPAUtils.getEntityManager();
+			Query upit = em.createQuery("SELECT p FROM Putnik p WHERE p.user LIKE :user AND p.password LIKE :pass")
+					.setParameter("user", user)
+					.setParameter("pass", pass);
+			Putnik put = (Putnik)upit.getSingleResult();
+			return put;
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	public static void main(String[] args) {
-
+		RegistracijaManager rm = new RegistracijaManager();
+		boolean postoji = rm.logInPutnik("peki", "zdera");
+		Putnik p = rm.getPutnikZaUserPass("peki", "zdera");
+		if(postoji)
+			System.out.println("Putnik "+ p.getIme()+" "+p.getPrezime()+" sa user-om "+p.getUser()+" postoji!");
+		else
+			System.out.println("Greska, korisnik NE POSTOJI u bazi!");
 	}//main
 
 }

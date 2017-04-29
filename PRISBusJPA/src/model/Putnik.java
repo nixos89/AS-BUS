@@ -72,7 +72,6 @@ public class Putnik implements Serializable {
 		this.ime = ime;
 	}
 
-	
 	public String getUser() {
 		return user;
 	}

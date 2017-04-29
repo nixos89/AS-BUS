@@ -50,8 +50,7 @@
 						<td class="td">800</td>
 					</tr>
 
-					</div>
-					</div>
+					
 					<div>
 				</table>
 				<marquee>

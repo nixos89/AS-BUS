@@ -28,7 +28,6 @@
   </dependencies>
   <build>
     <finalName>PRISBusWeb</finalName>
-    
   </build>
   <properties>
     <failOnMissingWebXml>false</failOnMissingWebXml>

@@ -18,7 +18,7 @@ public class Grad implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idgrad;
-	
+
 	private String naziv;
 
 	//bi-directional many-to-one association to Linija
