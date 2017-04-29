@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-
 import javax.persistence.*;
 
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="Putnik")
+@Table(name="PUTNIK")
 @NamedQuery(name="Putnik.findAll", query="SELECT p FROM Putnik p")
 public class Putnik implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -21,7 +20,7 @@ public class Putnik implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idputnik;
-
+	
 	private int brkarata;
 
 	private String ime;
