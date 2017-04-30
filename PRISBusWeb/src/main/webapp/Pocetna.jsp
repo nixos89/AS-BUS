@@ -24,7 +24,7 @@
 						class="fa fa-registered"></i> Logovanje</a></li>
 				<li id="veci"><a href="NoviPolasci.jsp"><i
 						class="fa fa-plus"></i> Novi Polasci</a></li>
-				<li id="veci1"><a href="CenaKarte"><i
+				<li id="veci1"><a href="CenaKarte.jsp"><i
 						class="fa fa-pencil-square-o"></i> Modifikuj cene</a></li>
 			</ul>
 

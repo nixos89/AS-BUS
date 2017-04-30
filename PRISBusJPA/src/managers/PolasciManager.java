@@ -216,7 +216,7 @@ public class PolasciManager {
 	
 	
 	public static void main(String[] args) {
-		PolasciManager pm = new PolasciManager();
+//		PolasciManager pm = new PolasciManager();
 		
 //		List<Linija> gradovi = sveLinije();
 //		for(Linija g: gradovi)
@@ -244,17 +244,17 @@ public class PolasciManager {
 //			System.out.println(vp.getVrsta());
 //		}
 //		
-		Date d=null;
-		try {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			d = sdf.parse("2017-04-21");
-			List<Polazak> nekiPolasci = pm.vratiPolaskeZaDatumIDestinaciju(4, d);
-			for(Polazak p: nekiPolasci){
-				System.out.println("idPolaska: "+p.getIdpolaska()+", prevoznik: "+p.getPrevoznik().getNaziv()+", linija: "+p.getLinija().getNazivlinije());
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		Date d=null;
+//		try {
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//			d = sdf.parse("2017-04-21");
+//			List<Polazak> nekiPolasci = pm.vratiPolaskeZaDatumIDestinaciju(4, d);
+//			for(Polazak p: nekiPolasci){
+//				System.out.println("idPolaska: "+p.getIdpolaska()+", prevoznik: "+p.getPrevoznik().getNaziv()+", linija: "+p.getLinija().getNazivlinije());
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
 	}//main
 

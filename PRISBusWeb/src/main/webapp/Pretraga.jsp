@@ -12,7 +12,7 @@
 <body>
 
 <body>
-	<jsp:useBean class="customBeans.SviGradovi" id="gradovi" scope="session" />
+	<jsp:useBean class="customBeans.SviGradovi" id="gradovi" scope="request" />
 	<div class="Box">
 		<header> <img id="logo" src="resources/images/Logo.jpg">
 		</header>
@@ -47,11 +47,11 @@
 					</tr>
 					<tr>
 						<td align="right">Datum polaska</td>
-						<td><input id="meeting" name="datumPolaska" type="date" /></td>
+						<td><input name="datumPolaska" type="text"/></td>
 					</tr>
 					<tr>
 						<td colspan="2" align="center">
-							<button type="button">Potvrdi</button>
+							<input type="submit" value="Potvrdi"/>
 						</td>
 
 					</tr>
@@ -69,19 +69,20 @@
 							<th class="th">Destinacija</th>
 							<th class="th">Vreme</th>
 							<th class="th">Prevoznik</th>
-							<th class="th">Cena</th>
+							<th class="th">Tip</th>
 						</tr>
 						<c:forEach items="${polasci}" var="polazak">
 							<tr class="tr">
 								<td class="td">Novi Sad</td>
-								<td class="td">${polazak.linija.grad}</td>
+								<td class="td">${polazak.linija.grad.naziv}</td>
 								<td class="td">${polazak.vremepolaska}</td>
-								<td class="td">${polazak.prevoznik}</td>
-								<td class="td">${polazak.karta.cenakarte}</td>
+								<td class="td">${polazak.prevoznik.naziv}</td>
+								<td class="td">${polazak.vrstapolaska.vrsta}</td>
 							</tr>
 						</c:forEach>
 					</table>
 				</c:if>
+				${porukaPretraga}
 			</div>
 		</div>
 	</div>
