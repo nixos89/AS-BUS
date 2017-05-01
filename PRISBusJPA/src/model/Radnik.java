@@ -20,12 +20,12 @@ public class Radnik implements Serializable {
 	private int idradnik;
 
 	private String ime;
-	
-	private String user;
 
 	private String password;
 
 	private String prezime;
+
+	private String user;
 
 	//bi-directional many-to-one association to Prodaja
 	@OneToMany(mappedBy="radnik")
@@ -49,14 +49,6 @@ public class Radnik implements Serializable {
 	public void setIme(String ime) {
 		this.ime = ime;
 	}
-	
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-	}
 
 	public String getPassword() {
 		return this.password;
@@ -72,6 +64,14 @@ public class Radnik implements Serializable {
 
 	public void setPrezime(String prezime) {
 		this.prezime = prezime;
+	}
+
+	public String getUser() {
+		return this.user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
 	}
 
 	public List<Prodaja> getProdajas() {

@@ -22,15 +22,15 @@ public class Prodaja implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date datumprodaje;
 
-	//bi-directional many-to-one association to Radnik
-	@ManyToOne
-	@JoinColumn(name="IDRADNIK")
-	private Radnik radnik;
-
 	//bi-directional many-to-one association to Polazak
 	@ManyToOne
 	@JoinColumn(name="IDPOLASKA")
 	private Polazak polazak;
+
+	//bi-directional many-to-one association to Radnik
+	@ManyToOne
+	@JoinColumn(name="IDRADNIK")
+	private Radnik radnik;
 
 	public Prodaja() {
 	}
@@ -51,20 +51,20 @@ public class Prodaja implements Serializable {
 		this.datumprodaje = datumprodaje;
 	}
 
-	public Radnik getRadnik() {
-		return this.radnik;
-	}
-
-	public void setRadnik(Radnik radnik) {
-		this.radnik = radnik;
-	}
-
 	public Polazak getPolazak() {
 		return this.polazak;
 	}
 
 	public void setPolazak(Polazak polazak) {
 		this.polazak = polazak;
+	}
+
+	public Radnik getRadnik() {
+		return this.radnik;
+	}
+
+	public void setRadnik(Radnik radnik) {
+		this.radnik = radnik;
 	}
 
 }

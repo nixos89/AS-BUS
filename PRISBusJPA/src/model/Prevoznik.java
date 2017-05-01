@@ -21,14 +21,15 @@ public class Prevoznik implements Serializable {
 
 	private int brmesta;
 
-	@Lob
-	private String komentar;
-
 	private String naziv;
 
 	//bi-directional many-to-one association to Polazak
 	@OneToMany(mappedBy="prevoznik")
 	private List<Polazak> polazaks;
+
+	//bi-directional many-to-one association to Komentar7
+	@OneToMany(mappedBy="prevoznik")
+	private List<Komentar7> komentar7s;
 
 	public Prevoznik() {
 	}
@@ -49,13 +50,6 @@ public class Prevoznik implements Serializable {
 		this.brmesta = brmesta;
 	}
 
-	public String getKomentar() {
-		return this.komentar;
-	}
-
-	public void setKomentar(String komentar) {
-		this.komentar = komentar;
-	}
 
 	public String getNaziv() {
 		return this.naziv;
@@ -85,6 +79,28 @@ public class Prevoznik implements Serializable {
 		polazak.setPrevoznik(null);
 
 		return polazak;
+	}
+
+	public List<Komentar7> getKomentar7s() {
+		return this.komentar7s;
+	}
+
+	public void setKomentar7s(List<Komentar7> komentar7s) {
+		this.komentar7s = komentar7s;
+	}
+
+	public Komentar7 addKomentar7(Komentar7 komentar7) {
+		getKomentar7s().add(komentar7);
+		komentar7.setPrevoznik(this);
+
+		return komentar7;
+	}
+
+	public Komentar7 removeKomentar7(Komentar7 komentar7) {
+		getKomentar7s().remove(komentar7);
+		komentar7.setPrevoznik(null);
+
+		return komentar7;
 	}
 
 }

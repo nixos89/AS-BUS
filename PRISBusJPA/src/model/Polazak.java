@@ -31,11 +31,6 @@ public class Polazak implements Serializable {
 	@OneToMany(mappedBy="polazak")
 	private List<Karta> kartas;
 
-	//bi-directional many-to-one association to Vrstapolaska
-	@ManyToOne
-	@JoinColumn(name="IDVRSTAPOLASKA")
-	private Vrstapolaska vrstapolaska;
-
 	//bi-directional many-to-one association to Linija
 	@ManyToOne
 	@JoinColumn(name="IDLINIJA")
@@ -46,13 +41,27 @@ public class Polazak implements Serializable {
 	@JoinColumn(name="IDPREVOZNIK")
 	private Prevoznik prevoznik;
 
+	//bi-directional many-to-many association to Putnik
+	@ManyToMany
+	@JoinTable(
+		name="REZERVACIJAPUTNIK"
+		, joinColumns={
+			@JoinColumn(name="IDPOLASKA")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="IDPUTNIK")
+			}
+		)
+	private List<Putnik> putniks;
+
+	//bi-directional many-to-one association to Vrstapolaska
+	@ManyToOne
+	@JoinColumn(name="IDVRSTAPOLASKA")
+	private Vrstapolaska vrstapolaska;
+
 	//bi-directional many-to-one association to Prodaja
 	@OneToMany(mappedBy="polazak")
 	private List<Prodaja> prodajas;
-
-	//bi-directional many-to-many association to Putnik
-	@ManyToMany(mappedBy="polazaks")
-	private List<Putnik> putniks;
 
 	public Polazak() {
 		putniks = new ArrayList<Putnik>();
@@ -104,14 +113,6 @@ public class Polazak implements Serializable {
 		return karta;
 	}
 
-	public Vrstapolaska getVrstapolaska() {
-		return this.vrstapolaska;
-	}
-
-	public void setVrstapolaska(Vrstapolaska vrstapolaska) {
-		this.vrstapolaska = vrstapolaska;
-	}
-
 	public Linija getLinija() {
 		return this.linija;
 	}
@@ -126,6 +127,22 @@ public class Polazak implements Serializable {
 
 	public void setPrevoznik(Prevoznik prevoznik) {
 		this.prevoznik = prevoznik;
+	}
+
+	public List<Putnik> getPutniks() {
+		return this.putniks;
+	}
+
+	public void setPutniks(List<Putnik> putniks) {
+		this.putniks = putniks;
+	}
+
+	public Vrstapolaska getVrstapolaska() {
+		return this.vrstapolaska;
+	}
+
+	public void setVrstapolaska(Vrstapolaska vrstapolaska) {
+		this.vrstapolaska = vrstapolaska;
 	}
 
 	public List<Prodaja> getProdajas() {
@@ -148,14 +165,6 @@ public class Polazak implements Serializable {
 		prodaja.setPolazak(null);
 
 		return prodaja;
-	}
-
-	public List<Putnik> getPutniks() {
-		return this.putniks;
-	}
-
-	public void setPutniks(List<Putnik> putniks) {
-		this.putniks = putniks;
 	}
 
 }

@@ -20,32 +20,27 @@ public class Putnik implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idputnik;
-	
+
 	private int brkarata;
 
 	private String ime;
-	
-	private String user;
 
 	private String password;
 
 	private String prezime;
 
+	private String user;
+
 	//bi-directional many-to-many association to Polazak
-	@ManyToMany
-	@JoinTable(
-		name="REZERVACIJAPUTNIK"
-		, joinColumns={
-			@JoinColumn(name="IDPUTNIK")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="IDPOLASKA")
-			}
-		)
+	@ManyToMany(mappedBy="putniks")
 	private List<Polazak> polazaks;
 
+	//bi-directional many-to-one association to Komentar7
+	@OneToMany(mappedBy="putnik")
+	private List<Komentar7> komentar7s;
+
 	public Putnik() {
-		polazaks = new ArrayList<Polazak>();
+		polazaks= new ArrayList<Polazak>();
 	}
 
 	public int getIdputnik() {
@@ -72,14 +67,6 @@ public class Putnik implements Serializable {
 		this.ime = ime;
 	}
 
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-
 	public String getPassword() {
 		return this.password;
 	}
@@ -96,12 +83,42 @@ public class Putnik implements Serializable {
 		this.prezime = prezime;
 	}
 
+	public String getUser() {
+		return this.user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
 	public List<Polazak> getPolazaks() {
 		return this.polazaks;
 	}
 
 	public void setPolazaks(List<Polazak> polazaks) {
 		this.polazaks = polazaks;
+	}
+
+	public List<Komentar7> getKomentar7s() {
+		return this.komentar7s;
+	}
+
+	public void setKomentar7s(List<Komentar7> komentar7s) {
+		this.komentar7s = komentar7s;
+	}
+
+	public Komentar7 addKomentar7(Komentar7 komentar7) {
+		getKomentar7s().add(komentar7);
+		komentar7.setPutnik(this);
+
+		return komentar7;
+	}
+
+	public Komentar7 removeKomentar7(Komentar7 komentar7) {
+		getKomentar7s().remove(komentar7);
+		komentar7.setPutnik(null);
+
+		return komentar7;
 	}
 
 }
