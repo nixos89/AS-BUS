@@ -47,7 +47,7 @@
 					</tr>
 					<tr>
 						<td align="right">Datum polaska</td>
-						<td><input name="datumPolaska" type="text"/></td>
+						<td><input id="meeting" name="datumPolaska" type="date"/></td>
 					</tr>
 					<tr>
 						<td colspan="2" align="center">
