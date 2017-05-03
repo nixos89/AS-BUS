@@ -56,6 +56,26 @@ li a {
  clear: none; 
 }
 
+.rezervacija1 {
+	width:600px; margin:0 auto;
+	color: #000080;
+}
+
+.rezervacija2 {
+	width:600px; margin:0 auto;
+	color: #c60000;
+}
+
+.vrstaKarte {
+	width:600px; margin:0 auto;
+	color: #000080;
+}
+
+.datum{
+	width:200px; margin:0 auto;
+	color: #000080;
+	
+}
 /*Hover state for top level links*/
 li:hover a {
 	background: #19c589;
