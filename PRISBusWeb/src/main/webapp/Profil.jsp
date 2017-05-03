@@ -49,13 +49,19 @@
 		<p><strong>Ime:</strong>  <label for="ime">Marko</label> </p>
         <p><strong>Prezime: </strong><label for="prezime">Marković</label> </p>
         <p><strong>Broj karata: </strong><label for="brKarata">2</label> </p>
+        
+        <form action="OnlineRezervacija" method="post">
+        	<input type="submit" value="ONLINE REZERVACIJA" >
+        </form>
+        <br></br>
+        	<marquee><img src="resources/images/as-bus.jpg"></marquee>
+        <br></br>
 		<form action="Logout" method="post">
-		<br></br>
-			<input type="submit" value="Logout" > <!-- SREDI OVO da bude preko Servlet-a ODJAVLJIVANJE!!!!!!!!!! -->		
+			<input type="submit" value="Logout" >
+		<br></br>	
 		</form>
 		<br>
 	</div>
-		<marquee><img src="resources/images/as-bus.jpg"></marquee>
 	</div>	
 </body>
 
