@@ -44,14 +44,16 @@
 			<p>
 				<strong>Broj karata: </strong><label for="brKarata">2</label>
 			</p>
-
+			
 			<form action="OnlineRezervacija" method="post">
 				<input type="submit" value="ONLINE REZERVACIJA">
 			</form>
-			<br></br>
+			<div class="rezervacija2">
 			<marquee>
-				<img src="resources/images/as-bus.jpg">
+				<p><strong> NA SVAKU TREĆU REZERVACIJU, POPUST OD 10% NA CENU KARTE! ! ! </strong>
+				<img src="resources/images/as-bus.jpg"></p>
 			</marquee>
+			</div>
 			<br></br>
 			<form action="Logout" method="post">
 				<input type="submit" value="Logout"> <br></br>

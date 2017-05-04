@@ -112,7 +112,7 @@
   			<table>
   				<tr>
   				<td><h4>Napomena:</h4></td>
-  				<td><textarea cols="50" rows="4">Ovde unesite Vašu napomenu (Napr. student--> br.Indexa, želimo mesto u šaragama,..)</textarea></td>
+  				<td><textarea cols="50" rows="3">Ovde unesite Vašu napomenu (Napr. student--> br.Indexa, želimo mesto u šaragama,..)</textarea></td>
   				<td><input type="hidden" name="skriveno" value="skrivenopolje"></td>
   				<td>&nbsp;</td>
   				</tr>
@@ -120,7 +120,8 @@
   			<input type="submit" name="Potvrdi" value="Potvrdi">
   			<input type="reset" name="Odustani" value="Odustani">
 		</form>
+		<strong><marquee>Na svaku treću rezervaciju, POPUST OD 10% na cenu karte! ! !</marquee></strong>
 		</div>
-		</form>
+			
 </body>
 </html>
