@@ -27,7 +27,7 @@
 			</ul>
 		</div>
 		<br></br>
-		<h3 align="center"><strong>Odaberite prevoznika: </strong></h3>
+		<h2 align="center"><strong>Odaberite prevoznika: </strong></h2>
 		<p align="center">
 					<select autofocus>
 						<option value="bg">LASTA</option>
@@ -42,7 +42,7 @@
 						<option value="ni">DUGA TRANS</option>
 					</select>
 			</p>
-	
+			<br></br>
 			<div class="rezervacija2">
 		<form action="">
   			Username: * <input type="text" name="ime"><br></br>
