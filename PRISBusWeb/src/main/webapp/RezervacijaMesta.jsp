@@ -27,93 +27,76 @@
 			</ul>
 		</div>
 		<br></br>
-		<h2 align="center"> ONLINE REZERVACIJA AUTOBUSKE KARTE </h2>
-			<div class="rezervacija1">
+		<h2 align="center">ONLINE REZERVACIJA AUTOBUSKE KARTE</h2>
+		<div class="rezervacija1">
 			<table width="500">
-					<tr>
-					<td>
-					<label for="polazak">Polazak: </label>
-					</td>
-					<td>
-					<select autofocus>
-						<option value="bg">BEOGRAD</option>
-						<option value="ns">NOVI SAD</option>
-						<option value="sa">ŠABAC</option>
-						<option value="va">VALJEVO</option>
-						<option value="so">SOMBOR</option>
-						<option value="ni">NIŠ</option>
-					</select>
-					</td>
+				<tr>
+					<td><label for="polazak">Polazak: </label></td>
+					<td><select autofocus>
+							<option value="bg">BEOGRAD</option>
+							<option value="ns">NOVI SAD</option>
+							<option value="sa">ŠABAC</option>
+							<option value="va">VALJEVO</option>
+							<option value="so">SOMBOR</option>
+							<option value="ni">NIŠ</option>
+					</select></td>
 					</div>
 					<div class="datum">
 						<td><label>Datum polaska:</label></td>
 						<td><input id="datePick" type="date" value="2011-01-13" />
 						<td>
-					</div><tr>		
+					</div>
+				<tr>
 					<div class="rezervacija1">
-					<td>
-					<label for="dolazak">Dolazak: </label>
-					</td>
-					<td>
-					<select autofocus>
-						<option value="bg">BEOGRAD</option>
-						<option value="ns">NOVI SAD</option>
-						<option value="sa">ŠABAC</option>
-						<option value="va">VALJEVO</option>
-						<option value="so">SOMBOR</option>
-						<option value="ni">NIŠ</option>
-					</select>
-					</td>
-					</div>	
-			
-			<div class="datum">
-				<td>
-				<label>Datum dolaska: </label>
-				</td>
-				<td>
-				<input id="datePick" type="date" value="2011-01-13"/>
-				</td>
+						<td><label for="dolazak">Dolazak: </label></td>
+						<td><select autofocus>
+								<option value="bg">BEOGRAD</option>
+								<option value="ns">NOVI SAD</option>
+								<option value="sa">ŠABAC</option>
+								<option value="va">VALJEVO</option>
+								<option value="so">SOMBOR</option>
+								<option value="ni">NIŠ</option>
+						</select></td>
+					</div>
+
+					<div class="datum">
+						<td><label>Datum dolaska: </label></td>
+						<td><input id="datePick" type="date" value="2011-01-13" /></td>
+					</div>
+			</table>
+			<div class="vrstaKarte">
+				<p>
+				<h3>Izaberite vrstu karte:</h3>
+				</p>
+				<label for="redovna">Redovna:</label> <input type="radio"
+					name="vrstaKarte" id="redovna" value="redovna"><br> <label
+					for="povratna">Povratna:</label> <input type="radio"
+					name="vrstaKarte" id="povratna" value="povratna"><br>
+				<label for="studentska">Studentska:</label> <input type="radio"
+					name="vrstaKarte" id="studentska" value="studentska"><br>
+				<label for="penzionerska">Penzionerska:</label> <input type="radio"
+					name="vrstaKarte" id="penzionerska" value="penzionerska"><br>
 			</div>
-	</table>	
-	<div class="vrstaKarte">
-		<p><h3>Izaberite vrstu karte:</h3></p>
-			<label for="redovna">Redovna:</label> 
-			<input type="radio" name="vrstaKarte" id="redovna" value="redovna"><br>
-			<label for="povratna">Povratna:</label> 
-			<input type="radio" name="vrstaKarte" id="povratna" value="povratna"><br>
-			<label for="studentska">Studentska:</label> 
-			<input type="radio" name="vrstaKarte" id="studentska" value="studentska"><br>		
-			<label for="penzionerska">Penzionerska:</label> 
-			<input type="radio" name="vrstaKarte" id="penzionerska" value="penzionerska"><br>						
+			<form action="PopustServlet" method="post">
+				<table>
+					<tr>
+						<td><p>
+								<strong>Broj karata: </strong>
+							</p></td>
+						<td><input type="text" value=""></td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="Potvrdi" value="Potvrdi"></td>
+						<td><input type="reset" name="Obrisi" value="Obrisi"></td>
+					</tr>					
+				</table>
+			</form>
+			<br/><br/><br/>	
+			<div class="rezervacija2">
+
+				<strong><marquee>Na svaku treću rezervaciju,
+						POPUST OD 10% na cenu karte! ! !</marquee></strong>
+			</div>
 		</div>
-		<form action="PopustServlet" method="post">
-		<table>
-			<tr>
-			<td><p><strong>Broj karata: </strong></p></td>
-			<td><input type="text" value=""></td>
-			</tr>
-		</table>
-		</form>
-		<div class="rezervacija2">
-		<form action="">
-		<p>Ukoliko rezervišete kartu na drugo ime, molimo unesite:</p>
-  			Ime putnika: * <input type="text" name="ime"><br></br>
-  			Prezime putnika: *<input type="text" name="prezime"><br></br>
-  			Email adresa putnika: <input type="text" name="email"><br></br>
-  			<table>
-  				<tr>
-  				<td><h4>Napomena:</h4></td>
-  				<td><textarea cols="50" rows="3">Ovde unesite Vašu napomenu (Napr. student--> br.Indexa, želimo mesto u šaragama,..)</textarea></td>
-  				<td><input type="hidden" name="skriveno" value="skrivenopolje"></td>
-  				<td>&nbsp;</td>
-  				</tr>
-  			</table>
-  			<input type="submit" name="Potvrdi" value="Potvrdi">
-  			<input type="reset" name="Odustani" value="Odustani">
-		</form>
-		<strong><marquee>Na svaku treću rezervaciju, POPUST OD 10% na cenu karte! ! !</marquee></strong>
-	</div>
-	</div>
-			
 </body>
 </html>
