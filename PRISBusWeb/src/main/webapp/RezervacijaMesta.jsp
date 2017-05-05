@@ -97,6 +97,7 @@
 			<label for="sezonska">Sezonska:</label> 
 			<input type="radio" name="vrstaKarte" id="sezonska" value="Sezonska"><br>
 		</div>
+		<form action="PopustServlet" method="post">
 		<table>
 			<tr>
 			<td><p><strong>Broj karata: </strong></p></td>
@@ -121,7 +122,8 @@
   			<input type="reset" name="Odustani" value="Odustani">
 		</form>
 		<strong><marquee>Na svaku treću rezervaciju, POPUST OD 10% na cenu karte! ! !</marquee></strong>
-		</div>
+	</div>
+	</div>
 			
 </body>
 </html>
