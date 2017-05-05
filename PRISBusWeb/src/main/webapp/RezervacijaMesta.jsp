@@ -78,19 +78,13 @@
 	<div class="vrstaKarte">
 		<p><h3>Izaberite vrstu karte:</h3></p>
 			<label for="redovna">Redovna:</label> 
-			<input type="radio" name="vrstaKarte" id="redovna" value="Redovna"><br>
+			<input type="radio" name="vrstaKarte" id="redovna" value="redovna"><br>
 			<label for="povratna">Povratna:</label> 
-			<input type="radio" name="vrstaKarte" id="povratna" value="Povratna"><br>
-			<label for="studentskaJ">Studentska:</label> 
-			<input type="radio" name="vrstaKarte" id="studentskaJ" value="StudentskaJ"><br>
-			<label for="studentskaPovratna">Studentska povratna:</label> 
-			<input type="radio" name="vrstaKarte" id="studentskaP" value="StudentskaP"><br>
-			<label for="penzionerskaJ">Penzionerska:</label> 
-			<input type="radio" name="vrstaKarte" id="penzionerskaJ" value="PenzionerskaJ"><br>
-			<label for="penzionerskaP">Penzionerska povratna:</label> 
-			<input type="radio" name="vrstaKarte" id="penzionerskaP" value="PenzionerskaP"><br>
-			<label for="sezonska">Sezonska:</label> 
-			<input type="radio" name="vrstaKarte" id="sezonska" value="Sezonska"><br>
+			<input type="radio" name="vrstaKarte" id="povratna" value="povratna"><br>
+			<label for="studentska">Studentska:</label> 
+			<input type="radio" name="vrstaKarte" id="studentska" value="studentska"><br>		
+			<label for="penzionerska">Penzionerska:</label> 
+			<input type="radio" name="vrstaKarte" id="penzionerska" value="penzionerska"><br>						
 		</div>
 		<form action="PopustServlet" method="post">
 		<table>
