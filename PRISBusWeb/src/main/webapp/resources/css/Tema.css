@@ -138,6 +138,28 @@ li:hover a {
   font-size: 10px;
  }
 }
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  color:#ff8040;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  color:#ff8040;
+  
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color:#ff8040;
+   
+}
+
 .contain {        
   margin-left:15%;
   margin-right:auto;
