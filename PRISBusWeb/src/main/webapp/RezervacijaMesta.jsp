@@ -3,9 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
-<title>Online rezervacija</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
+	<title>Online rezervacija</title>
 </head>
 <body>
 	<div class="Box">
@@ -44,16 +44,12 @@
 						<option value="ni">NIŠ</option>
 					</select>
 					</td>
-					</div>	
-				<div class="datum"> 
-				<td>
-				<label>Datum polaska:</label>
-				</td>
-				<td>
-				<input id="datePick" type="date" value="2011-01-13"/>
-				<td>
-				</div>	
-				<tr>		
+					</div>
+					<div class="datum">
+						<td><label>Datum polaska:</label></td>
+						<td><input id="datePick" type="date" value="2011-01-13" />
+						<td>
+					</div><tr>		
 					<div class="rezervacija1">
 					<td>
 					<label for="dolazak">Dolazak: </label>
@@ -81,7 +77,6 @@
 	</table>	
 	<div class="vrstaKarte">
 		<p><h3>Izaberite vrstu karte:</h3></p>
-
 			<label for="redovna">Redovna:</label> 
 			<input type="radio" name="vrstaKarte" id="redovna" value="Redovna"><br>
 			<label for="povratna">Povratna:</label> 
@@ -104,6 +99,7 @@
 			<td><input type="text" value=""></td>
 			</tr>
 		</table>
+		</form>
 		<div class="rezervacija2">
 		<form action="">
 		<p>Ukoliko rezervišete kartu na drugo ime, molimo unesite:</p>
