@@ -36,11 +36,10 @@ public class LogInServlet extends HttpServlet {
 //			Putnik putnik = (Putnik) session.getAttribute("putnik");
 			String user = request.getParameter("korisnicko_ime");	
 			String password = request.getParameter("lozinka");
-			boolean korisnikPostoji = new RegistracijaManager().logInPutnik(user, password);
+			Putnik p = new RegistracijaManager().getPutnikZaUserPass(user, password);
 			String porukaError = null;
-			if(korisnikPostoji){			
-//				String korisnik = putnik.getIme();
-//				request.setAttribute("korisnik", korisnik);
+			if(p != null ){
+				request.getSession().setAttribute("korisnik", p);
 				request.getRequestDispatcher("Profil.jsp").forward(request, response);
 			}else{
 				porukaError = "Greska, korisnik sa unetim paramterima ne postoji!";
