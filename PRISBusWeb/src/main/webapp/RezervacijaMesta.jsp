@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,6 +9,7 @@
 	<title>Online rezervacija</title>
 </head>
 <body>
+	<jsp:useBean class="customBeans.SviPolasci" id="polasci" scope="session" />
 	<div class="Box">
 		<img id="logo" src="resources/images/Logo.jpg">
 		<div class="menu">
@@ -31,14 +33,11 @@
 		<div class="rezervacija1">
 			<table width="500">
 				<tr>
-					<td><label for="polazak">Polazak: </label></td>
-					<td><select autofocus>
-							<option value="bg">BEOGRAD</option>
-							<option value="ns">NOVI SAD</option>
-							<option value="sa">ŠABAC</option>
-							<option value="va">VALJEVO</option>
-							<option value="so">SOMBOR</option>
-							<option value="ni">NIŠ</option>
+					<td><label for="polazak">Destinacija: </label></td>
+					<td><select name="polazak">
+						<c:forEach items="${polasci.sviPolasci }" var="p">
+							<option value="${p.idpolaska }">${p.linija.grad.naziv }</option>
+						</c:forEach>								
 					</select></td>
 					</div>
 					<div class="datum">
@@ -47,22 +46,8 @@
 						<td>
 					</div>
 				<tr>
-					<div class="rezervacija1">
-						<td><label for="dolazak">Dolazak: </label></td>
-						<td><select autofocus>
-								<option value="bg">BEOGRAD</option>
-								<option value="ns">NOVI SAD</option>
-								<option value="sa">ŠABAC</option>
-								<option value="va">VALJEVO</option>
-								<option value="so">SOMBOR</option>
-								<option value="ni">NIŠ</option>
-						</select></td>
-					</div>
-
-					<div class="datum">
-						<td><label>Datum dolaska: </label></td>
-						<td><input id="datePick" type="date" value="2011-01-13" /></td>
-					</div>
+				
+					
 			</table>
 			<div class="vrstaKarte">
 				<p>
