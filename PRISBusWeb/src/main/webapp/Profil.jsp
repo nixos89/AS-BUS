@@ -36,13 +36,13 @@
 			<img src="resources/images/profile.png">
 
 			<p>
-				<strong>Ime:</strong> <label for="ime">Marko</label>
+				<strong>Ime:</strong> <label for="ime">${korisnik.ime}</label>
 			</p>
 			<p>
-				<strong>Prezime: </strong><label for="prezime">Marković</label>
+				<strong>Prezime: </strong><label for="prezime">${korisnik.prezime}</label>
 			</p>
 			<p>
-				<strong>Broj karata: </strong><label for="brKarata">2</label>
+				<strong>Broj karata: </strong><label for="brKarata">${korisnik.brkarata}</label>
 			</p>
 			
 			<form action="OnlineRezervacija" method="post">

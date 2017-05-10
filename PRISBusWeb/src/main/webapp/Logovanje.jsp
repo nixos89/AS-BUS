@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -57,8 +57,9 @@
 			<tr>
 			<td>&nbsp;</td>
 			<td><input type="submit" name="submit" value="Prijavite se"></td>
-			</tr>
+			</tr>			
 		</table>
+		${porukaError}
 		</form>
 		<br></br>
 		<marquee><img src="resources/images/as-bus.jpg"></marquee>
