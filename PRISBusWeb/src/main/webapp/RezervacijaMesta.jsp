@@ -9,7 +9,7 @@
 	<title>Online rezervacija</title>
 </head>
 <body>
-	<jsp:useBean class="customBeans.SviPolasci" id="polasci" scope="session" />
+	<jsp:useBean class="customBeans.SviRazlicitiPolasci" id="polasci" scope="session" />
 	<div class="Box">
 		<img id="logo" src="resources/images/Logo.jpg">
 		<div class="menu">

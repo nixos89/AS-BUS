@@ -72,12 +72,12 @@ public class PolasciManager {
 		}
 	}//sveVrstePolazaka
 	
-	public List<Polazak> sviRazlicitiPolasci(){
+	public List<Grad> sviRazlicitiPolasci(){
 		EntityManager em = JPAUtils.getEntityManager();		
 		try {
-			Query upit = em.createQuery("SELECT p FROM Polazak p join p.linija l join l.grad g  WHERE g.idgrad=:id");
-			upit.setParameter("id", 2);
-			List<Polazak> sviPolasci = (List<Polazak>)upit.getResultList();
+			Query upit = em.createQuery("SELECT DISTINCT(p.linija.grad) FROM Polazak p join p.linija l join l.grad g  ");
+			
+			List<Grad> sviPolasci = (List<Grad>)upit.getResultList();
 		
 			em.close();
 			return sviPolasci;
@@ -233,15 +233,16 @@ public class PolasciManager {
 	public static void main(String[] args) {
 		PolasciManager pm = new PolasciManager();
 			
-		List<Polazak> polasci = pm.sviRazlicitiPolasci();
+		List<Grad> polasci = pm.sviRazlicitiPolasci();
 		
-		for(Polazak p: polasci){		
-			System.out.println(p.getIdpolaska());
+		for(Grad p: polasci){		
+			System.out.println(p.getNaziv());
 			
 			
 		}		
 		
 			//System.out.println(p.getLinija().getGrad().getNaziv());
+		
 		
 //		PolasciManager pm = new PolasciManager();
 		

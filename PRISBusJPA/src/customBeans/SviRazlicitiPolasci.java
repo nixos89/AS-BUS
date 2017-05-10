@@ -3,21 +3,22 @@ package customBeans;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Polazak;
+import managers.PolasciManager;
+import model.Grad;
 
 public class SviRazlicitiPolasci {
 
-	private List<Polazak> sviRazlicitiPolasci = new ArrayList<Polazak>();
+	private List<Grad> sviRazlicitiPolasci = new ArrayList<Grad>();
 	
 	public SviRazlicitiPolasci(){
-		
+		sviRazlicitiPolasci = new PolasciManager().sviRazlicitiPolasci();
 	}
 
-	public List<Polazak> getSviRazlicitiPolasci() {
+	public List<Grad> getSviRazlicitiPolasci() {
 		return sviRazlicitiPolasci;
 	}
 
-	public void setSviRazlicitiPolasci(List<Polazak> sviRazlicitiPolasci) {
+	public void setSviRazlicitiPolasci(List<Grad> sviRazlicitiPolasci) {
 		this.sviRazlicitiPolasci = sviRazlicitiPolasci;
 	}
 	
