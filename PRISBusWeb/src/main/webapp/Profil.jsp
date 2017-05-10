@@ -45,7 +45,7 @@
 				<strong>Broj karata: </strong><label for="brKarata">${korisnik.brkarata}</label>
 			</p>
 			
-			<form action="OnlineRezervacija" method="post">
+			<form action="RezervacijaMesta.jsp">
 				<input type="submit" value="ONLINE REZERVACIJA">
 			</form>
 			<div class="rezervacija2">

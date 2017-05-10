@@ -72,6 +72,21 @@ public class PolasciManager {
 		}
 	}//sveVrstePolazaka
 	
+	public List<Grad> sviRazlicitiPolasci(){
+		EntityManager em = JPAUtils.getEntityManager();		
+		try {
+			Query upit = em.createQuery("SELECT DISTINCT(p.linija.grad) FROM Polazak p join p.linija l join l.grad g  ");
+			
+			List<Grad> sviPolasci = (List<Grad>)upit.getResultList();
+		
+			em.close();
+			return sviPolasci;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}		
+	}
+	
 	public static boolean sacuvajPrevoznika(String naziv, int brMesta){
 		try {
 			EntityManager em = JPAUtils.getEntityManager();
@@ -216,6 +231,19 @@ public class PolasciManager {
 	
 	
 	public static void main(String[] args) {
+		PolasciManager pm = new PolasciManager();
+			
+		List<Grad> polasci = pm.sviRazlicitiPolasci();
+		
+		for(Grad p: polasci){		
+			System.out.println(p.getNaziv());
+			
+			
+		}		
+		
+			//System.out.println(p.getLinija().getGrad().getNaziv());
+		
+		
 //		PolasciManager pm = new PolasciManager();
 		
 //		List<Linija> gradovi = sveLinije();
