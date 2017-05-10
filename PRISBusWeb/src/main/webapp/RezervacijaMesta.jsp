@@ -35,8 +35,8 @@
 				<tr>
 					<td><label for="polazak">Destinacija: </label></td>
 					<td><select name="polazak">
-						<c:forEach items="${polasci.sviPolasci }" var="p">
-							<option value="${p.idpolaska }">${p.linija.grad.naziv }</option>
+						<c:forEach items="${polasci.getSviRazlicitiPolasci()}" var="p">
+							<option value="${p.idgrad}">${p.naziv}</option>
 						</c:forEach>								
 					</select></td>
 					</div>
