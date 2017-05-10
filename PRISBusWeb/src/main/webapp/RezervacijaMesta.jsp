@@ -9,7 +9,7 @@
 	<title>Online rezervacija</title>
 </head>
 <body>
-	<jsp:useBean class="customBeans.SviRazlicitiPolasci" id="polasci" scope="session" />
+	<jsp:useBean class="customBeans.SviRazlicitiPolasci" id="razlicitipolasci" scope="session" />
 	<div class="Box">
 		<img id="logo" src="resources/images/Logo.jpg">
 		<div class="menu">
@@ -35,7 +35,7 @@
 				<tr>
 					<td><label for="polazak">Destinacija: </label></td>
 					<td><select name="polazak">
-						<c:forEach items="${polasci.getSviRazlicitiPolasci()}" var="p">
+						<c:forEach items="${razlicitipolasci.getSviRazlicitiPolasci()}" var="p">
 							<option value="${p.idgrad}">${p.naziv}</option>
 						</c:forEach>								
 					</select></td>
