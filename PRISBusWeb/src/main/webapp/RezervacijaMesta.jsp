@@ -31,37 +31,48 @@
 		<br></br>
 		<h2 align="center">ONLINE REZERVACIJA AUTOBUSKE KARTE</h2>
 		<div class="rezervacija1">
-			<table width="500">
-				<tr>
-					<td><label for="polazak">Destinacija: </label></td>
-					<td><select name="polazak">
-						<c:forEach items="${polasci.getSviRazlicitiPolasci()}" var="p">
-							<option value="${p.idgrad}">${p.naziv}</option>
-						</c:forEach>								
-					</select></td>
-					</div>
-					<div class="datum">
-						<td><label>Datum polaska:</label></td>
-						<td><input id="datePick" type="date" value="2011-01-13" />
-						<td>
-					</div>
-				<tr>
-				
-					
-			</table>
-			<div class="vrstaKarte">
-				<p>
-				<h3>Izaberite vrstu karte:</h3>
-				</p>
-				<label for="redovna">Redovna:</label> <input type="radio"
-					name="vrstaKarte" id="redovna" value="redovna"><br> <label
-					for="povratna">Povratna:</label> <input type="radio"
-					name="vrstaKarte" id="povratna" value="povratna"><br>
-				<label for="studentska">Studentska:</label> <input type="radio"
-					name="vrstaKarte" id="studentska" value="studentska"><br>
-				<label for="penzionerska">Penzionerska:</label> <input type="radio"
-					name="vrstaKarte" id="penzionerska" value="penzionerska"><br>
-			</div>
+			<form action="RezervacijaMestaServlet" method="get">
+				<table width="500">
+					<tr>
+						<td><label for="polazak">Destinacija: </label></td>
+						<td><select name="polazak">
+								<c:forEach items="${polasci.getSviRazlicitiPolasci()}" var="p">
+									<option value="${p.idgrad}">${p.naziv}</option>
+								</c:forEach>
+						</select></td>
+						<div class="datum">
+							<td><label>Datum polaska:</label></td>
+							<td><input id="datePick" type="date" name="datumPolaska" value="2011-01-13" />							
+						</div>
+					</tr>
+				</table>
+				<div class="vrstaKarte">
+					<h3>Izaberite vrstu karte:</h3>
+					<label for="redovna">Redovna:</label> 
+					<input type="radio" name="vrstaKarte" id="redovna" value="Redovna">&nbsp; 
+					<label for="povratna">Povratna:</label> 
+					<input type="radio" name="vrstaKarte" id="povratna" value="Povratna">&nbsp; 
+					<label for="studentska">Studentska:</label> 
+					<input type="radio" name="vrstaKarte" id="studentska" value="Studentska">&nbsp;
+					<label for="penzionerska">Penzionerska:</label> 
+					<input type="radio" name="vrstaKarte" id="penzionerska" value="Penzionerska">&nbsp;
+				</div><br/>
+				<input type="submit" value="Pretraži"> 
+			</form>
+			<br/><br/>
+			<c:if test="${empty trazeniPolasci}">
+				${porukaNemaPol}
+			</c:if>
+			<c:if test="${!empty trazeniPolasci}">
+				<table border="1">
+					<tr>
+						<th>Destinacija</th><th>Vreme polaska</th><th>Cena karte</th><th>Broj preostalih karata</th>
+					</tr>
+					<tr>
+						
+					</tr>
+				</table>				
+			</c:if>
 			<form action="PopustServlet" method="post">
 				<table>
 					<tr>
@@ -71,8 +82,8 @@
 						<td><input type="text" value=""></td>
 					</tr>
 					<tr>
-						<td><input type="submit" name="Potvrdi" value="Potvrdi"></td>
-						<td><input type="reset" name="Obrisi" value="Obrisi"></td>
+						<td><input type="submit" name="Potvrdi" value="Rezerviši"></td>
+						<td><input type="reset" name="Obrisi" value="Poništi"></td>
 					</tr>					
 				</table>
 			</form>
