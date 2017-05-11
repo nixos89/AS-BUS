@@ -46,7 +46,7 @@
 						</div>
 					</tr>
 				</table>
-				<div class="vrstaKarte">
+				<div class="vrstaKarte"> 
 					<h3>Izaberite vrstu karte:</h3>
 					<label for="redovna">Redovna:</label> 
 					<input type="radio" name="vrstaKarte" id="redovna" value="Redovna">&nbsp; 
