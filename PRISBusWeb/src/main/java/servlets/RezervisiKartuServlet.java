@@ -31,14 +31,21 @@ public class RezervisiKartuServlet extends HttpServlet {
 		int idpolaska = Integer.parseInt(request.getParameter("idPolaska"));		
 		int brkarata = Integer.parseInt(request.getParameter("brKarata"));		
 		Putnik putnik = (Putnik)request.getSession().getAttribute("korisnik");
+		int cenaKarte = Integer.parseInt(request.getParameter("cenaKarte"));
 		RezervacijaKarteManager rk = new RezervacijaKarteManager();
 		String poruka=null;
+		String popust=null;
 		if(rk.rezervisiKartu(idpolaska, brkarata, putnik)){
+			if(putnik.getBrkarata() % 3 == 0){
+				int cena=cenaKarte*brkarata;
+				popust="Dobili ste popust 10%, puna cena: "+cena+" umanjena cena je:"+(cena - cena*0.1);
+			}
 			poruka="uspestno ste rezervisali karte.";
 		}else{
 			poruka="Doslo je do greske, niste rezervisali kartu.";
 		}
 		request.setAttribute("poruka", poruka);
+		request.setAttribute("popust", popust);
 		request.getRequestDispatcher("RezervacijaMesta.jsp").forward(request, response);
 	}
 

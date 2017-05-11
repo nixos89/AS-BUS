@@ -41,9 +41,9 @@
 			<p>
 				<strong>Prezime: </strong><label for="prezime">${korisnik.prezime}</label>
 			</p>
-<!-- 			<p> -->
-<%-- 				<strong>Broj karata: </strong><label for="brKarata">${korisnik.brkarata}</label> --%>
-<!-- 			</p> -->
+ 			<p> 
+ 				<strong>Broj rezervacija: </strong><label for="brKarata">${korisnik.brkarata}</label> 
+ 			</p> 
 			
 			<form action="RezervacijaMesta.jsp">
 				<input type="submit" value="ONLINE REZERVACIJA">

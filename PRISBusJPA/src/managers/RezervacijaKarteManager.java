@@ -16,13 +16,11 @@ public class RezervacijaKarteManager {
 			int brojMesta=polazak.getPrevoznik().getBrmesta();
 			int brprodatihkarata=polazak.getBrprodatihkarata();
 			int ukKarata=brprodatihkarata + brkarata;
-			if( ukKarata <= brojMesta){
-				System.out.println("usao u if");
-				polazak.setBrprodatihkarata(ukKarata);
-				polazak.getPutniks().add(putnik);				
-				putnik.getPolazaks().add(polazak);
-				em.merge(polazak);
+			if( ukKarata <= brojMesta){	
+				putnik.setBrkarata(putnik.getBrkarata()+1);					
+				polazak.setBrprodatihkarata(ukKarata);		
 				em.merge(putnik);
+				em.merge(polazak);
 				em.getTransaction().commit();
 				em.close();
 				return true;
@@ -34,4 +32,5 @@ public class RezervacijaKarteManager {
 			return false;			
 		}		
 	}
+	
 }

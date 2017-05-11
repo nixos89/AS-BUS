@@ -84,6 +84,7 @@
 								     value="${wantPol.vremepolaska}" /></td>
 								<td>${wantPol.prevoznik.brmesta - wantPol.brprodatihkarata}</td>
  								<c:forEach items="${wantPol.kartas}" var="vrstaKarte">
+ 									<input type="hidden" name="cenaKarte" value="${vrstaKarte.cenakarte}"/>
 									<td>${vrstaKarte.cenakarte}</td>
 									<td>${vrstaKarte.tipkarte}</td>
 								</c:forEach>
@@ -92,9 +93,14 @@
 							</c:forEach>
 						</tr>
 					</table>
-					${porukaRezervacija}
+					
+					
 				</c:if>
 			</form>
+			<br>
+			${poruka}
+			<br>
+			${popust}
 			<br/><br/><br/>	
 			<div class="rezervacija2">
 

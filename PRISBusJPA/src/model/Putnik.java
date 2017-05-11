@@ -50,9 +50,9 @@ public class Putnik implements Serializable {
 	public void setIdputnik(int idputnik) {
 		this.idputnik = idputnik;
 	}
-
+			
 	public int getBrkarata() {
-		return this.brkarata;
+		return brkarata;
 	}
 
 	public void setBrkarata(int brkarata) {
@@ -120,5 +120,5 @@ public class Putnik implements Serializable {
 
 		return komentar7;
 	}
-
+	
 }
