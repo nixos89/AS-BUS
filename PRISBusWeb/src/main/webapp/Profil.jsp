@@ -48,6 +48,9 @@
 			<form action="RezervacijaMesta.jsp">
 				<input type="submit" value="ONLINE REZERVACIJA">
 			</form>
+			<form action="KomentariKorisnika.jsp">
+				<input type="submit" value="KOMENTARI ZA PREVOZNIKA">
+			</form>
 			<div class="rezervacija2">
 			<marquee>
 				<p><strong> NA SVAKU TREĆU REZERVACIJU, POPUST OD 10% NA CENU KARTE! ! ! </strong>
@@ -55,7 +58,7 @@
 			</marquee>
 			</div>
 			<br></br>
-			<form action="Logout" method="post">
+			<form action="LogOutServlet" method="get">
 				<input type="submit" value="Logout"> <br></br>
 			</form>
 			<br>
