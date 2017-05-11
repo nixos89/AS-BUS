@@ -9,9 +9,7 @@
 </head>
 <!-- <body>Sta ce ovde 2 body tag-a???? -->
 <body>
-
 	<div class="Box">
-
 		<img id="logo" src="resources/images/Logo.jpg">
 		<div class="menu">
 			<ul id="menu">

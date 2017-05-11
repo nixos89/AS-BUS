@@ -26,7 +26,6 @@
 						class="fa fa-plus"></i> Novi Polasci</a></li>
 				<li id="veci1"><a href="CenaKarte.jsp"><i
 						class="fa fa-pencil-square-o"></i> Modifikuj cene</a></li>
-
 			</ul>
 
 		</div>
@@ -48,14 +47,17 @@
 			<form action="RezervacijaMesta.jsp">
 				<input type="submit" value="ONLINE REZERVACIJA">
 			</form>
-			<div class="rezervacija2">
+			<form action="KomentariKorisnika.jsp">
+				<input type="submit" value="KOMENTARI ZA PREVOZNIKA">
+			</form>
+			<div class="rezervacija2"> 
 			<marquee>
 				<p><strong> NA SVAKU TREĆU REZERVACIJU, POPUST OD 10% NA CENU KARTE! ! ! </strong>
 				<img src="resources/images/as-bus.jpg"></p>
 			</marquee>
 			</div>
 			<br></br>
-			<form action="Logout" method="post">
+			<form action="LogOutServlet" method="get">
 				<input type="submit" value="Logout"> <br></br>
 			</form>
 			<br>

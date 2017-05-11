@@ -10,7 +10,8 @@ public class PopustManager {
 	public boolean getObavestiZaPopust(String user, String password, int brkarata){
 		try{
 			EntityManager em = JPAUtils.getEntityManager();
-			Query upit = em.createQuery("SELECT p FROM Putnik p WHERE p.user LIKE :user AND p.password LIKE :pass AND p.brkarata LIKE :brkarata")
+			Query upit = em.createQuery("SELECT p FROM Putnik p WHERE p.user LIKE :user AND p.password LIKE :pass "
+					+ "AND p.brkarata LIKE :brkarata")
 					.setParameter("user", user)
 					.setParameter("password", password)
 					.setParameter("brkarata", brkarata);

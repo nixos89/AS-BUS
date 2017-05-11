@@ -82,6 +82,18 @@
   	<description></description>
   	<servlet-class>servlets.RezervisiKartuServlet</servlet-class>
   </servlet>
+    <servlet>
+  	<servlet-name>KomentariKorisnikaServlet</servlet-name>
+  	<display-name>KomentariKorisnikaServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.KomentariKorisnikaServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LogOutServlet</servlet-name>
+  	<display-name>LogOutServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.LogOutServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LogInServlet</servlet-name>
   	<url-pattern>/LogInServlet</url-pattern>
@@ -133,5 +145,13 @@
   <servlet-mapping>
   	<servlet-name>RegistracijaServlet</servlet-name>
   	<url-pattern>/RegistracijaServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>KomentariKorisnikaServlet</servlet-name>
+  	<url-pattern>/KomentariKorisnikaServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogOutServlet</servlet-name>
+  	<url-pattern>/LogOutServlet</url-pattern>
   </servlet-mapping>
 </web-app>

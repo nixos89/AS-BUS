@@ -10,7 +10,8 @@
 </head>
 <body>`
 	<div class="Box">
-		<header> <img id="logo" src="resources/images/Logo.jpg">
+		<header> 
+			<img id="logo" src="resources/images/Logo.jpg">
 		</header>
 		<div class="menu">
 			<ul id="menu">
