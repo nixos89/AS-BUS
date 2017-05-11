@@ -54,21 +54,31 @@
 					</tr>
 				</table>
 				<div class="rating">
-					<input type="radio" name="ocena" value="1"/>&nbsp;
-					<input type="radio" name="ocena" value="2"/>&nbsp;
-					<input type="radio" name="ocena" value="3"/>&nbsp;
-					<input type="radio" name="ocena" value="4"/>&nbsp;
-					<input type="radio" name="ocena" value="5"/>
+					<label for="1">1:</label>
+					<input type="radio" id="1" name="ocena" value="1"/>&nbsp;
+					<label for="2">2:</label>
+					<input type="radio" id="2" name="ocena" value="2"/>&nbsp;
+					<label for="3">3:</label>
+					<input type="radio" id="3" name="ocena" value="3"/>&nbsp;
+					<label for="4">4:</label>
+					<input type="radio" id="4" name="ocena" value="4"/>&nbsp;
+					<label for="5">5:</label>
+					<input type="radio" id="5" name="ocena" value="5"/>
 				</div>
 				<input type="submit" value="Unesi"> <input type="reset"
 					value="Obriši">
 			</form>
 		</div>
 		<div class="rezervacija2">
-			<c:if test="${!empty prevoznici}">
-				<table>
-					
-				</table>
+			<c:if test="${!empty komentars}">
+				<c:forEach items="${komentars}" var="komentar">
+					<table>
+						<tr>
+							<td>Korisnik:</td>
+							<td>${komentar.prevoznik.naziv}</td>
+						</tr>
+					</table>
+				</c:forEach>
 			</c:if>
 		</div>
 </body>
