@@ -25,6 +25,7 @@ public class PopustServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try{
+			/* Ovo NIJE dobro, MORA se ispraviti ova provera za POPUST je losa!!!! */
 			request.getSession().getServletContext();
 			String user = request.getParameter("korisnicko_ime");	
 			String password = request.getParameter("lozinka");

@@ -269,12 +269,23 @@ public class PolasciManager {
 			return false;
 		}
 	}//snimiCenuKarte
-
+	
+	/* Ovaj metod vrsi REZERVACIJU karte/karata i vraca logicku vrednost */
+	public boolean rezervacijaKarti(int idPolaska, int brKarata, int idKarte){
+		try{
+			EntityManager em = JPAUtils.getEntityManager();
+			Polazak pol = em.find(Polazak.class, idPolaska);
+			
+			return true;
+		}catch(Exception e){
+			e.printStackTrace();
+			return false;
+		}
+	}
 	
 	
 	public static void main(String[] args) {
-		PolasciManager pm = new PolasciManager();
-		
+		PolasciManager pm = new PolasciManager();		
 		try{
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date datumPolaska  = sdf.parse("2017-04-21");
@@ -283,8 +294,8 @@ public class PolasciManager {
 				System.out.println("Prazna lista TRAZENIH polazaka!");
 			else{
 				for(Polazak p : trazeniPolasci){
-					System.out.println("Prevoznik: "+p.getPrevoznik()+", destinacija: "+p.getLinija().getGrad().getNaziv()+", vreme: "+p.getVremepolaska()+
-							", vrsta polaska: "+p.getVrstapolaska().getVrsta()+", broj karata " + p.getBrprodatihkarata());
+					System.out.println("Prevoznik: "+p.getPrevoznik().getNaziv()+", destinacija: "+p.getLinija().getGrad().getNaziv()+", vreme: "+p.getVremepolaska()+
+							", vrsta polaska: "+p.getVrstapolaska().getVrsta()+", cena karte: ");
 				}
 			}
 		}catch(Exception e){

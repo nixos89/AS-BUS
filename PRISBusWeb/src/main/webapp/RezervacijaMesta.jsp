@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -60,27 +61,33 @@
 				<input type="submit" value="Pretraži"> 
 			</form>
 			<br/><br/>
-			<c:if test="${empty trazeniPolasci}">
-				${porukaNemaPol}
-			</c:if>
-			<c:if test="${!empty trazeniPolasci}">
-				<table border="1">
-					<tr>
-						<th>Destinacija</th><th>Vreme polaska</th><th>Broj preostalih karata</th>
-						<th>Cena PENZIONERSKE karte</th><th>Cena POVRATNE karte</th>
-						<th>Cena STUDENTSKE karte</th><th>Cena REDOVNE karte</th>
-					</tr>
-					<tr>
-						<c:forEach items="${trazeniPolasci}" var="wantPol">
-							<td>${wantPol.linija.grad.naziv}</td>
-							<td>${wantPol.vremepolaska}</td>
-							<td>${wantPol.prevoznik.brmesta - wantPol.brprodatihkarata}</td>
-							<td>${wantPol.}</td>
-						</c:forEach>			
-					</tr>
-				</table>				
-			</c:if>
 			<form action="PopustServlet" method="post">
+				<c:if test="${empty trazeniPolasci}">
+					${porukaNemaPol}
+				</c:if>
+				<c:if test="${!empty trazeniPolasci}">
+					<table border="1">
+						<tr>
+							<th>Destinacija</th>
+							<th>Vreme polaska</th>
+							<th>Broj preostalih karata</th>
+							<th>Cena karte</th>
+							<th>Tip karte</th>
+						</tr>
+						<tr>
+							<c:forEach items="${trazeniPolasci}" var="wantPol">
+								<td>${wantPol.linija.grad.naziv}</td>
+								<td><fmt:formatDate type="both" dateStyle="long"
+										timeStyle="medium" value="${wantPol.vremepolaska}" /></td>
+								<td>${wantPol.prevoznik.brmesta - wantPol.brprodatihkarata}</td>
+								<c:forEach items="${wantPol.kartas}" var="vrstaKarte">
+									<td>${vrstaKarte.cenakarte}</td>
+									<td>${vrstaKarte.tipkarte}</td>
+								</c:forEach>
+							</c:forEach>
+						</tr>
+					</table>
+				</c:if>
 				<table>
 					<tr>
 						<td><p>
@@ -91,7 +98,7 @@
 					<tr>
 						<td><input type="submit" name="Potvrdi" value="Rezerviši"></td>
 						<td><input type="reset" name="Obrisi" value="Poništi"></td>
-					</tr>					
+					</tr>
 				</table>
 			</form>
 			<br/><br/><br/>	
