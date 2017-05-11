@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import managers.PrevoznikManager;
+import model.Komentar7;
 import model.Prevoznik;
 
 /**
@@ -22,12 +24,24 @@ public class KomentariKorisnikaServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// aj sad...
-		List<Prevoznik> prevoznici = null;
+		try{
+			int idPrevoznika = Integer.parseInt(request.getParameter("prevoznik"));			
+			List<Komentar7> komentars = new PrevoznikManager().sviKomentariZaPrevoznika(idPrevoznika);
+			String porukaKomentariZaPrevoznika=null;
+			if(komentars.isEmpty()){
+				porukaKomentariZaPrevoznika = "Ne postoje komentari za odabranog prevoznika!";
+				request.setAttribute("porukaKomentariZaPrevoznika", porukaKomentariZaPrevoznika);
+			}
+			request.setAttribute("komentars", komentars);
+			request.getRequestDispatcher("KomentariKorisnika.jsp").forward(request, response);			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		// IMPLEMENTIRATI za dodavanje komentara
 	}
 
 }

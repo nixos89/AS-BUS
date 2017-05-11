@@ -43,8 +43,7 @@
 		</form>
 		<br></br>
 		<div class="rezervacija2">
-			<form action="">
-				Username: * <input type="text" name="ime"><br></br>
+			<form action="KomentariKorisnikaServlet" method="get">
 				<table>
 					<tr>
 						<td><h4>Komentar:</h4></td>
@@ -54,28 +53,41 @@
 					</tr>
 				</table>
 				<div class="rating">
-					<label for="1">1:</label>
+					<b><label for="1">1:</label></b>
 					<input type="radio" id="1" name="ocena" value="1"/>&nbsp;
-					<label for="2">2:</label>
+					<b><label for="2">2:</label></b>
 					<input type="radio" id="2" name="ocena" value="2"/>&nbsp;
-					<label for="3">3:</label>
+					<b><label for="3">3:</label></b>
 					<input type="radio" id="3" name="ocena" value="3"/>&nbsp;
-					<label for="4">4:</label>
+					<b><label for="4">4:</label></b>
 					<input type="radio" id="4" name="ocena" value="4"/>&nbsp;
-					<label for="5">5:</label>
+					<b><label for="5">5:</label></b>
 					<input type="radio" id="5" name="ocena" value="5"/>
 				</div>
 				<input type="submit" value="Unesi"> <input type="reset"
 					value="Obriši">
 			</form>
 		</div>
+	</div>	
 		<div class="rezervacija2">
 			<c:if test="${!empty komentars}">
 				<c:forEach items="${komentars}" var="komentar">
-					<table>
+					<table border="1">
+						<tr>
+							<td>Prevoznik:</td>
+							<td>${komentar.prevoznik.naziv}</td>
+						</tr>
 						<tr>
 							<td>Korisnik:</td>
-							<td>${komentar.prevoznik.naziv}</td>
+							<td>${komentar.putnik.ime} ${komentar.putnik.prezime}</td>
+						</tr>
+						<tr>
+							<td>Ocena:</td>
+							<td>${komentar.ocena}</td>
+						</tr>
+						<tr>
+							<td>Komentar:</td>
+							<td>${komentar.tekstkomentara}</td>
 						</tr>
 					</table>
 				</c:forEach>
