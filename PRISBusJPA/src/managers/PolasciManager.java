@@ -88,10 +88,14 @@ public class PolasciManager {
 	/* Daje SVE polaske koje je registrovani korisnik selektovao filtrirajuci DESTINACIJU, DATUM POLASKA i TIP KARTE!!! */
 	public List<Polazak> getTrazeniPolasci(int idGrad,Date datumPolaska,String vrstaKarte){
 		try{
+			System.out.println(idGrad);
+			System.out.println(datumPolaska);
+			System.out.println(vrstaKarte);
 			EntityManager em = JPAUtils.getEntityManager();
 			TypedQuery<Polazak> upit = 
-				em.createQuery("SELECT p FROM Polazak p JOIN FETCH p.kartas k WHERE k.tipkarte "
-						+ "LIKE :vrstaKarte AND p.vremepolaska = :datumPolaska", Polazak.class);
+				em.createQuery("SELECT p FROM Polazak p JOIN FETCH p.kartas k join p.linija l join l.grad g"
+						+ " WHERE g.idgrad=:idGrad AND k.tipkarte "
+						+ "LIKE :vrstaKarte AND l.datumpolaska = :datumPolaska", Polazak.class);
 			upit.setParameter("idGrad", idGrad);
 			upit.setParameter("datumPolaska", datumPolaska);
 			upit.setParameter("vrstaKarte", vrstaKarte);
