@@ -61,7 +61,7 @@
 				<input type="submit" value="Pretraži"> 
 			</form>
 			<br/><br/>
-			<form action="PopustServlet" method="get">
+			<form action=RezervisiKartuServlet method="get">
 				<c:if test="${empty trazeniPolasci}">
 					<p style="color:red">${porukaNemaPol}</p>
 				</c:if>
