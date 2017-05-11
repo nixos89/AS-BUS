@@ -238,6 +238,8 @@ public class PolasciManager {
 			k.setCenakarte(cena);
 			k.setTipkarte(tipKarte);
 			k.setPolazak(em.find(Polazak.class, idPolaska));	
+			Polazak p = em.find(Polazak.class, idPolaska);
+			p.getKartas().add(k);
 			em.persist(k);
 			em.getTransaction().commit();
 			em.close();

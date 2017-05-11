@@ -42,7 +42,7 @@
 						</select></td>
 						<div class="datum">
 							<td><label>Datum polaska:</label></td>
-							<td><input id="datePick" type="date" name="datumPolaska" value="2011-01-13" />							
+							<td><input id="datePick" type="date" name="datumPolaska" value="2017-4-21" />							
 						</div>
 					</tr>
 				</table>
