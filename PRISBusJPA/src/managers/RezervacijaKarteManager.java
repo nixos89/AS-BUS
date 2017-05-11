@@ -27,11 +27,11 @@ public class RezervacijaKarteManager {
 				em.close();
 				return true;
 			}
+			em.close();
 			return false;
 		} catch (Exception e) {			
 			e.printStackTrace();
-			return false;
-			
+			return false;			
 		}		
 	}
 }
