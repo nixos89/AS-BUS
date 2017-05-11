@@ -46,7 +46,7 @@
 					</tr>
 					<tr>
 						<td><p>Korisničko ime: *</p></td>
-						<td><input type="text" name="korisnicko _ime"></td>
+						<td><input type="text" name="korisnicko_ime"></td>
 					</tr>
 					<tr>
 						<td><p>Lozinka: *</p></td>
