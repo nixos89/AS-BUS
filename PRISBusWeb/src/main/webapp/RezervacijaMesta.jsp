@@ -66,10 +66,17 @@
 			<c:if test="${!empty trazeniPolasci}">
 				<table border="1">
 					<tr>
-						<th>Destinacija</th><th>Vreme polaska</th><th>Cena karte</th><th>Broj preostalih karata</th>
+						<th>Destinacija</th><th>Vreme polaska</th><th>Broj preostalih karata</th>
+						<th>Cena PENZIONERSKE karte</th><th>Cena POVRATNE karte</th>
+						<th>Cena STUDENTSKE karte</th><th>Cena REDOVNE karte</th>
 					</tr>
 					<tr>
-						
+						<c:forEach items="${trazeniPolasci}" var="wantPol">
+							<td>${wantPol.linija.grad.naziv}</td>
+							<td>${wantPol.vremepolaska}</td>
+							<td>${wantPol.prevoznik.brmesta - wantPol.brprodatihkarata}</td>
+							<td>${wantPol.}</td>
+						</c:forEach>			
 					</tr>
 				</table>				
 			</c:if>
