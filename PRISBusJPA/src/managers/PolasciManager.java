@@ -114,7 +114,7 @@ public class PolasciManager {
 				em.createQuery("SELECT p FROM Polazak p JOIN FETCH p.kartas k join p.linija l join l.grad g"
 						+ " WHERE g.idgrad=:idGrad AND k.tipkarte "
 						+ "LIKE :vrstaKarte AND l.datumpolaska = :datumPolaska", Polazak.class);
-			System.out.println("prosao sam upit 'getTrazeniPolasci' ...");
+
 			upit.setParameter("idGrad", idGrad);
 			upit.setParameter("datumPolaska", datumPolaska);
 			upit.setParameter("vrstaKarte", vrstaKarte);
