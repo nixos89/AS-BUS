@@ -54,7 +54,11 @@
 					</tr>
 				</table>
 				<div class="rating">
-					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+					<input type="radio" name="ocena" value="1"/>&nbsp;
+					<input type="radio" name="ocena" value="2"/>&nbsp;
+					<input type="radio" name="ocena" value="3"/>&nbsp;
+					<input type="radio" name="ocena" value="4"/>&nbsp;
+					<input type="radio" name="ocena" value="5"/>
 				</div>
 				<input type="submit" value="Unesi"> <input type="reset"
 					value="Obriši">
