@@ -61,9 +61,9 @@
 				<input type="submit" value="Pretraži"> 
 			</form>
 			<br/><br/>
-			<form action="PopustServlet" method="post">
+			<form action="PopustServlet" method="get">
 				<c:if test="${empty trazeniPolasci}">
-					${porukaNemaPol}
+					<p style="color:red">${porukaNemaPol}</p>
 				</c:if>
 				<c:if test="${!empty trazeniPolasci}">
 					<table border="1">
@@ -73,33 +73,27 @@
 							<th>Broj preostalih karata</th>
 							<th>Cena karte</th>
 							<th>Tip karte</th>
+							<th>Broj karata</th>
+							<th>Potvrda</th>
 						</tr>
 						<tr>
 							<c:forEach items="${trazeniPolasci}" var="wantPol">
+								<input type="hidden" name="idPolaska" value="${wantPol.idpolaska}"/>
 								<td>${wantPol.linija.grad.naziv}</td>
-								<td><fmt:formatDate type="both" dateStyle="long"
-										timeStyle="medium" value="${wantPol.vremepolaska}" /></td>
+								<td><fmt:formatDate type="both" dateStyle="long" timeStyle="medium" 
+								     value="${wantPol.vremepolaska}" /></td>
 								<td>${wantPol.prevoznik.brmesta - wantPol.brprodatihkarata}</td>
-								<c:forEach items="${wantPol.kartas}" var="vrstaKarte">
+ 								<c:forEach items="${wantPol.kartas}" var="vrstaKarte">
 									<td>${vrstaKarte.cenakarte}</td>
 									<td>${vrstaKarte.tipkarte}</td>
 								</c:forEach>
+								<td><input type="text" name="brKarata"></td>
+								<td><input type="submit" value="Rezerviši"></td>
 							</c:forEach>
 						</tr>
 					</table>
+					${porukaRezervacija}
 				</c:if>
-				<table>
-					<tr>
-						<td><p>
-								<strong>Broj karata: </strong>
-							</p></td>
-						<td><input type="text" value=""></td>
-					</tr>
-					<tr>
-						<td><input type="submit" name="Potvrdi" value="Rezerviši"></td>
-						<td><input type="reset" name="Obrisi" value="Poništi"></td>
-					</tr>
-				</table>
 			</form>
 			<br/><br/><br/>	
 			<div class="rezervacija2">

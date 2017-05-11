@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import managers.PolasciManager;
 import managers.PopustManager;
+import model.Putnik;
 
 //@Nevena
 public class PopustServlet extends HttpServlet {
@@ -19,7 +21,27 @@ public class PopustServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request,response);
+		try{
+			System.out.println("\nUsao sam u doGet() PopustServlet-a");
+			request.getServletContext();
+			int idPolaska = Integer.parseInt(request.getParameter("idPolaska"));
+			int brKarata = Integer.parseInt(request.getParameter("brKarata"));
+			Putnik p = (Putnik) request.getSession().getAttribute("korisnik");
+			System.out.println("Ucitao Putnik-a iz sesije!");
+			boolean rezervisano = new PolasciManager().rezervacijaMesta(idPolaska, p, brKarata);
+			String porukaRezervacija = null;
+			if(rezervisano){
+				porukaRezervacija = "Rezervacija je uspesno izvrsena!";
+				request.setAttribute("porukaRezervacija", porukaRezervacija);
+				request.getRequestDispatcher("RerzervacijaMesta.jsp").forward(request, response);
+			}else{
+				porukaRezervacija = "Greska, rezervacija NIJE izvrsena!";
+				request.setAttribute("porukaRezervacija", porukaRezervacija);
+				request.getRequestDispatcher("RerzervacijaMesta.jsp").forward(request, response);
+			}
+		}catch(Exception e){
+			e.printStackTrace();			
+		}
 	}
 
 

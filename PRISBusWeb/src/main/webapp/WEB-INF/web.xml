@@ -11,6 +11,12 @@
   	<servlet-class>servlets.LogInServlet</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>PopustServlet</servlet-name>
+  	<display-name>PopustServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.PopustServlet</servlet-class>
+  </servlet>
+  <servlet>
   	<servlet-name>SacuvajVrstuPolaskaServlet</servlet-name>
   	<display-name>SacuvajVrstuPolaskaServlet</display-name>
   	<description></description>
@@ -85,6 +91,10 @@
   <servlet-mapping>
   	<servlet-name>CenaKarteServlet</servlet-name>
   	<url-pattern>/CenaKarteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PopustServlet</servlet-name>
+  	<url-pattern>/PopustServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>PretragaServlet</servlet-name>

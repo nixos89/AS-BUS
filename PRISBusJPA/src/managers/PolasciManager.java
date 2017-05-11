@@ -15,6 +15,7 @@ import model.Karta;
 import model.Linija;
 import model.Polazak;
 import model.Prevoznik;
+import model.Putnik;
 import model.Vrstapolaska;
 
 public class PolasciManager {	
@@ -270,12 +271,25 @@ public class PolasciManager {
 		}
 	}//snimiCenuKarte
 	
-	/* Ovaj metod vrsi REZERVACIJU karte/karata i vraca logicku vrednost */
-	public boolean rezervacijaKarti(int idPolaska, int brKarata, int idKarte){
+	/* Rezervacija karte za odredjeni POLAZAK, KARTU i tipKarte (koji odredjuje i njenu CENU)
+	 * i vraca logicku vrednost!!! */
+	public boolean rezervacijaMesta(int idPolaska, Putnik putnik,int brKarata){
 		try{
-			EntityManager em = JPAUtils.getEntityManager();
+			System.out.println("usao sam u rezervacijaMesta metod!");
+			EntityManager em  = JPAUtils.getEntityManager();
+			em.getTransaction().begin();
 			Polazak pol = em.find(Polazak.class, idPolaska);
-			
+			int brProdatihKarata = pol.getBrprodatihkarata();
+			int noviBrProdatihKarata = brKarata+brProdatihKarata;
+			pol.setBrprodatihkarata(noviBrProdatihKarata);
+			pol.getPutniks().add(putnik);
+			System.out.println("dosao do putnik.getPolazaks().add(pol);...");
+			putnik.getPolazaks().add(pol);
+			System.out.println("...prosao do putnik.getPolazaks().add(pol);");
+			em.merge(pol);
+			em.merge(putnik);
+			em.getTransaction().commit();
+			em.close();
 			return true;
 		}catch(Exception e){
 			e.printStackTrace();

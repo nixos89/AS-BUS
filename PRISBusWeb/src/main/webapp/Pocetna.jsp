@@ -8,7 +8,7 @@
 
 <title>Početna</title>
 </head>
-<body>
+<body>`
 	<div class="Box">
 		<header> <img id="logo" src="resources/images/Logo.jpg">
 		</header>
