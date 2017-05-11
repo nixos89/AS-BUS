@@ -50,7 +50,7 @@
 			<form action="KomentariKorisnika.jsp">
 				<input type="submit" value="KOMENTARI ZA PREVOZNIKA">
 			</form>
-			<div class="rezervacija2">
+			<div class="rezervacija2"> 
 			<marquee>
 				<p><strong> NA SVAKU TREĆU REZERVACIJU, POPUST OD 10% NA CENU KARTE! ! ! </strong>
 				<img src="resources/images/as-bus.jpg"></p>
