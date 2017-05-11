@@ -58,6 +58,12 @@
   	<description></description>
   	<servlet-class>servlets.RezervacijaMestaServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>KomentariKorisnikaServlet</servlet-name>
+  	<display-name>KomentariKorisnikaServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.KomentariKorisnikaServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LogInServlet</servlet-name>
   	<url-pattern>/LogInServlet</url-pattern>
@@ -93,5 +99,9 @@
   <servlet-mapping>
   	<servlet-name>RezervacijaMestaServlet</servlet-name>
   	<url-pattern>/RezervacijaMestaServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>KomentariKorisnikaServlet</servlet-name>
+  	<url-pattern>/KomentariKorisnikaServlet</url-pattern>
   </servlet-mapping>
 </web-app>

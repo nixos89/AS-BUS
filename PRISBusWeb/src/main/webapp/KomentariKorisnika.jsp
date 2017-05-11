@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,6 +9,7 @@
 <title>Komentari korisnika</title>
 </head>
 <body>
+	<jsp:useBean id="prevoznici" class="customBeans.SviPrevoznici"/>	
 	<div class="Box">
 		<img id="logo" src="resources/images/Logo.jpg">
 		<div class="menu">
@@ -28,38 +30,42 @@
 		</div>
 		<br></br>
 		<h2 align="center"><strong>Odaberite prevoznika: </strong></h2>
-		<p align="center">
-					<select autofocus>
-						<option value="bg">LASTA</option>
-						<option value="ns">NIŠ EKSPRES</option>
-						<option value="sa">EUROLINES</option>
-						<option value="va">BANBUS</option>
-						<option value="so">FENIKS G&Z</option>
-						<option value="ni">AUTOKODEKS</option>
-						<option value="so">DUNAV PREVOZ</option>
-						<option value="ni">SEVERTRANS</option>
-						<option value="so">BEČEJ PREVOZ</option>
-						<option value="ni">DUGA TRANS</option>
-					</select>
+		<form action="KomentariKorisnikaServlet" method="get">
+			<p align="center">
+				<select name="prevoznik">
+					<c:forEach items="${prevoznici.getSviPrevoznici()}" var="prevoznik">
+						<option value="${prevoznik.idprevoznik}">${prevoznik.naziv}</option>
+					</c:forEach>
+				</select>
+				<input type="submit" value="Pretraži"/>
 			</p>
-			<br></br>
-			<div class="rezervacija2">
-		<form action="">
-  			Username: * <input type="text" name="ime"><br></br>
-  			<table>
-  				<tr>
-  				<td><h4>Komentar:</h4></td>
-  				<td><textarea cols="65" rows="5">Ovde unesite Vaš komentar</textarea></td>
-  				<td><input type="hidden" name="skriveno" value="skrivenopolje"></td>
-  				<td>&nbsp;</td>
-  				</tr>
-  			</table>
-  			<div class="rating">
-				<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-			</div>
-  			<input type="submit" name="Potvrdi" value="Potvrdi">
-  			<input type="reset" name="Odustani" value="Odustani">
+			
 		</form>
+		<br></br>
+		<div class="rezervacija2">
+			<form action="">
+				Username: * <input type="text" name="ime"><br></br>
+				<table>
+					<tr>
+						<td><h4>Komentar:</h4></td>
+						<td><textarea cols="65" rows="5">Ovde unesite Vaš komentar</textarea></td>
+						<td><input type="hidden" name="skriveno" value="skrivenopolje"></td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+				<div class="rating">
+					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+				</div>
+				<input type="submit" value="Unesi"> <input type="reset"
+					value="Obriši">
+			</form>
+		</div>
+		<div class="rezervacija2">
+			<c:if test="${!empty prevoznici}">
+				<table>
+					
+				</table>
+			</c:if>
 		</div>
 </body>
 </html>
