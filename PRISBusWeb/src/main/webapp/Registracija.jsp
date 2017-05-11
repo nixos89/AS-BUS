@@ -11,7 +11,6 @@
 <body>
 
 	<div class="Box">
-
 		<img id="logo" src="resources/images/Logo.jpg">
 		<div class="menu">
 			<ul id="menu">
