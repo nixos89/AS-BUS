@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -47,19 +48,25 @@
 				<c:forEach items="${komentars}" var="komentar">					
 					<table border="1">
 						<tr>
-							<td>Prevoznik:</td>
+							<td><b>Prevoznik:</b></td>
 							<td>${komentar.prevoznik.naziv}</td>
 						</tr>
 						<tr>
-							<td>Korisnik:</td>
+							<td><b>Korisnik:</b></td>
 							<td>${komentar.putnik.ime} ${komentar.putnik.prezime}</td>
 						</tr>
 						<tr>
-							<td>Ocena:</td>
+							<td><b>Ocena:</b></td>
 							<td>${komentar.ocena}</td>
 						</tr>
 						<tr>
-							<td>Komentar:</td>
+							<td><b>Datum:</b></td>
+							<td><fmt:formatDate type="date" dateStyle="long"
+								     value="${komentar.datumkomentara}" />
+							</td>
+						</tr>
+						<tr>
+							<td><b>Komentar:</b></td>
 							<td>${komentar.tekstkomentara}</td>
 						</tr>
 					</table>
