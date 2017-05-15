@@ -92,9 +92,7 @@
 								<td><input type="submit" value="Rezerviši"></td>
 							</c:forEach>
 						</tr>
-					</table>
-					
-					
+					</table>										
 				</c:if>
 			</form>
 			<br>
