@@ -50,7 +50,7 @@
 				<br></br>
 			</div>
 			<marquee><img src="resources/images/karta.jpg"></marquee>
-			
+	
 </body>
 </html>
 
