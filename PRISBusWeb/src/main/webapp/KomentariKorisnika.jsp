@@ -100,7 +100,7 @@
 				  <table>			
 					<tr>
 						<td><h4>Komentar:</h4></td>
-						<td><textarea cols="65" name="tekstKomentara" rows="5">Ovde unesite Vaš komentar</textarea></td>
+						<td><textarea cols="65" name="tekstKomentara" rows="5" placeholder="Ovde unesite Vaš komentar"></textarea></td>
 						<td><input type="hidden" name="skriveno" value="skrivenopolje"></td>
 						<td>&nbsp;</td>
 					</tr>
