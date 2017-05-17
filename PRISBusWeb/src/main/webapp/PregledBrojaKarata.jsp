@@ -45,7 +45,7 @@
 			<br></br>
 			<div class="rezervacija2">
 				<h3 align="justify">Broj prodatih karata: ${prodaja.brprodatih}</h3>
-				<h3 align="justify">Dneveni profit od prodatih karata: ${prodaja.dnevniprofit}</h3>
+				<h3 align="justify">Dnevni profit od prodatih karata: ${prodaja.dnevniprofit}</h3>
 				<br></br>
 				<br></br>
 			</div>
