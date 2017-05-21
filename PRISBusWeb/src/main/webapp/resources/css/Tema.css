@@ -12,17 +12,16 @@ body {
 }
 table, td, th {    
     border: 2px solid #ff0080;
-    text-align: left;
+    text-align: center;
     background-color: white;
-}
 
-table {
-    border-collapse: collapse;
-    width: 100%;
 }
-
-th, td {
-    padding: 15px;
+ table {
+ 	width: 100%;
+ 
+ }
+.text {
+	color: red;
 }
 #logo {
 	width: 100%;
