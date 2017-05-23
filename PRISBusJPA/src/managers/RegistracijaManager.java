@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import model.Putnik;
+import model.Radnik;
 
 public class RegistracijaManager {
 
@@ -59,6 +60,26 @@ public class RegistracijaManager {
 		}
 	}
 	
+	public Radnik sacuvajRadnika(String ime, String prezime,String user,String password){
+		try{
+			EntityManager em = JPAUtils.getEntityManager();
+			em.getTransaction().begin();
+			Radnik r = new Radnik();
+			r.setIme(ime);
+			r.setPrezime(prezime);
+			r.setUser(user);
+			r.setPassword(password);
+			em.persist(r);
+			em.getTransaction().commit();
+			em.close();
+			return r;
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	
 	public static void main(String[] args) {
 		RegistracijaManager rm = new RegistracijaManager();
 		boolean postoji = rm.logInPutnik("peki", "zdera");
@@ -67,6 +88,12 @@ public class RegistracijaManager {
 			System.out.println("Putnik "+ p.getIme()+" "+p.getPrezime()+" sa user-om "+p.getUser()+" postoji!");
 		else
 			System.out.println("Greska, korisnik NE POSTOJI u bazi!");
+		
+		Radnik r = rm.sacuvajRadnika("Milica", "Salteric", "mica", "ubica");
+		if(r!=null)
+			System.out.println("Radnik "+r.getIme()+" "+r.getPrezime()+" je sacuvan!");
+		else
+			System.out.println("Greska, Radnik NIJE sacuvan!");
 	}//main
 
 }
