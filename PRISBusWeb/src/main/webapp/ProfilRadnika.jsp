@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>Pregled broja karata</title>
+<title>Profil Radnika</title>
 <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
 <meta HTTP-EQUIV="Expires" CONTENT="-1">
 <link href="resources/css/Tema.css" rel="stylesheet" type="text/css" />
@@ -45,8 +45,9 @@
 			<br></br>
 			<div class="rezervacija2">
 				<h3 align="justify">Broj prodatih karata: ${prodaja.brprodatih}</h3>
-				<h3 align="justify">Dneveni profit od prodatih karata: ${prodaja.dnevniprofit}</h3>
+				<h3 align="justify">Dnevni profit od prodatih karata: ${prodaja.dnevniprofit}</h3>
 				<br></br>
+				<input type="submit" value="PRODAJA KARATA">
 				<br></br>
 			</div>
 			<marquee><img src="resources/images/karta.jpg"></marquee>
