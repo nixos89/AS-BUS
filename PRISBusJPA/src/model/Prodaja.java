@@ -31,6 +31,8 @@ public class Prodaja implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="IDRADNIK")
 	private Radnik radnik;
+	
+	private int iznos;
 
 	public Prodaja() {
 	}
@@ -67,4 +69,12 @@ public class Prodaja implements Serializable {
 		this.radnik = radnik;
 	}
 
+	public int getIznos() {
+		return iznos;
+	}
+
+	public void setIznos(int iznos) {
+		this.iznos = iznos;
+	}
+	
 }
