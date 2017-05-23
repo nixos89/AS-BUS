@@ -57,12 +57,12 @@ public class ProdajaKarataZaRadnikaServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int idpolaska = Integer.parseInt(request.getParameter("idPolaska"));		
 		int brkarata = Integer.parseInt(request.getParameter("brKarata"));		
-		Radnik radnik = (Radnik)request.getSession().getAttribute("korisnik");
+		Radnik radnik = (Radnik)request.getSession().getAttribute("radnik");
 		int cenaKarte = Integer.parseInt(request.getParameter("cenaKarte"));
 		RezervacijaKarteManager rk = new RezervacijaKarteManager();
 		String poruka=null;
 		String popust=null;
-		Prodaja prodaja = rk.prodajKartu(idpolaska, brkarata, radnik);
+		Prodaja prodaja = rk.prodajKartu(idpolaska, brkarata, cenaKarte, radnik);
 		if(prodaja!=null){ // ispravi da bude metod 'prodajKartu'			
 			poruka="Uspesno ste prodali karte!";
 		}else{

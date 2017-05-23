@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import managers.RegistracijaManager;
 import model.Putnik;
+import model.Radnik;
 
 /**
  * @author Slobodan Babic
@@ -37,11 +38,16 @@ public class LogInServlet extends HttpServlet {
 			String user = request.getParameter("korisnicko_ime");	
 			String password = request.getParameter("lozinka");
 			Putnik p = new RegistracijaManager().getPutnikZaUserPass(user, password);
+			Radnik r = new RegistracijaManager().getRadnikZaUserPass(user, password);
 			String porukaError = null;
 			if(p != null ){
 				request.getSession().setAttribute("korisnik", p);
-				request.getRequestDispatcher("Profil.jsp").forward(request, response);
-			}else{
+				request.getRequestDispatcher("ProfilKorisnika.jsp").forward(request, response);
+			}else if(r!=null){
+				request.getSession().setAttribute("radnik", r);
+				request.getRequestDispatcher("ProfilRadnika.jsp").forward(request, response);
+			}
+			else{
 				porukaError = "Greska, korisnik sa unetim paramterima ne postoji!";
 				request.setAttribute("porukaError", porukaError);
 				request.getRequestDispatcher("Logovanje.jsp").forward(request, response);

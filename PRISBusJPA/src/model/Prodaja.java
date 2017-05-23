@@ -15,7 +15,7 @@ import java.util.Date;
 public class Prodaja implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Id	
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idprodaja;
 
@@ -31,7 +31,9 @@ public class Prodaja implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="IDRADNIK")
 	private Radnik radnik;
-
+	
+	private int iznos;
+	
 	public Prodaja() {
 	}
 
@@ -67,4 +69,13 @@ public class Prodaja implements Serializable {
 		this.radnik = radnik;
 	}
 
+	public int getIznos() {
+		return iznos;
+	}
+
+	public void setIznos(int iznos) {
+		this.iznos = iznos;
+	}
+
+	
 }

@@ -2,6 +2,7 @@ package managers;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import model.Putnik;
 import model.Radnik;
@@ -49,13 +50,25 @@ public class RegistracijaManager {
 	public Putnik getPutnikZaUserPass(String user, String pass){
 		try{
 			EntityManager em = JPAUtils.getEntityManager();
-			Query upit = em.createQuery("SELECT p FROM Putnik p WHERE p.user LIKE :user AND p.password LIKE :pass")
+			TypedQuery<Putnik> upit = em.createQuery("SELECT p FROM Putnik p WHERE p.user LIKE :user AND p.password LIKE :pass", Putnik.class)
 					.setParameter("user", user)
 					.setParameter("pass", pass);
-			Putnik put = (Putnik)upit.getSingleResult();
+			Putnik put = upit.getSingleResult();
 			return put;
-		}catch(Exception e){
-			e.printStackTrace();
+		}catch(Exception e){			
+			return null;
+		}
+	}
+	
+	public Radnik getRadnikZaUserPass(String user, String pass){
+		try{
+			EntityManager em = JPAUtils.getEntityManager();
+			TypedQuery<Radnik> upit = em.createQuery("SELECT r FROM Radnik r WHERE r.user LIKE :user AND r.password LIKE :pass",Radnik.class)
+					.setParameter("user", user)
+					.setParameter("pass", pass);
+			Radnik radnik =upit.getSingleResult();
+			return radnik;
+		}catch(Exception e){			
 			return null;
 		}
 	}
