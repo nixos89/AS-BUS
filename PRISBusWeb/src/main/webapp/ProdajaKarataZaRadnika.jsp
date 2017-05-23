@@ -10,6 +10,7 @@
 	<title>Prodaja karata za radnika</title>
 </head>
 <body>
+	<jsp:useBean class="customBeans.SviRazlicitiPolasci" id="razlicitipolasci" scope="session" />
 	<div class="Box">
 		<img id="logo" src="resources/images/Logo.jpg">
 		<div class="menu">
@@ -31,7 +32,7 @@
 		<br></br>
 		<h2 align="center">PRODAJA KARATA</h2>
 		<div class="rezervacija2">
-			<form>
+			<form action="ProdajaKarataZaRadnikaServlet" method="get">
 				<table>
 					<tr>
 						<td><h3><label for="polazak">Odaberite polazak: </label></td></h3>
@@ -40,36 +41,62 @@
 									<option value="${p.idgrad}">${p.naziv}</option>
 								</c:forEach>
 						</select></td>
+						<div class="datum">
+							<td><label>Datum polaska:</label></td>
+							<td><input id="datePick" type="date" name="datumPolaska" value="2017-4-21" />							
+						</div>
+					</tr>		
 				</table>
 				<div class="vrstaKarte"> 
-					<h3>Odaberite vrstu karte:</h3>
+					<h3>Izaberite vrstu karte:</h3>
 					<label for="redovna">Redovna:</label> 
-					<input type="radio" name="vrstaKarte" id="redovna" value="Redovna"> 
-					
+					<input type="radio" name="vrstaKarte" id="redovna" value="Redovna">&nbsp; 
 					<label for="povratna">Povratna:</label> 
-					<input type="radio" name="vrstaKarte" id="povratna" value="Povratna">
-					
+					<input type="radio" name="vrstaKarte" id="povratna" value="Povratna">&nbsp; 
 					<label for="studentska">Studentska:</label> 
-					<input type="radio" name="vrstaKarte" id="studentska" value="Studentska">
-					
-					<label for="studentskaPovratna">Studentska povratna:</label> 
-					<input type="radio" name="vrstaKarte" id="studentskaPovratna" value="Studentska povratna">
-					
+					<input type="radio" name="vrstaKarte" id="studentska" value="Studentska">&nbsp;
 					<label for="penzionerska">Penzionerska:</label> 
-					<input type="radio" name="vrstaKarte" id="penzionerska" value="Penzionerska">
-					
-					<label for="penzionerskaPovratna">Penzionerska povratna:</label> 
-					<input type="radio" name="vrstaKarte" id="penzionerskaPovratna" value="Penzionerska povratna">
-					
-					<label for="sezonska">Sezonska:</label> 
-					<input type="radio" name="vrstaKarte" id="sezonska" value="Sezonska">
-				</div>
-					<h4><label for="brKarata">Broj karata: </label></h4>
-					<input type="text" name="brKarata">
-					<br></br>
+					<input type="radio" name="vrstaKarte" id="penzionerska" value="Penzionerska">&nbsp;
+				</div><br/>
 				<input type="submit" value="Potvrdi"> 
 			</form>
-			<br/><br/>
+			<br/><br/>			
 		</div>
-</body>
+		<form action=ProdajaKarataZaRadnikaServlet method="post">
+			<c:if test="${empty trazeniPolasci}">
+				<p style="color: red">${porukaNemaPol}</p>
+			</c:if>
+			<c:if test="${!empty trazeniPolasci}">
+				<table border="1">
+					<tr>
+						<th>Destinacija</th>
+						<th>Vreme polaska</th>
+						<th>Broj preostalih karata</th>
+						<th>Cena karte</th>
+						<th>Tip karte</th>
+						<th>Broj karata</th>
+						<th>Potvrda</th>
+					</tr>
+					<tr>
+						<c:forEach items="${trazeniPolasci}" var="wantPol">
+							<input type="hidden" name="idPolaska"
+								value="${wantPol.idpolaska}" />
+							<td>${wantPol.linija.grad.naziv}</td>
+							<td><fmt:formatDate type="both" dateStyle="long"
+									timeStyle="medium" value="${wantPol.vremepolaska}" /></td>
+							<td>${wantPol.prevoznik.brmesta - wantPol.brprodatihkarata}</td>
+							<c:forEach items="${wantPol.kartas}" var="vrstaKarte">
+								<input type="hidden" name="cenaKarte"
+									value="${vrstaKarte.cenakarte}" />
+								<td>${vrstaKarte.cenakarte}</td>
+								<td>${vrstaKarte.tipkarte}</td>
+							</c:forEach>
+							<td><input type="text" name="brKarata"></td>
+							<td><input type="submit" value="Prodaj"></td>
+						</c:forEach>
+					</tr>
+				</table>
+			</c:if>
+		</form>
+	</body>
 </html>
