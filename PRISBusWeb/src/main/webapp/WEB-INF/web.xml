@@ -94,6 +94,12 @@
   	<description></description>
   	<servlet-class>servlets.LogOutServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ProdajaKarataZaRadnikaServlet</servlet-name>
+  	<display-name>ProdajaKarataZaRadnikaServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.ProdajaKarataZaRadnikaServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LogInServlet</servlet-name>
   	<url-pattern>/LogInServlet</url-pattern>
@@ -153,5 +159,9 @@
   <servlet-mapping>
   	<servlet-name>LogOutServlet</servlet-name>
   	<url-pattern>/LogOutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProdajaKarataZaRadnikaServlet</servlet-name>
+  	<url-pattern>/ProdajaKarataZaRadnikaServlet</url-pattern>
   </servlet-mapping>
 </web-app>

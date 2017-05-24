@@ -30,49 +30,41 @@
 			</ul>
 
 		</div>
-		<h2 id="naslov">
+
+		<br></br>
+		<h2 align="center">
 			TOP PONUDA!
-			<h2>
+			</h2>
 				<table class="table">
 					<tr class="tr">
 						<th class="th">Polazak</th>
-						<th class="th">Završetak</th>
+						<th class="th">Dolazak</th>
 						<th class="th">Vreme</th>
 						<th class="th">Prevoznik</th>
 						<th class="th">Cena</th>
-
 					</tr>
 					<tr class="tr">
-						<td class="td">Novi Sad</td>
-						<td class="td">Niš</td>
-						<td class="td">15:35</td>
-						<td class="td">Lasta</td>
-						<td class="td">800</td>
+						<th class="td">Novi Sad</th>
+						<th class="td">Niš</th>
+						<th class="td">15:35</th>
+						<th class="td">Lasta</th>
+						<th class="td">800</th>
 					</tr>
-
-					
-					<div>
 				</table>
-				<marquee>
-					<p id="text">PUTUJTE UDOBNO I SIGURNO!</p>
-				</marquee>
+				<br></br>
+				<div class="rating" align="center">
+					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+				</div>
+				<div class="text">
+				 <h3 align="center"><strong>Na osnovu ocena korisnika, najbolji prevoznik ovog meseca je: ${prevoznik.naziv}</strong></h3>
+				</div>
+				<br></br>
 				<img id="logo" align="center" src="resources/images/ponude.jpg">
-
-				<h2 id="naslov1">Najisplativiji prevoznik!</h2>
-				<h3 id="naslov1">Ovog meseca iz ponude izdvajamo:</h3>
-
-				<table class="table">
-					<tr class="tr">
-						<th class="th">Prevoznik</th>
-						<th class="th">Prosečna cena karte</th>
-						<th class="th">U proseku jeftiniji od</th>
-					</tr>
-					<tr class="tr">
-						<td class="td">Lasta</td>
-						<td class="td">1000</td>
-						<td class="td">15%</td>
-					</tr>
-				</table>
-	</div>
+       			<br></br>
+       			<div class="text">
+				<marquee>
+					<h2>PUTUJTE UDOBNO I SIGURNO!</h2>
+				</marquee>  
+				</div>      
 </body>
 </html>

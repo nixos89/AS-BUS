@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
 
-<title>Profil</title>
+<title>Profil Korisnika</title>
 </head>
 <body>
 <body>
@@ -47,6 +47,7 @@
 			<form action="RezervacijaMesta.jsp">
 				<input type="submit" value="ONLINE REZERVACIJA">
 			</form>
+			<br></br>
 			<form action="KomentariKorisnika.jsp">
 				<input type="submit" value="KOMENTARI ZA PREVOZNIKA">
 			</form>
