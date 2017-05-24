@@ -32,7 +32,9 @@
 			</ul>
 		</div>
 		<br></br>
-		
+			<form action="LogOutServlet" method="get">
+					<input type="submit" value="Logout"> <br></br>
+			</form>
 			<div class="rezervacija1">
 			<p>
 				<strong>Ime:</strong> <label for="ime">${radnik.ime}</label>
@@ -45,11 +47,15 @@
 			<br></br>
 			<div class="rezervacija2">
 				<h3 align="justify">Broj prodatih karata: ${prodaja.brprodatih}</h3>
-				<h3 align="justify">Dnevni profit od prodatih karata: ${prodaja.dnevniprofit}</h3>
+				<h3 align="justify">Dnevni profit od prodatih karata: </h3>
 				<br></br>
 				<input type="submit" value="PRODAJA KARATA">
 				<br></br>
+				
+			<br>
 			</div>
+			<br></br>
+			
 			<marquee><img src="resources/images/karta.jpg"></marquee>
 	
 </body>

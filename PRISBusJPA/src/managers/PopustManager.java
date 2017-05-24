@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import model.Putnik;
-//obavestenje o popustu, Nevena
+
 public class PopustManager {
 	
 	public boolean getObavestiZaPopust(String user, String password, int brkarata){

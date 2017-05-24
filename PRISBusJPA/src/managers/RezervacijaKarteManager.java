@@ -1,9 +1,13 @@
 package managers;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import model.Polazak;
 import model.Prodaja;
@@ -69,14 +73,42 @@ public class RezervacijaKarteManager {
 		}		
 	}//prodajKartu
 	
-	public static void main(String[] args) {
-		RegistracijaManager rm = new RegistracijaManager();
-		EntityManager em = JPAUtils.getEntityManager();	
-		Radnik r = em.find(Radnik.class, 1);
-		r.addProdaja(em.find(Prodaja.class, 1));
-		for(Prodaja p: r.getProdajas()){
-			System.out.println(p.getPolazak().getIdpolaska()+",radnik:"+p.getRadnik().getIme());
+	public double getDnevniProfit(Date datum,Radnik radnik){
+		try{
+			EntityManager em = JPAUtils.getEntityManager();
+			TypedQuery<Prodaja> upit = em.createQuery("SELECT p FROM Prodaja p WHERE p.datumprodaje = :datum AND p.radnik = :radnik",Prodaja.class)
+					.setParameter("datum", datum)
+					.setParameter("radnik", radnik);
+			double dnevniProfit = 0.0;
+			List<Prodaja> dnevniPrihodRadnika = upit.getResultList();
+			for(Prodaja p: dnevniPrihodRadnika){
+				dnevniProfit+=p.getIznos();
+			}			
+			return dnevniProfit;
+		}catch(Exception e){
+			e.printStackTrace();
+			return -1;
 		}
+	}//getDnevniProfit
+	
+	public static void main(String[] args) {
+		RezervacijaKarteManager rkm = new RezervacijaKarteManager();
+		EntityManager em = JPAUtils.getEntityManager();
+		Radnik r = em.find(Radnik.class, 1);
+		Date datumProdaje = null;
+		double dProfit=0.0;
+		try{
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			datumProdaje = sdf.parse("2017-05-23");
+			dProfit = rkm.getDnevniProfit(datumProdaje, r);
+			System.out.println("Radnik "+r.getIme()+" "+r.getPrezime()+" je dana "+datumProdaje+" ostvarila prihod od "+dProfit+" dinara!" );
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+//		r.addProdaja(em.find(Prodaja.class, 1));
+//		for(Prodaja p: r.getProdajas()){
+//			System.out.println(p.getPolazak().getIdpolaska()+",radnik:"+p.getRadnik().getIme());
+//		}
 	}
 	
 }
