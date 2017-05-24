@@ -14,20 +14,7 @@
 		<header>
 			<img id="logo" src="resources/images/Logo.jpg">
 		</header>
-		<div class="menu">
-			<ul id="menu">
-				<li id="standard"><a href="Administrator.jsp"><i
-						class="fa fa-home"></i>Početna</a></li>
-				<li id="standard"><a href="Grad.jsp"><i class="fa fa-plus"></i>Novi
-						Prevoznik</a></li>
-				<li id="standard"><a href="Prevoznik.jsp"><i
-						class="fa fa-plus"></i>Nova linija</a></li>
-				<li id="veci"><a href="NoviPolasci.jsp"><i
-						class="fa fa-plus"></i>Novi Polasci</a></li>
-				<li id="standard"><a href="CenaKarte.jsp"><i
-						class="fa fa-plus"></i>Dodaj promocije</a></li>
-			</ul>
-		</div>
+		<%@ include file="/resources/templates/menu.jsp" %>
 		<div class="contain">
 			<h2>Dodati novu liniju:</h2>
 			<form method="post" action="UnosLinijeServlet">

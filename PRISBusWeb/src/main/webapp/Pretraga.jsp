@@ -11,6 +11,8 @@
 </head>
 <body>
 
+<!-- ********************* OVO JE DUPLIKAT!!!!!! ******************** -->
+
 <body>
 	<jsp:useBean class="customBeans.SviGradovi" id="gradovi" scope="request" />
 	<div class="Box">

@@ -39,12 +39,16 @@ public class LogInServlet extends HttpServlet {
 			String password = request.getParameter("lozinka");
 			Putnik p = new RegistracijaManager().getPutnikZaUserPass(user, password);
 			Radnik r = new RegistracijaManager().getRadnikZaUserPass(user, password);
+			
 			String porukaError = null;
 			if(p != null ){
 				request.getSession().setAttribute("korisnik", p);
 				request.getRequestDispatcher("ProfilKorisnika.jsp").forward(request, response);
 			}else if(r!=null){
-				request.getSession().setAttribute("radnik", r);
+				if(r.getUser().equals("admin") && r.getPassword().equals("admin"))
+					request.getSession().setAttribute("admin", r);
+				else
+					request.getSession().setAttribute("radnik", r);
 				request.getRequestDispatcher("ProfilRadnika.jsp").forward(request, response);
 			}
 			else{
