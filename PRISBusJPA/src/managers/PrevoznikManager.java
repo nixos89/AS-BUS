@@ -1,8 +1,17 @@
 package managers;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import model.Komentar7;
@@ -27,8 +36,7 @@ public class PrevoznikManager {
 			return null;
 		}
 	}//sacuvajPrevoznika
-	
-	
+		
 	public List<Komentar7> sviKomentariZaPrevoznika(int idPrevoznik){
 		try{
 			EntityManager em = JPAUtils.getEntityManager();
@@ -42,14 +50,52 @@ public class PrevoznikManager {
 		}
 	}//sviKomentariZaPrevoznika
 	
+	public static List<Prevoznik> najboljeOcenjeniPrevoznici(){
+		EntityManager em = JPAUtils.getEntityManager();
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			LocalDate danasnjiDatum = LocalDate.now();			
+			LocalDate prosliMesecDatum=danasnjiDatum.minusDays(30);			
+			TypedQuery<Komentar7> q = em.createQuery("SELECT komentar FROM Komentar7 komentar where komentar.datumkomentara BETWEEN  :prosliMesecDatum AND :danasnjiDatum",Komentar7.class);
+			q.setParameter("prosliMesecDatum", sdf.parse(prosliMesecDatum.toString()));
+			q.setParameter("danasnjiDatum", sdf.parse(danasnjiDatum.toString()));
+			List<Komentar7>komentari = q.getResultList();
+			Map<Prevoznik, Integer> prevoznici = new HashMap<>();
+			Prevoznik p = new Prevoznik();
+			for(Komentar7 k: komentari){
+				 p=k.getPrevoznik();
+				 int ocena=k.getOcena();
+				 if(prevoznici.containsKey(p)){
+					 prevoznici.put(p, prevoznici.get(p)+ocena);
+				 }
+				 else{
+					 prevoznici.put(p, k.getOcena());
+				 }
+				
+			}
+			List<Prevoznik> prevoznicikLista = new ArrayList<>();
+			prevoznici.entrySet().stream().sorted(Map.Entry.<Prevoznik, Integer>comparingByValue()) 
+	        .limit(3).collect(Collectors.toList());
+			
+			
+			return prevoznicikLista;
+					
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	public static void main(String[] args) {
 		PrevoznikManager pm = new PrevoznikManager();
-		Prevoznik prev = pm.sacuvajPrevoznika(50, "Dunav Prevoz");
+		/*Prevoznik prev = pm.sacuvajPrevoznika(50, "Dunav Prevoz");
 		if(prev!=null)
 			System.out.println("Prevoznik "+prev.getNaziv()+" je sacuvan!");
 		else
-			System.out.println("Greska, prevoznik NIJE sacuvan!");
-
+			System.out.println("Greska, prevoznik NIJE sacuvan!");*/
+		System.out.println("svi ocenjeni prevoznici za prethodni mesec");
+		for(Prevoznik p:najboljeOcenjeniPrevoznici()){
+			System.out.println(p.getNaziv());
+		}
 	}
-
 }
