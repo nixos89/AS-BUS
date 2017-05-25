@@ -55,6 +55,7 @@
 							<td>${komentar.tekstkomentara}</td>
 						</tr>
 					</table>
+					<br/><br/>
 				</c:forEach>
 			</c:if>
 		</div>
@@ -83,16 +84,13 @@
 				
 				  <table>			
 					<tr>
-						<td><h4>Komentar:</h4></td>
-						<td>&nbsp;</td>
-						<td><textarea placeholder="Ovde unesite Vaš komentar" cols="60" name="tekstKomentara" rows="5"></textarea></td>
-						<td><textarea placeholder="Ovde unesite Vaš komentar" cols="60" name="tekstKomentara" rows="5"></textarea></td>
-					</tr>
-					<tr>
-						<td><input type="submit" value="Unesi"></td>
-						<td> <input type="reset" value="Obriši"></td>
-					</tr>	
+						<td><h4>Komentar:</h4></td>						
+						<td><textarea placeholder="Ovde unesite Vaš komentar" cols="60" name="tekstKomentara" rows="5"></textarea></td>						
+					</tr>				
 				  </table>
+				  <br/>
+				  <input type="submit" value="Unesi">&nbsp;
+				  <input type="reset" value="Obriši">
 				  ${porukaKomentar}	
 				</div>				
 			</form>

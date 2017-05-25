@@ -42,10 +42,7 @@
 			</marquee>
 			</div>
 			<br></br>
-			<form action="LogOutServlet" method="get">
-				<input type="submit" value="Logout"> <br></br>
-			</form>
-			<br>
+			
 		</div>
 	</div>
 <%@ include file="/resources/templates/footer.jsp" %>

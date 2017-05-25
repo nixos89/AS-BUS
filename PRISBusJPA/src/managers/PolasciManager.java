@@ -301,21 +301,21 @@ public class PolasciManager {
 	
 	public static void main(String[] args) {
 		PolasciManager pm = new PolasciManager();		
-		try{
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			Date datumPolaska  = sdf.parse("2017-04-21");
-			List<Polazak> trazeniPolasci = pm.getTrazeniPolasci(2, datumPolaska, "Penzionerska");
-			if(trazeniPolasci.isEmpty())
-				System.out.println("Prazna lista TRAZENIH polazaka!");
-			else{
-				for(Polazak p : trazeniPolasci){
-					System.out.println("Prevoznik: "+p.getPrevoznik().getNaziv()+", destinacija: "+p.getLinija().getGrad().getNaziv()+", vreme: "+p.getVremepolaska()+
-							", vrsta polaska: "+p.getVrstapolaska().getVrsta()+", cena karte: ");
-				}
-			}
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+//		try{
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//			Date datumPolaska  = sdf.parse("2017-04-21");
+//			List<Polazak> trazeniPolasci = pm.getTrazeniPolasci(2, datumPolaska, "Penzionerska");
+//			if(trazeniPolasci.isEmpty())
+//				System.out.println("Prazna lista TRAZENIH polazaka!");
+//			else{
+//				for(Polazak p : trazeniPolasci){
+//					System.out.println("Prevoznik: "+p.getPrevoznik().getNaziv()+", destinacija: "+p.getLinija().getGrad().getNaziv()+", vreme: "+p.getVremepolaska()+
+//							", vrsta polaska: "+p.getVrstapolaska().getVrsta()+", cena karte: ");
+//				}
+//			}
+//		}catch(Exception e){
+//			e.printStackTrace();
+//		}
 //		try{
 //			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 //			Date datumPolaska  = sdf.parse("2017-04-21");
@@ -356,18 +356,18 @@ public class PolasciManager {
 //			System.out.println(vp.getVrsta());
 //		}
 //		
-//		Date d=null;
-//		try {
-//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//			d = sdf.parse("2017-04-21");
-//			List<Polazak> nekiPolasci = pm.vratiPolaskeZaDatumIDestinaciju(4, d);
-//			for(Polazak p: nekiPolasci){
-//				System.out.println("idPolaska: " + p.getIdpolaska() + ", prevoznik: " + p.getPrevoznik().getNaziv() +
-//									", linija: " + p.getLinija().getNazivlinije());
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}		
+		Date d=null;
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			d = sdf.parse("2017-04-21");
+			List<Polazak> nekiPolasci = pm.vratiPolaskeZaDatumIDestinaciju(4, d);
+			for(Polazak p: nekiPolasci){
+				System.out.println("idPolaska: " + p.getIdpolaska() + ", prevoznik: " + p.getPrevoznik().getNaziv() +
+									", linija: " + p.getLinija().getNazivlinije());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
 	}//main
 
 }

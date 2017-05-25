@@ -6,14 +6,14 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" href="../resources/css/Tema.css" type="text/css">
+	<link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
 	<title>Online rezervacija</title>
 </head>
 <body>
 	<jsp:useBean class="customBeans.SviRazlicitiPolasci" id="razlicitipolasci" scope="session" />
 	<div class="Box">
-		<img id="logo" src="../resources/images/Logo.jpg">
-		<%@ include file="../resources/templates/menu.jsp" %>
+		<img id="logo" src="resources/images/Logo.jpg">
+		<%@ include file="/resources/templates/menu.jsp" %>
 		<br></br>
 		<h2 align="center">ONLINE REZERVACIJA AUTOBUSKE KARTE</h2>
 		<div class="rezervacija1">
@@ -26,10 +26,11 @@
 									<option value="${p.idgrad}">${p.naziv}</option>
 								</c:forEach>
 						</select></td>
-						<div class="datum">
+					</tr>
+					<tr>	
 							<td><label>Datum polaska:</label></td>
-							<td><input id="datePick" type="date" name="datumPolaska" value="2017-4-21" />							
-						</div>
+							<td><input id="datePick" type="date" name="datumPolaska" /></td>							
+						
 					</tr>
 				</table>
 				<div class="vrstaKarte"> 
@@ -77,9 +78,7 @@
 								<td><input type="submit" value="Rezerviši"></td>
 							</c:forEach>
 						</tr>
-					</table>
-					
-					
+					</table>					
 				</c:if>
 			</form>
 			<br>
@@ -93,4 +92,5 @@
 						POPUST OD 10% na cenu karte! ! !</marquee></strong>
 			</div>
 		</div>
+	</div>	
 <%@ include file="/resources/templates/footer.jsp" %>
