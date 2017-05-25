@@ -11,7 +11,7 @@ public class NajboljeOcenjeniPrevoznici {
 
 	public NajboljeOcenjeniPrevoznici() {		
 		najboljeOcenjeniPrevoznici = PrevoznikManager.najboljeOcenjeniPrevoznici();
-	}
+	} 
 
 	public Map<Prevoznik, Double> getNajboljeOcenjeniPrevoznici() {
 		return najboljeOcenjeniPrevoznici;
