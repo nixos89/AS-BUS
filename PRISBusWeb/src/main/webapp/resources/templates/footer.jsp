@@ -1,6 +1,6 @@
 	<br/><br/>
 	<center>
-		<p>&copy; Autobuska stanica BUS 2017</p>
+		<p><span style="background:lightblue">&copy; Autobuska stanica BUS 2017</span></p>
 	</center>
 </body>
 </html>

@@ -46,6 +46,4 @@
 			
 			<marquee><img src="resources/images/karta.jpg"></marquee>
 	
-</body>
-</html>
-
+<%@ include file="/resources/templates/footer.jsp" %>

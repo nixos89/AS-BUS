@@ -65,6 +65,4 @@
 		<br></br> <img id="logo" src="resources/images/s3.jpg">
 	</div>
 
-</body>
-</html>
-
+<%@ include file="/resources/templates/footer.jsp" %>

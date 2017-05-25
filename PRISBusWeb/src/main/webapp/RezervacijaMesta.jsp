@@ -93,5 +93,4 @@
 						POPUST OD 10% na cenu karte! ! !</marquee></strong>
 			</div>
 		</div>
-</body>
-</html>
+<%@ include file="/resources/templates/footer.jsp" %>

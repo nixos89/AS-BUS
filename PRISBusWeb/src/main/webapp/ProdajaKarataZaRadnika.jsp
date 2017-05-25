@@ -83,5 +83,4 @@
 				</table>
 			</c:if>
 		</form>
-	</body>
-</html>
+<%@ include file="/resources/templates/footer.jsp" %>

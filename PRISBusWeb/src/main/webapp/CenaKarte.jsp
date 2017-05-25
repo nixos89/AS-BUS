@@ -67,5 +67,4 @@
 		</marquee>
 	</div>
 
-</body>
-</html>
+<%@ include file="/resources/templates/footer.jsp" %>
