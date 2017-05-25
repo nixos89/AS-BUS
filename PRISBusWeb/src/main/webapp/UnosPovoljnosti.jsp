@@ -14,38 +14,42 @@
             da se to sto je SELEKTOVANO PRIKAZE na index.jsp) -->
 
 <body>
+	<jsp:useBean class="customBeans.SviRazlicitiPolasci" id="razlicitipolasci" scope="session" />
 	<div class="Box">
 		<header> <img id="logo" src="resources/images/Logo.jpg">
 		</header>
 		<%@ include file="/resources/templates/menu.jsp" %>
-		<form action="UnosPovoljnostiServlet" method="get">
-				<table>
-					<tr>
-						<td><h3><label for="polazak">Odaberite polazak: </label></td></h3>
-						<td><select name="polazak">
-								<c:forEach items="${razlicitipolasci.getSviRazlicitiPolasci()}" var="p">
-									<option value="${p.idgrad}">${p.naziv}</option>
-								</c:forEach>
-						</select></td>
-						<div class="datum">
-							<td><label>Datum polaska:</label></td>
-							<td><input id="datePick" type="date" name="datumPolaska" value="2017-4-21" />							
-						</div>
-					</tr>		
-				</table>
-				<div class="vrstaKarte"> 
-					<h3>Izaberite vrstu karte:</h3>
-					<label for="redovna">Redovna:</label> 
-					<input type="radio" name="vrstaKarte" id="redovna" value="Redovna">&nbsp; 
-					<label for="povratna">Povratna:</label> 
-					<input type="radio" name="vrstaKarte" id="povratna" value="Povratna">&nbsp; 
-					<label for="studentska">Studentska:</label> 
-					<input type="radio" name="vrstaKarte" id="studentska" value="Studentska">&nbsp;
-					<label for="penzionerska">Penzionerska:</label> 
-					<input type="radio" name="vrstaKarte" id="penzionerska" value="Penzionerska">&nbsp;
-				</div><br/>
-				<input type="submit" value="Potvrdi"> 
-			</form>
+		<br/><br/><br/>
+		<div class="rezervacija2">
+			<form action="UnosPovoljnostiServlet" method="get">
+					<table>
+						<tr>
+							<td><h3><label for="polazak">Odaberite polazak: </label></td></h3>
+							<td><select name="polazak">
+									<c:forEach items="${razlicitipolasci.getSviRazlicitiPolasci()}" var="p">
+										<option value="${p.idgrad}">${p.naziv}</option>
+									</c:forEach>
+							</select></td>
+							<div class="datum">
+								<td><label>Datum polaska:</label></td>
+								<td><input id="datePick" type="date" name="datumPolaska" />							
+							</div>
+						</tr>		
+					</table>
+					<div class="vrstaKarte"> 
+						<h3>Izaberite vrstu karte:</h3>
+						<label for="redovna">Redovna:</label> 
+						<input type="radio" name="vrstaKarte" id="redovna" value="Redovna">&nbsp; 
+						<label for="povratna">Povratna:</label> 
+						<input type="radio" name="vrstaKarte" id="povratna" value="Povratna">&nbsp; 
+						<label for="studentska">Studentska:</label> 
+						<input type="radio" name="vrstaKarte" id="studentska" value="Studentska">&nbsp;
+						<label for="penzionerska">Penzionerska:</label> 
+						<input type="radio" name="vrstaKarte" id="penzionerska" value="Penzionerska">&nbsp;
+					</div><br/>
+					<input type="submit" value="Potvrdi"> 
+				</form>
+			</div>
 			<br/><br/>	
 			<form action="UnosPovoljnostiServlet" method="post">
 			<c:if test="${empty trazeniPolasci}">

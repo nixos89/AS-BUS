@@ -34,7 +34,7 @@
 					</tr>
 					<tr>
 						<td align="right">Datum polaska</td>
-						<td><input id="meeting" name="datumPolaska" type="date"/></td>
+						<td><input id="datePick" type="date" name="datumPolaska"/>
 					</tr>
 					<tr>
 						<td colspan="2" align="center">
@@ -67,7 +67,6 @@
 								<td class="td">${polazak.vremepolaska}</td>
 								<td class="td">${polazak.prevoznik.naziv}</td>
 								<td class="td">${polazak.vrstapolaska.vrsta}</td>
-								<td><input type="text" name="brKarata"></td>
 							</tr>
 						</c:forEach>
 					</table>

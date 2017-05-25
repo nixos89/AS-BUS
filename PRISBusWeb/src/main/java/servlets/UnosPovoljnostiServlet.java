@@ -44,10 +44,10 @@ public class UnosPovoljnostiServlet extends HttpServlet {
 			if(trazeniPolasci.isEmpty()){
 				porukaNemaPol = "Nema polazaka za odabrane paramtere!";
 				request.setAttribute("porukaNemaPol", porukaNemaPol);
-				request.getRequestDispatcher("ProdajaKarataZaRadnika.jsp").forward(request, response);
+				request.getRequestDispatcher("UnosPovoljnosti.jsp").forward(request, response);
 			}else{// IMA trazenih polazaka
 				request.setAttribute("trazeniPolasci", trazeniPolasci);
-				request.getRequestDispatcher("ProdajaKarataZaRadnika.jsp").forward(request, response);
+				request.getRequestDispatcher("UnosPovoljnosti.jsp").forward(request, response);
 			}
 		}catch(Exception e){
 			e.printStackTrace();
