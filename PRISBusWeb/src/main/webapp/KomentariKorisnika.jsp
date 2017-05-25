@@ -63,14 +63,14 @@
 		<div class="rezervacija2">
 			<form action="KomentariKorisnikaServlet" method="post">
 				<div style="border='1'">
-				  Odaberite prevoznika za komentar: 
+				  |<strong>Odaberite prevoznika za komentar:</strong> 
 				  <select name="prevoznik">
 					<c:forEach items="${prevoznici.getSviPrevoznici()}" var="prevoznik">
 						<option value="${prevoznik.idprevoznik}">${prevoznik.naziv}</option>
 					</c:forEach>
 				  </select>
 				  <br/><br/>
-				  Ocenite prevoznika (5 - max, a 1 - min)&nbsp;
+				  <strong>Ocenite prevoznika (5 - max, a 1 - min)&nbsp;</strong>
 					<b><label for="1">1:</label></b>
 					<input type="radio" id="1" name="ocena" value="1"/>&nbsp;
 					<b><label for="2">2:</label></b>
@@ -85,9 +85,8 @@
 				  <table>			
 					<tr>
 						<td><h4>Komentar:</h4></td>
-						<td><textarea cols="65" name="tekstKomentara" rows="5" placeholder="Ovde unesite Vaš komentar"></textarea></td>
-						<td><input type="hidden" name="skriveno" value="skrivenopolje"></td>
 						<td>&nbsp;</td>
+						<td><textarea placeholder="Ovde unesite Vaš komentar" cols="60" name="tekstKomentara" rows="5"></textarea></td>
 					</tr>
 					<tr>
 						<td><input type="submit" value="Unesi"></td>
