@@ -5,7 +5,7 @@ body {
 .Box {
 	margin-left: 15%;
 	margin-top: 30px;
-	width: 85%;
+	width: 84.5%;
 	background-color: powderblue;
 	height: 1000px;
 	color: #8000ff;
@@ -109,7 +109,7 @@ li:hover a {
   width: 13.87%;
  }
  #standard {
-  font-size: 12px;
+  font-size: 18px;
  }
 #veci {
   font-size: 15px;
@@ -126,17 +126,51 @@ li:hover a {
  #veci {
   font-size: 15px;
  }
+ 
+ #standardA {
+	font-size: 10px;
+	width: 140px;
 }
+
+#standardO {
+	font-size: 14px;
+	width: 282px;
+}
+
+#standardR {
+	font-size: 14px;
+    width: 225px;
+
+}
+
+}
+
+
 @media screen and (min-width:1200px) {
    li {
   width: 13.87%;
  }
  #standard, #veci1 {
-  font-size: 10px;
+  font-size: 15px;
  }
 #veci {
   font-size: 10px;
  }
+#standardA {
+	font-size: 14px;
+	width: 140px;
+}
+
+#standardO {
+	font-size: 14px;
+	width: 282px;
+}
+
+#standardR {
+	font-size: 14px;
+    width: 225px;
+
+}
 }
 
 .rating {
