@@ -53,12 +53,9 @@
 			<tr>
 				<td><p>Lozinka:</p></td>
 				<td><input type="text" name="lozinka"></td>
-			</tr>
-			<tr>
-			<td>&nbsp;</td>
-			<td><input type="submit" name="submit" value="Prijavite se"></td>
 			</tr>			
 		</table>
+		<h4 align="center"><input type="submit" name="submit" value="Prijavite se"></h4>
 		${porukaError}
 		</form>
 		<br></br>
