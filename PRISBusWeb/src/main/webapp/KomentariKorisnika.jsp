@@ -73,7 +73,8 @@
 			</c:if>
 		</div>
 		<br></br>
-		
+		<br></br>
+		<br></br>
 		<div class="rezervacija2">
 			<form action="KomentariKorisnikaServlet" method="post">
 				<div style="border='1'">
