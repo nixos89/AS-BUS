@@ -69,11 +69,10 @@
 							<td>${komentar.tekstkomentara}</td>
 						</tr>
 					</table>
+					<br></br>
 				</c:forEach>
 			</c:if>
 		</div>
-		<br></br>
-		<br></br>
 		<br></br>
 		<div class="rezervacija2">
 			<form action="KomentariKorisnikaServlet" method="post">
