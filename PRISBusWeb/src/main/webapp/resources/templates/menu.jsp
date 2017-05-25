@@ -23,7 +23,6 @@
 			</c:when>
 			<c:when test="${admin!=null}" >
 				<li id="standardA"><a href="index.jsp"><i class="fa fa-home"></i>Početna</a></li>
-				<li id="standardA"><a href="PretragaPolazaka.jsp"><i class="fa fa-home"></i>Pretraga polazaka</a></li>
 				<li id="standardA"><a href="Grad.jsp"><i class="fa fa-plus"></i>Dodaj Grad</a></li>
 				<li id="standardA"><a href="UnosLinije.jsp"><i class="fa fa-plus"></i>Nova Linija</a></li>
 				<li id="standardA"><a href="Prevoznik.jsp"><i class="fa fa-plus"></i>Novi Prevoznik</a></li>
