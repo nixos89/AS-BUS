@@ -42,7 +42,6 @@
 			</p>
 			
 		</form>
-		<br></br>
 		<div class="rezervacija2">
 			<c:if test="${!empty komentars}">
 				<c:forEach items="${komentars}" var="komentar">					
@@ -103,7 +102,6 @@
 						<td><textarea placeholder="Ovde unesite Vaš komentar" cols="60" name="tekstKomentara" rows="5"></textarea></td>
 					</tr>
 				  </table>
-				  <br></br>
 					<input type="submit" value="Unesi"></td>
 				    <input type="reset" value="Obriši"></td>
 				  ${porukaKomentar}	
