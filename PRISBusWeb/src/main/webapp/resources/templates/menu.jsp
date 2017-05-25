@@ -28,6 +28,7 @@
 				<li id="standardA"><a href="UnosLinije.jsp"><i class="fa fa-plus"></i>Nova Linija</a></li>
 				<li id="standardA"><a href="Prevoznik.jsp"><i class="fa fa-plus"></i>Novi Prevoznik</a></li>
 				<li id="standardA"><a href="NoviPolasci.jsp"><i class="fa fa-plus"></i>Novi Polasci</a></li>
+				<li id="standardA"><a href="UnosPovoljnosti.jsp"><i class="fa fa-plus"></i>Unos povoljnosti</a></li>
 				<li id="standardA"><a href="CenaKarte.jsp"><i class="fa fa-plus"></i>Unos cena karata</a></li>
 				<li id="standardA"><a href="LogInOutServlet?user=${admin.user}&pass=${admin.password}"><i class="fa fa-plus"></i>Odjava</a></li>
 			</c:when>

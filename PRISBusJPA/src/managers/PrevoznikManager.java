@@ -85,6 +85,40 @@ public class PrevoznikManager {
 			e.printStackTrace();
 			return null;
 		}
-	}
+	}//najboljeOcenjeniPrevoznici
+	
+	public static Map<Prevoznik,Double> najJeftinijiPrevoznici(){
+		EntityManager em = JPAUtils.getEntityManager();
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			LocalDate danasnjiDatum = LocalDate.now();			
+			LocalDate prosliMesecDatum=danasnjiDatum.minusDays(30);				
+			TypedQuery<Komentar7> q = em.createQuery("SELECT komentar FROM Komentar7 komentar where komentar.datumkomentara BETWEEN  :prosliMesecDatum AND :danasnjiDatum",Komentar7.class);
+			q.setParameter("prosliMesecDatum", sdf.parse(prosliMesecDatum.toString()));
+			q.setParameter("danasnjiDatum", sdf.parse(danasnjiDatum.toString()));
+			List<Komentar7>komentari = q.getResultList();
+			
+			Map<Prevoznik,Double>prevozniciProsek=new HashMap<>(); 
+			Map<Prevoznik,Double>prevozniciProsekSort=new LinkedHashMap<>(); 
+			
+			prevozniciProsek = komentari
+					.stream()
+					.collect(Collectors.groupingBy(Komentar7::getPrevoznik,Collectors.averagingDouble(Komentar7::getOcena)));						
+						
+			prevozniciProsek.entrySet()
+					.stream()	
+					.sorted(Map.Entry.<Prevoznik,Double>comparingByValue().reversed())	
+					.limit(3)
+					.forEach(entry -> prevozniciProsekSort.put(entry.getKey(), entry.getValue()) );			
+			
+			return prevozniciProsekSort;
+					
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}//najJeftinijiPrevoznici
+	
+	
 	
 }

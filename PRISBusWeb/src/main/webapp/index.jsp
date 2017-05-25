@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,6 +10,8 @@
 <title>Početna</title>
 </head>
 <body>
+	<jsp:useBean id="bestPrevoznici" class="customBeans.NajboljeOcenjeniPrevoznici"
+		scope="application" />
 	<div class="Box">
 		<header> 
 			<img id="logo" src="resources/images/Logo.jpg">
@@ -17,31 +20,22 @@
 		<br></br>
 		
 		<h2 align="center">
-			TOP PONUDA!
+			NAJBOLJI PREVOZNICI
 			</h2>
-				<table class="table">
-					<tr class="tr">
-						<th class="th">Polazak</th>
-						<th class="th">Dolazak</th>
-						<th class="th">Vreme</th>
-						<th class="th">Prevoznik</th>
-						<th class="th">Cena</th>
+				<table>
+					<tr>
+						<th>Prevoznik</th>
+						<th>Ocena</th>
 					</tr>
-					<tr class="tr">
-						<th class="td">Novi Sad</th>
-						<th class="td">Niš</th>
-						<th class="td">15:35</th>
-						<th class="td">Lasta</th>
-						<th class="td">800</th>
-					</tr>
+					<c:forEach items="${bestPrevoznici.najboljeOcenjeniPrevoznici}" var="best">				
+						<tr>
+							<td>${best.key.naziv}</td>
+							<td>${best.value}</td>
+						</tr>
+					</c:forEach>	
 				</table>
-				<br></br>
-				<div class="rating" align="center">
-					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-				</div>
-				<div class="text">
-				 <h3 align="center"><strong>Na osnovu ocena korisnika, najbolji prevoznik ovog meseca je: ${prevoznik.naziv}</strong></h3>
-				</div>
+			
+				
 				<br></br>
 				<img id="logo" align="center" src="resources/images/ponude.jpg">
        			<br></br>
@@ -49,5 +43,6 @@
 				<marquee>
 					<h2>PUTUJTE UDOBNO I SIGURNO!</h2>
 				</marquee>  
-				</div>      
+				</div>
+	</div>			      
 <%@ include file="/resources/templates/footer.jsp" %>

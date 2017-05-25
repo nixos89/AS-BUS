@@ -13,9 +13,9 @@
 	<jsp:useBean id="vrstePolaska" class="customBeans.SveVrstePolazaka"
 		scope="request" />
 	<jsp:useBean id="sveLinije" class="customBeans.SveLinije"
-		scope="session"></jsp:useBean>
+		scope="request"></jsp:useBean>
 	<jsp:useBean id="sviPrevoznici" class="customBeans.SviPrevoznici"
-		scope="session"></jsp:useBean>
+		scope="request"></jsp:useBean>
 	<div class="Box">
 		<header>
 			<img id="logo" src="resources/images/Logo.jpg">
