@@ -59,7 +59,6 @@
 			</c:if>
 		</div>
 		<br></br>
-		
 		<div class="rezervacija2">
 			<form action="KomentariKorisnikaServlet" method="post">
 				<div style="border='1'">
@@ -86,6 +85,7 @@
 					<tr>
 						<td><h4>Komentar:</h4></td>
 						<td>&nbsp;</td>
+						<td><textarea placeholder="Ovde unesite Vaš komentar" cols="60" name="tekstKomentara" rows="5"></textarea></td>
 						<td><textarea placeholder="Ovde unesite Vaš komentar" cols="60" name="tekstKomentara" rows="5"></textarea></td>
 					</tr>
 					<tr>
