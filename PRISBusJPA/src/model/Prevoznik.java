@@ -103,4 +103,28 @@ public class Prevoznik implements Serializable {
 		return komentar7;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idprevoznik;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Prevoznik other = (Prevoznik) obj;
+		if (idprevoznik != other.idprevoznik)
+			return false;
+		return true;
+	}
+	
+	
+
 }
