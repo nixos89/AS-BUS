@@ -11,16 +11,15 @@
 
 <body>
 
+	<body>
 	<div class="Box">
-		<header>
-			<img id="logo" src="resources/images/Logo.jpg">
-		</header>
+		<img id="logo" src="resources/images/Logo.jpg">
 		<div class="menu">
 			<ul id="menu">
 				<li id="standard"><a href="Pocetna.jsp"><i
 						class="fa fa-home"></i>Početna</a></li>
 				<li id="standard"><a href="Pretraga.jsp"><i
-						class="fa fa-search"></i> Pretraga </a></li>
+						class="fa fa-search"></i> Pretraga</a></li>
 				<li id="standard"><a href="Registracija.jsp"><i
 						class="fa fa-registered"></i> Registracija</a></li>
 				<li id="standard"><a href="Logovanje.jsp"><i
@@ -30,28 +29,32 @@
 				<li id="veci1"><a href="CenaKarte.jsp"><i
 						class="fa fa-pencil-square-o"></i> Modifikuj cene</a></li>
 			</ul>
+
 		</div>
 		<br></br>
-		
-			<div class="rezervacija1">
+		<div class="rezervacija1">
 			<p>
 				<strong>Ime:</strong> <label for="ime">${radnik.ime}</label>
 			</p>
 			<p>
 				<strong>Prezime: </strong><label for="prezime">${radnik.prezime}</label>
 			</p>
-			</div>
-			<strong><h3 align="center">PREGLED PROFITA: </h3></strong>
+		</div>
+		<strong><h3 align="center">PREGLED PROFITA: </h3></strong>
 			<br></br>
 			<div class="rezervacija2">
 				<h3 align="justify">Broj prodatih karata: ${prodaja.brprodatih}</h3>
-				<h3 align="justify">Dnevni profit od prodatih karata: ${prodaja.dnevniprofit}</h3>
+				<form action="DnevniProfitRadnikaServlet" method="get">
+					<input type="submit" value="Ostvareni dnevni profit">
+				</form>
+				<h3 align="justify">${porukaProfit}</h3>
 				<br></br>
 				<input type="submit" value="PRODAJA KARATA">
 				<br></br>
+				
+			<br>
 			</div>
+			<br></br>
+			
 			<marquee><img src="resources/images/karta.jpg"></marquee>
 	
-</body>
-</html>
-
