@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,57 +18,70 @@
 		<header> <img id="logo" src="resources/images/Logo.jpg">
 		</header>
 		<%@ include file="/resources/templates/menu.jsp" %>
-		<h2 id="naslov">
-			TOP PONUDA!
-			<h2>
-				<table class="table">
-					<tr class="tr">
-						<th class="th">Polazak</th>
-						<th class="th">Završetak</th>
-						<th class="th">Vreme</th>
-						<th class="th">Prevoznik</th>
-						<th class="th">Cena</th>
-
-					</tr>
-					<tr class="tr">
-						<td class="td">Beograd</td>
-						<td class="td">Niš</td>
-						<td class="td">15:35</td>
-						<td class="td">Lasta</td>
-						<td class="td">800</td>
-					</tr>
-
-					</div>
-					</div>
-					<div>
+		<form action="UnosPovoljnostiServlet" method="get">
+				<table>
+					<tr>
+						<td><h3><label for="polazak">Odaberite polazak: </label></td></h3>
+						<td><select name="polazak">
+								<c:forEach items="${razlicitipolasci.getSviRazlicitiPolasci()}" var="p">
+									<option value="${p.idgrad}">${p.naziv}</option>
+								</c:forEach>
+						</select></td>
+						<div class="datum">
+							<td><label>Datum polaska:</label></td>
+							<td><input id="datePick" type="date" name="datumPolaska" value="2017-4-21" />							
+						</div>
+					</tr>		
 				</table>
-				<marquee>
-					<p id="text">PUTUJTE UDOBNO I SIGURNO!</p>
-				</marquee>
-				<img id="logo" align="center" src="resources/images/ponude.jpg">
-
-				<h2 id="naslov1">Najisplativiji prevoznik!</h2>
-				<h3 id="naslov1">Ovog meseca iz ponude izdvajamo:</h3>
-
-				<table class="table">
-					<tr class="tr">
-						<th class="th">Prevoznik</th>
-						<th class="th">Prosečna cena karte</th>
-						<th class="th">U proseku jeftiniji od</th>
-
-
+				<div class="vrstaKarte"> 
+					<h3>Izaberite vrstu karte:</h3>
+					<label for="redovna">Redovna:</label> 
+					<input type="radio" name="vrstaKarte" id="redovna" value="Redovna">&nbsp; 
+					<label for="povratna">Povratna:</label> 
+					<input type="radio" name="vrstaKarte" id="povratna" value="Povratna">&nbsp; 
+					<label for="studentska">Studentska:</label> 
+					<input type="radio" name="vrstaKarte" id="studentska" value="Studentska">&nbsp;
+					<label for="penzionerska">Penzionerska:</label> 
+					<input type="radio" name="vrstaKarte" id="penzionerska" value="Penzionerska">&nbsp;
+				</div><br/>
+				<input type="submit" value="Potvrdi"> 
+			</form>
+			<br/><br/>	
+			<form action="UnosPovoljnostiServlet" method="post">
+			<c:if test="${empty trazeniPolasci}">
+				<p style="color: red">${porukaNemaPol}</p>
+			</c:if>
+			<c:if test="${!empty trazeniPolasci}">
+				<table border="1">
+					<tr>
+						<th>Destinacija</th>
+						<th>Vreme polaska</th>
+						<th>Broj preostalih karata</th>
+						<th>Cena karte</th>
+						<th>Tip karte</th>
+						<th>Broj karata</th>
+						<th>Potvrda</th>
 					</tr>
-					<tr class="tr">
-						<td class="td">Lasta</td>
-						<td class="td">1000</td>
-						<td class="td">15%</td>
+					<tr>
+						<c:forEach items="${trazeniPolasci}" var="wantPol">
+							<input type="hidden" name="idPolaska"
+								value="${wantPol.idpolaska}" />
+							<td>${wantPol.linija.grad.naziv}</td>
+							<td><fmt:formatDate type="both" dateStyle="long"
+									timeStyle="medium" value="${wantPol.vremepolaska}" /></td>
+							<td>${wantPol.prevoznik.brmesta - wantPol.brprodatihkarata}</td>
+							<c:forEach items="${wantPol.kartas}" var="vrstaKarte">
+								<input type="hidden" name="cenaKarte"
+									value="${vrstaKarte.cenakarte}" />
+								<td>${vrstaKarte.cenakarte}</td>
+								<td>${vrstaKarte.tipkarte}</td>
+							</c:forEach>
+							<td><input type="checkbox" name="odabraniPolazak" value="${wantPol.idpolaska}"></td>
+							<td><input type="submit" value="Postavi"></td>
+						</c:forEach>
 					</tr>
-					<tr class="tr">
-						<td class="td">Niš ekspres</td>
-						<td class="td">1100</td>
-						<td class="td">14%</td>
-					</tr>
-
 				</table>
+			</c:if>
+		</form>
 	</div>
 <%@ include file="/resources/templates/footer.jsp" %>
