@@ -17,22 +17,21 @@
 		</header>
 		<%@ include file="/resources/templates/menu.jsp" %>
 		<br></br>
-			<form action="LogOutServlet" method="get">
+			<form action="LogInOutServlet" method="get">
 					<input type="submit" value="Logout"> <br></br>
 			</form>
-			<div class="rezervacija1">
+		<div class="rezervacija1">
 			<p>
 				<strong>Ime:</strong> <label for="ime">${radnik.ime}</label>
 			</p>
 			<p>
 				<strong>Prezime: </strong><label for="prezime">${radnik.prezime}</label>
 			</p>
-			</div>
-			<strong><h3 align="center">PREGLED PROFITA: </h3></strong>
+		</div>
+		<strong><h3 align="center">PREGLED PROFITA: </h3></strong>
 			<br></br>
 			<div class="rezervacija2">
 				<h3 align="justify">Broj prodatih karata: ${prodaja.brprodatih}</h3>
-<!-- 				<h3 align="justify">Dnevni profit od prodatih karata: </h3> -->
 				<form action="DnevniProfitRadnikaServlet" method="get">
 					<input type="submit" value="Ostvareni dnevni profit">
 				</form>

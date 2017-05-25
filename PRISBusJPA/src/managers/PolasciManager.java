@@ -145,6 +145,7 @@ public class PolasciManager {
 		}
 	}//sacuvajPrevoznika
 	
+	
 	public static boolean sacuvajGrad(String naziv){
 		try {
 			EntityManager em = JPAUtils.getEntityManager();

@@ -3,13 +3,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<title>Unos povoljnosti</title>
+	<link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Unos povoljnosti</title>
 </head>
-<body>
 
+<!-- HITNO: Izmenuti ovu stranicu da se unose povoljnosti (pomocu checkbox-eva i 
+            da se to sto je SELEKTOVANO PRIKAZE na index.jsp) -->
+
+<body>
 	<div class="Box">
 		<header> <img id="logo" src="resources/images/Logo.jpg">
 		</header>

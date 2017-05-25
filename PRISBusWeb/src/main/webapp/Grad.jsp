@@ -26,7 +26,11 @@
 						<td>&nbsp;</td>
 						<td><input type="submit" name="submit" value="Dodaj"></td>
 					</tr>
+					<tr>
+						<td>${porukaGrad}</td>
+					</tr>
 				</table>
+				
 			</form>			
 		</div>				
 	</div>	

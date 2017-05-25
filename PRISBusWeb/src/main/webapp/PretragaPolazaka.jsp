@@ -19,7 +19,6 @@
 
 		<div class="pretraga">
 			<br/>
-			<h1><u>PRODAJA KARATA</u></h1>
 			<h2 class="sansserif">Pronađite odgovarajući autobus</h2>
 			<form method="get" action="PretragaServlet">
 				<table>

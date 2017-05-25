@@ -102,11 +102,11 @@ public class RegistracijaManager {
 		else
 			System.out.println("Greska, korisnik NE POSTOJI u bazi!");
 		
-		Radnik r = rm.sacuvajRadnika("Milica", "Salteric", "mica", "ubica");
-		if(r!=null)
-			System.out.println("Radnik "+r.getIme()+" "+r.getPrezime()+" je sacuvan!");
-		else
-			System.out.println("Greska, Radnik NIJE sacuvan!");
+//		Radnik r = rm.sacuvajRadnika("Gorica", "Grozdic", "goca", "gomboca");
+//		if(r!=null)
+//			System.out.println("Radnik "+r.getIme()+" "+r.getPrezime()+" je sacuvan!");
+//		else
+//			System.out.println("Greska, Radnik NIJE sacuvan!");
 	}//main
 
 }

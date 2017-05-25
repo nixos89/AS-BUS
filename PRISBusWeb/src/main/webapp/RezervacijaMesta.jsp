@@ -6,18 +6,18 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" href="resources/css/Tema.css" type="text/css">
+	<link rel="stylesheet" href="../resources/css/Tema.css" type="text/css">
 	<title>Online rezervacija</title>
 </head>
 <body>
 	<jsp:useBean class="customBeans.SviRazlicitiPolasci" id="razlicitipolasci" scope="session" />
 	<div class="Box">
-		<img id="logo" src="resources/images/Logo.jpg">
-		<%@ include file="/resources/templates/menu.jsp" %>
+		<img id="logo" src="../resources/images/Logo.jpg">
+		<%@ include file="../resources/templates/menu.jsp" %>
 		<br></br>
 		<h2 align="center">ONLINE REZERVACIJA AUTOBUSKE KARTE</h2>
 		<div class="rezervacija1">
-			<form action="RezervacijaMestaServlet" method="get">
+			<form action="/PRISBusWeb/RezervacijaMestaServlet" method="get">
 				<table width="500">
 					<tr>
 						<td><label for="polazak">Destinacija: </label></td>
