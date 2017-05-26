@@ -19,7 +19,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import model.Karta;
 import model.Komentar7;
+import model.Polazak;
 import model.Prevoznik;
 import model.Putnik;
 
@@ -87,31 +89,31 @@ public class PrevoznikManager {
 		}
 	}//najboljeOcenjeniPrevoznici
 	
-	public static Map<Prevoznik,Double> najJeftinijiPrevoznici(){
+	public static Map<Polazak,Integer> najJeftinijiPolasci(){
 		EntityManager em = JPAUtils.getEntityManager();
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			LocalDate danasnjiDatum = LocalDate.now();			
-			LocalDate prosliMesecDatum=danasnjiDatum.minusDays(30);				
-			TypedQuery<Komentar7> q = em.createQuery("SELECT komentar FROM Komentar7 komentar where komentar.datumkomentara BETWEEN  :prosliMesecDatum AND :danasnjiDatum",Komentar7.class);
-			q.setParameter("prosliMesecDatum", sdf.parse(prosliMesecDatum.toString()));
+			LocalDate narednih7Dana =danasnjiDatum.plusDays(7);			
+			TypedQuery<Polazak> q = em.createQuery("SELECT p FROM Polazak p where k.vremepolaska BETWEEN :danasnjiDatum AND :narednih7Dana",Polazak.class);
+			q.setParameter("narednih7Dana", sdf.parse(narednih7Dana.toString()));
 			q.setParameter("danasnjiDatum", sdf.parse(danasnjiDatum.toString()));
-			List<Komentar7>komentari = q.getResultList();
+			List<Polazak> polasciNarednih7Dana = q.getResultList();
 			
-			Map<Prevoznik,Double>prevozniciProsek=new HashMap<>(); 
-			Map<Prevoznik,Double>prevozniciProsekSort=new LinkedHashMap<>(); 
+			List<Karta> karteZaPolazak = new ArrayList<>(); 
+			for(Polazak p : polasciNarednih7Dana){
+				karteZaPolazak.addAll(p.getKartas());
+			}
 			
-			prevozniciProsek = komentari
-					.stream()
-					.collect(Collectors.groupingBy(Komentar7::getPrevoznik,Collectors.averagingDouble(Komentar7::getOcena)));						
-						
-			prevozniciProsek.entrySet()
-					.stream()	
-					.sorted(Map.Entry.<Prevoznik,Double>comparingByValue().reversed())	
-					.limit(3)
-					.forEach(entry -> prevozniciProsekSort.put(entry.getKey(), entry.getValue()) );			
+//			for(Karta k: karteZaPolazak){
+//				
+//			}
 			
-			return prevozniciProsekSort;
+			Map<Polazak,Integer> najjeftinijiPrevoznici = new HashMap<>(); 
+			
+			
+			// na kraju
+			return najjeftinijiPrevoznici;
 					
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -119,6 +121,12 @@ public class PrevoznikManager {
 		}
 	}//najJeftinijiPrevoznici
 	
-	
+	public static void main(String[] args) {
+		try{
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}//main
 	
 }
