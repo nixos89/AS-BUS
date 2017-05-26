@@ -21,7 +21,7 @@
 			<br/>
 			<h2 class="sansserif">Pronađite odgovarajući autobus</h2>
 			<form method="get" action="PretragaServlet">
-				<table>
+				<table class="pretragaPolazaka">
 					<tr>
 						<td align="right">Destinacija: </td>
 						<td>

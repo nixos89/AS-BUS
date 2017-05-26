@@ -26,15 +26,7 @@
 			</p>
  			<p> 
  				<strong>Broj rezervacija: </strong><label for="brKarata">${korisnik.brkarata}</label> 
- 			</p> 
-			
-			<form action="RezervacijaMesta.jsp">
-				<input type="submit" value="ONLINE REZERVACIJA">
-			</form>
-			<br></br>
-			<form action="KomentariKorisnika.jsp">
-				<input type="submit" value="KOMENTARI ZA PREVOZNIKA">
-			</form>
+ 			</p> 					
 			<div class="rezervacija2"> 
 			<marquee>
 				<p><strong> NA SVAKU TREĆU REZERVACIJU, POPUST OD 10% NA CENU KARTE! ! ! </strong>

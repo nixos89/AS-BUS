@@ -15,7 +15,7 @@
 		</header>
 		<%@ include file="/resources/templates/menu.jsp" %>		
 		<div class="contain">
-			<h2>Dodati novi grad:</h2>
+			<h2>Dodajte novi grad (destinaciju):</h2>
 			<form method="post" action="GradServlet">
 				<table>
 					<tr>
@@ -23,14 +23,12 @@
 						<td><input type="text" name="naziv"></td>
 					</tr>															
 					<tr>
-						<td>&nbsp;</td>
+						<td><input type="reset" name="reset" value="Obriši"></td>
 						<td><input type="submit" name="submit" value="Dodaj"></td>
 					</tr>
-					<tr>
-						<td>${porukaGrad}</td>
-					</tr>
+					
 				</table>
-				
+				${porukaGrad}
 			</form>			
 		</div>				
 	</div>	
