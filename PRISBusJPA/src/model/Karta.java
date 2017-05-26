@@ -1,6 +1,8 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Comparator;
+
 import javax.persistence.*;
 
 
@@ -11,7 +13,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="KARTA")
 @NamedQuery(name="Karta.findAll", query="SELECT k FROM Karta k")
-public class Karta implements Serializable {
+public class Karta implements Serializable,Comparable<Karta>{
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -61,5 +63,17 @@ public class Karta implements Serializable {
 	public void setPolazak(Polazak polazak) {
 		this.polazak = polazak;
 	}
+
+	@Override
+	public int compareTo(Karta o) {
+		Integer cenaKarte = cenakarte;
+		int cmpCenaKarte = cenaKarte.compareTo(o.cenakarte);
+		if(cmpCenaKarte !=0)
+			return cmpCenaKarte;
+		else
+			return 0; 
+	}
+
+	
 
 }

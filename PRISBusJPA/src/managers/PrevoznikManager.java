@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -21,6 +22,7 @@ import javax.persistence.TypedQuery;
 
 import model.Karta;
 import model.Komentar7;
+import model.Linija;
 import model.Polazak;
 import model.Prevoznik;
 import model.Putnik;
@@ -94,39 +96,45 @@ public class PrevoznikManager {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			LocalDate danasnjiDatum = LocalDate.now();			
-			LocalDate narednih7Dana =danasnjiDatum.plusDays(7);			
-			TypedQuery<Polazak> q = em.createQuery("SELECT p FROM Polazak p where k.vremepolaska BETWEEN :danasnjiDatum AND :narednih7Dana",Polazak.class);
+			LocalDate narednih7Dana =danasnjiDatum.plusDays(1);			
+			TypedQuery<Polazak> q = em.createQuery("SELECT p FROM Polazak p where p.vremepolaska BETWEEN :danasnjiDatum AND :narednih7Dana",Polazak.class);
 			q.setParameter("narednih7Dana", sdf.parse(narednih7Dana.toString()));
 			q.setParameter("danasnjiDatum", sdf.parse(danasnjiDatum.toString()));
 			List<Polazak> polasciNarednih7Dana = q.getResultList();
+		
+			List<Karta> karteZaPolazak = new ArrayList<>();
+			int minCena;
+			int karteZaPolazakNiz[];
 			
-			List<Karta> karteZaPolazak = new ArrayList<>(); 
-			for(Polazak p : polasciNarednih7Dana){
-				karteZaPolazak.addAll(p.getKartas());
+			for(Polazak p : polasciNarednih7Dana){				
+				karteZaPolazakNiz = new int[p.getKartas().size()];// niz je inicijalizovan
+				
+				minCena = p.getKartas().indexOf(0);
+				for(Karta k: p.getKartas()){
+					
+				}
+				karteZaPolazak.removeAll(karteZaPolazak); // ocisti kolekciju posto je izvukao najmanju cenu
 			}
 			
-//			for(Karta k: karteZaPolazak){
-//				
+			
+//			for(Polazak p : polasciNarednih7Dana){
+//				karteZaPolazak.addAll(p.getKartas());
+//				for(Karta k:karteZaPolazak){
+//					minCena = k.getCenakarte();
+//					
+//				}
+//				karteZaPolazak.removeAll(karteZaPolazak); // ocisti kolekciju posto je izvukao najmanju cenu
 //			}
 			
 			Map<Polazak,Integer> najjeftinijiPrevoznici = new HashMap<>(); 
-			
-			
-			// na kraju
-			return najjeftinijiPrevoznici;
-					
+			Map<Polazak,Integer> najjeftinijiPrevozniciSort = new LinkedHashMap<>();
+	
+			return najjeftinijiPrevozniciSort;				
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 	}//najJeftinijiPrevoznici
 	
-	public static void main(String[] args) {
-		try{
-			
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-	}//main
 	
 }
